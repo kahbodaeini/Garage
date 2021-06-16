@@ -1,0 +1,30 @@
+package Model;
+
+public enum Company {
+    BMW,
+    BENZ,
+    PORSCHE,
+    PEUGEOT,
+    AUDI,
+    CADILLAC,
+    LAMBORGHINI,
+    FERRARI,
+    TOYOTA,
+    HONDA,
+    FORD,
+    CHEVROLET,
+    JEEP,
+    NISSAN,
+    VOLKSWAGEN,
+    LEXUS,
+    SUBARU,
+    VOLVO,
+    JAGUAR,
+    MAZDA,
+    TESLA,
+    MITSUBISHI,
+    MASERATI,
+    BUGATTI,
+    FIAT,
+    ASTON_MARTIN;
+}
