@@ -94,4 +94,86 @@ public class Car {
             obj.put("intact", "No");
         return obj;
     }
+
+    public double calculatePrice(){
+
+        double companyCoefficient;
+        double carTypeCoefficient;
+
+        switch (this.getCompany()){
+
+            case BMW:
+            case CADILLAC:
+            case AUDI:
+            case BENZ:
+                companyCoefficient = 8;
+                break;
+            case FIAT:
+                companyCoefficient = 6;
+                break;
+            case JAGUAR:
+            case TESLA:
+            case ASTON_MARTIN:
+            case PORSCHE:
+                companyCoefficient = 9;
+                break;
+            case JEEP:
+            case VOLKSWAGEN:
+            case VOLVO:
+            case FORD:
+                companyCoefficient = 5;
+                break;
+            case PEUGEOT:
+                companyCoefficient = 3;
+                break;
+            case BUGATTI:
+            case MASERATI:
+            case LAMBORGHINI:
+            case FERRARI:
+                companyCoefficient = 10;
+                break;
+            case LEXUS:
+                companyCoefficient = 7;
+                break;
+            case TOYOTA:
+            case CHEVROLET:
+            case MITSUBISHI:
+            case SUBARU:
+            case MAZDA:
+            case HONDA:
+            case NISSAN:
+            default:
+                companyCoefficient = 4;
+                break;
+        }
+
+        switch (this.getType()){
+            case SUPERCAR:
+                carTypeCoefficient = 7;
+                break;
+            case MICRO:
+                carTypeCoefficient = 1;
+                break;
+            case PICKUP:
+            case TRUCK:
+            case SUV:
+                carTypeCoefficient = 4;
+                break;
+            case COUPE:
+            case HATCHBACK:
+                carTypeCoefficient = 2;
+                break;
+            case VAN:
+                carTypeCoefficient = 5;
+                break;
+
+            case CUV:
+            case SEDAN:
+            default:
+                carTypeCoefficient = 3;
+                break;
+        }
+
+        return 3000 * (carTypeCoefficient + companyCoefficient);
+    }
 }

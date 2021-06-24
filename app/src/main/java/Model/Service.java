@@ -26,8 +26,7 @@ public class Service {
         this.serviceType = serviceType;
     }
 
-    //TODO
-    /*private double calculateCost(){
+    private double calculateCost(){
 
         double companyCoefficient;
         double carTypeCoefficient;
@@ -36,13 +35,131 @@ public class Service {
         switch (this.car.getCompany()){
 
             case BMW:
-                companyCoefficient = 1.5;
-                break;
+            case CADILLAC:
+            case AUDI:
             case BENZ:
-                companyCoefficient = 2;
+                companyCoefficient = 8;
                 break;
-
+            case FIAT:
+                companyCoefficient = 6;
+                break;
+            case JAGUAR:
+            case TESLA:
+            case ASTON_MARTIN:
+            case PORSCHE:
+                companyCoefficient = 9;
+                break;
+            case JEEP:
+            case VOLKSWAGEN:
+            case VOLVO:
+            case FORD:
+                companyCoefficient = 5;
+                break;
+            case PEUGEOT:
+                companyCoefficient = 3;
+                break;
+            case BUGATTI:
+            case MASERATI:
+            case LAMBORGHINI:
+            case FERRARI:
+                companyCoefficient = 10;
+                break;
+            case LEXUS:
+                companyCoefficient = 7;
+                break;
+            case TOYOTA:
+            case CHEVROLET:
+            case MITSUBISHI:
+            case SUBARU:
+            case MAZDA:
+            case HONDA:
+            case NISSAN:
+            default:
+                companyCoefficient = 4;
+                break;
         }
 
-    }*/
+        switch (this.getServiceType()){
+
+            case COLOR:
+            case ENGINE1:
+                serviceTypeCoefficient = 5;
+                break;
+            case RING1:
+            case LEATHER1:
+            case LIGHT2:
+            case WHEEL2:
+            case EXHAUST2:
+                serviceTypeCoefficient = 2;
+                break;
+            case RING2:
+            case LEATHER2:
+            case EXHAUST3:
+                serviceTypeCoefficient = 3;
+                break;
+            case RING3:
+            case LEATHER3:
+                serviceTypeCoefficient = 4;
+                break;
+            case LIGHT1:
+            case WHEEL1:
+            case EXHAUST1:
+                serviceTypeCoefficient = 1.5;
+                break;
+            case LIGHT3:
+            case WHEEL3:
+                serviceTypeCoefficient = 2.5;
+                break;
+            case ENGINE2:
+            case REPAIRMENT1:
+                serviceTypeCoefficient = 6;
+                break;
+            case ENGINE3:
+            case REPAIRMENT2:
+                serviceTypeCoefficient = 7;
+                break;
+            case REPAIRMENT3:
+                serviceTypeCoefficient = 8;
+                break;
+            case REPAIRMENT4:
+                serviceTypeCoefficient = 9;
+                break;
+            case REPAIRMENT5:
+                serviceTypeCoefficient = 10;
+                break;
+            case CAR_WASH:
+            default:
+                serviceTypeCoefficient = 1;
+                break;
+        }
+
+        switch (this.car.getType()){
+            case SUPERCAR:
+                carTypeCoefficient = 7;
+                break;
+            case MICRO:
+                carTypeCoefficient = 1;
+                break;
+            case PICKUP:
+            case TRUCK:
+            case SUV:
+                carTypeCoefficient = 4;
+                break;
+            case COUPE:
+            case HATCHBACK:
+                carTypeCoefficient = 2;
+                break;
+            case VAN:
+                carTypeCoefficient = 5;
+                break;
+
+            case CUV:
+            case SEDAN:
+            default:
+                carTypeCoefficient = 3;
+                break;
+        }
+
+        return 500*carTypeCoefficient + 1000 * serviceTypeCoefficient + 1500 * companyCoefficient;
+    }
 }
