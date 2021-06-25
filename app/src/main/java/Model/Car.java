@@ -99,6 +99,9 @@ public class Car {
 
         double companyCoefficient;
         double carTypeCoefficient;
+        double intactCoefficient;
+
+        intactCoefficient = this.intact ? 0 : -2;
 
         switch (this.getCompany()){
 
@@ -174,6 +177,6 @@ public class Car {
                 break;
         }
 
-        return 3000 * (carTypeCoefficient + companyCoefficient);
+        return 3000 * (carTypeCoefficient + companyCoefficient + intactCoefficient);
     }
 }

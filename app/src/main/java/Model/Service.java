@@ -26,7 +26,7 @@ public class Service {
         this.serviceType = serviceType;
     }
 
-    private double calculateCost(){
+    public double calculateCost(){
 
         double companyCoefficient;
         double carTypeCoefficient;
@@ -88,7 +88,6 @@ public class Service {
             case RING1:
             case LEATHER1:
             case LIGHT2:
-            case WHEEL2:
             case EXHAUST2:
                 serviceTypeCoefficient = 2;
                 break;
@@ -102,12 +101,10 @@ public class Service {
                 serviceTypeCoefficient = 4;
                 break;
             case LIGHT1:
-            case WHEEL1:
             case EXHAUST1:
                 serviceTypeCoefficient = 1.5;
                 break;
             case LIGHT3:
-            case WHEEL3:
                 serviceTypeCoefficient = 2.5;
                 break;
             case ENGINE2:
@@ -161,5 +158,39 @@ public class Service {
         }
 
         return 500*carTypeCoefficient + 1000 * serviceTypeCoefficient + 1500 * companyCoefficient;
+    }
+
+    public String getImagePath(ServiceType serviceType){
+
+        String string = null;
+
+        switch (serviceType){
+
+            case EXHAUST1:
+                string = "/src/main/java/Model/images/Exhaust1.jpg";
+            case EXHAUST2:
+                string = "/src/main/java/Model/images/Exhaust2.jpeg";
+            case EXHAUST3:
+                string = "/src/main/java/Model/images/Exhaust3.jpg";
+            case RING1:
+                string = "/src/main/java/Model/images/Tire1.jpg";
+            case RING2:
+                string = "/src/main/java/Model/images/Tire2.jpg";
+            case RING3:
+                string = "/src/main/java/Model/images/Tire3.jpg";
+            case LEATHER1:
+                string = "/src/main/java/Model/images/Leather1.jpg";
+            case LEATHER2:
+                string = "/src/main/java/Model/images/Leather2.jpg";
+            case LEATHER3:
+                string = "/src/main/java/Model/images/Leather3.jpeg";
+            case LIGHT1:
+                string = "/src/main/java/Model/images/Light1.jpg";
+            case LIGHT2:
+                string = "/src/main/java/Model/images/Light2.jpg";
+            case LIGHT3:
+                string = "/src/main/java/Model/images/Light3.jpg";
+        }
+        return string;
     }
 }

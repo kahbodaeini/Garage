@@ -1,5 +1,7 @@
 package Controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -12,6 +14,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import Model.User;
@@ -19,6 +22,7 @@ import Model.User;
 public class SignAndLog {
 
     private static FileWriter file;
+    public static User currentUser;
 
     private boolean usernameExists(String username) throws IOException, ParseException {
 
@@ -34,11 +38,15 @@ public class SignAndLog {
         return false;
     }
 
-    private void signup(User user) throws JSONException, IOException {
+    private void signup(String firstName, String lastName, String userName, String password, double budget) throws JSONException, IOException {
+
+        User user = new User(firstName, lastName, userName, password, budget, new ArrayList<>());
 
         JSONArray obj = user.toJson();
         file = new FileWriter("main/java/Model/Database/Users/"+user.getUserName()+".json");
         file.write(obj.toString());
+
+        currentUser = user;
     }
 
     private int checkPassword(String username, String password) throws IOException, ParseException, JSONException {
@@ -53,8 +61,14 @@ public class SignAndLog {
             JSONObject user = (JSONObject) obj;
             String pass = (String) user.get("password");
 
-            if(pass.equals(password))
+            if(pass.equals(password)){
+
+                String json = user.toString();
+                ObjectMapper objectMapper = new ObjectMapper();
+                currentUser = objectMapper.readValue(json, User.class);
+
                 return 1;
+            }
             else
                 return -1;
         }

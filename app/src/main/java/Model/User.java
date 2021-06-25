@@ -1,18 +1,21 @@
 package Model;
 
-import android.util.JsonReader;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
 
 public class User {
 
     private String firstName, lastName, userName, password;
     private double budget;
-    private Car[] cars;
+    private ArrayList<Car> cars;
 
-    public User(String firstName, String lastName, String userName, String password, double budget, Car[] cars) {
+    public User(String firstName, String lastName, String userName, String password, double budget, ArrayList<Car> cars) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
@@ -61,11 +64,11 @@ public class User {
         this.budget = budget;
     }
 
-    public Car[] getCars() {
+    public ArrayList<Car> getCars() {
         return cars;
     }
 
-    public void setCars(Car[] cars) {
+    public void setCars(ArrayList<Car> cars) {
         this.cars = cars;
     }
 
@@ -80,13 +83,41 @@ public class User {
 
         JSONArray allCars = new JSONArray();
 
-        for(int i = 0; i < this.cars.length; i++){
-            allCars.put(this.cars[i].toJson());
+        for(int i = 0; i < this.cars.size(); i++){
+            allCars.put(this.cars.get(i).toJson());
         }
 
         JSONArray user = new JSONArray();
         user.put(obj);
         user.put(allCars);
         return user;
+    }
+
+    public void addCar(Car car) throws IOException {
+
+        ArrayList<Car> cars = this.getCars();
+        cars.add(car);
+        this.setCars(cars);
+
+        File file = new File("main/java/Model/Database/Users/"+this.getUserName()+".json");
+        file.deleteOnExit();
+
+        FileWriter newFile = new FileWriter("main/java/Model/Database/Users/"+this.getUserName()+".json");
+        newFile.write(this.toString());
+
+    }
+
+    public void removeCar(Car car) throws IOException {
+
+        ArrayList<Car> cars = this.getCars();
+        cars.remove(car);
+        this.setCars(cars);
+
+        File file = new File("main/java/Model/Database/Users/"+this.getUserName()+".json");
+        file.deleteOnExit();
+
+        FileWriter newFile = new FileWriter("main/java/Model/Database/Users/"+this.getUserName()+".json");
+        newFile.write(this.toString());
+
     }
 }
