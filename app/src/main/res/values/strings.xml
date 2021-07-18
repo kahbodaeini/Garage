@@ -12,4 +12,6 @@
     <string name="password">password</string>
     <string name="username">username</string>
     <string name="done">Done</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="login">Login</string>
 </resources>

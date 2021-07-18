@@ -25,7 +25,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/firstNameTextBox"
+        android:id="@+id/allUsers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
@@ -35,13 +35,13 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="First Name"
-        app:layout_constraintBottom_toTopOf="@+id/lastNameTextBox"
+        app:layout_constraintBottom_toTopOf="@+id/allCars"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userNameTextBox" />
 
     <EditText
-        android:id="@+id/lastNameTextBox"
+        android:id="@+id/allCars"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
@@ -55,7 +55,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/firstNameTextBox" />
+        app:layout_constraintTop_toBottomOf="@+id/allUsers" />
 
     <EditText
         android:id="@+id/userNameTextBox"
@@ -68,7 +68,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Username"
-        app:layout_constraintBottom_toTopOf="@+id/firstNameTextBox"
+        app:layout_constraintBottom_toTopOf="@+id/allUsers"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -87,7 +87,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lastNameTextBox" />
+        app:layout_constraintTop_toBottomOf="@+id/allCars" />
 
     <EditText
         android:id="@+id/budgetTextBox"
