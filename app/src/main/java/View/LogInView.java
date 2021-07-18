@@ -11,7 +11,7 @@ public class LogInView extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstancesState) {
         super.onCreate(savedInstancesState);
-        setContentView(R.layout.login_layoout);
+        setContentView(R.layout.login_layout);
 
     }
 }
