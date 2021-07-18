@@ -120,4 +120,24 @@ public class User {
         newFile.write(this.toString());
 
     }
+
+    public boolean checkPasswordInProfilePage(String password){
+
+        return this.password.equals(password);
+    }
+
+    public boolean changePassword(String oldPassword, String newPassword) throws IOException {
+
+        if (checkPasswordInProfilePage(oldPassword))
+            return false;
+        else{
+            this.password = newPassword;
+            File file = new File("main/java/Model/Database/Users/"+this.getUserName()+".json");
+            file.deleteOnExit();
+
+            FileWriter newFile = new FileWriter("main/java/Model/Database/Users/"+this.getUserName()+".json");
+            newFile.write(this.toString());
+            return true;
+        }
+    }
 }
