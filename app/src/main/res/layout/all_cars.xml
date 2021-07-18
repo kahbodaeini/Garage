@@ -1,6 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent">
+
+<ScrollView
+    android:id="@+id/scroll_view"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/main_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <LinearLayout
+            android:id="@+id/bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="@dimen/fab_margin"
+                app:srcCompat="@android:drawable/ic_dialog_email"
+                tools:ignore="MissingConstraints" />
+
+
+            <TextView
+                android:id="@+id/month_button"
+                android:layout_width="320dp"
+                android:layout_height="72dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="120dp"
+                android:layout_toEndOf="@+id/refresh"
+                android:layout_toRightOf="@+id/refresh"
+                android:text="         all cars"
+                android:textColor="#C80D0D"
+                android:textSize="39sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/car_layouts"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            android:visibility="invisible">
+
+            <ImageButton
+                android:id="@+id/car_image"
+                android:layout_width="80dp"
+                android:layout_height="80dp" />
+            <!--                android:src="@drawable/coin1"-->
+            <!--                />-->
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="310dp"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/car_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="96dp"
+                    android:layout_marginLeft="96dp"
+                    android:text="BTC | Bitcoin"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="@+id/car_image"
+                    tools:ignore="MissingConstraints,NotSibling"
+                    tools:layout_editor_absoluteY="0dp" />
+
+                <TextView
+                    android:id="@+id/car_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="220dp"
+                    android:layout_marginTop="3dp"
+                    android:gravity="end"
+                    android:text="100 $"
+                    app:layout_constraintLeft_toLeftOf="@+id/car_name"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/car_model"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="56dp"
+                    android:layout_marginRight="268dp"
+                    android:text="1h: 0%"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>
+
+</RelativeLayout>
