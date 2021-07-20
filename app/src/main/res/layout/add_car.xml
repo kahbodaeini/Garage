@@ -112,7 +112,6 @@
         tools:layout_editor_absoluteX="181dp"
         tools:layout_editor_absoluteY="422dp" />
 
-
     <TextView
         tools:ignore="MissingConstraints"
         android:layout_width="wrap_content"
@@ -124,11 +123,11 @@
 
     <ImageButton
         tools:ignore="MissingConstraints"
-        android:id="@+id/car_image"
+        android:id="@+id/check_image"
         android:layout_width="46dp"
         android:layout_height="45dp"
         tools:layout_editor_absoluteX="181dp"
-        tools:layout_editor_absoluteY="502dp" />
+        tools:layout_editor_absoluteY="495dp" />
 
     <Button
         tools:ignore="MissingConstraints"
