@@ -7,6 +7,15 @@
     android:background="#FFFFFF"
     android:backgroundTint="#FFFFFF">
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@android:drawable/ic_dialog_email"
+        tools:ignore="MissingConstraints" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="254dp"
@@ -123,7 +132,7 @@
         android:layout_width="87dp"
         android:layout_height="41dp"
         android:layout_marginTop="11dp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginEnd="34dp"
         android:layout_marginBottom="128dp"
         android:backgroundTint="#FFFFFF"
         android:text="Log in"
@@ -142,7 +151,7 @@
         android:layout_marginEnd="126dp"
         android:layout_marginBottom="55dp"
         android:backgroundTint="#FDFDFD"
-        android:text="Enter as Guest"
+        android:text="Done"
         android:textColor="#F61010"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

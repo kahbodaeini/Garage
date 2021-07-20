@@ -1,6 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADD CAR"
+        android:textSize="30dp"
+        android:textColor="#C80D0D"
+        tools:layout_editor_absoluteX="143dp"
+        tools:layout_editor_absoluteY="16dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        tools:ignore="MissingConstraints"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="company: "
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="102dp" />
+
+    <Spinner
+        tools:ignore="MissingConstraints"
+        android:id="@+id/car_company"
+        android:layout_width="180dp"
+        android:layout_height="35dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        tools:layout_editor_absoluteX="181dp"
+        tools:layout_editor_absoluteY="102dp" />
+
+    <TextView
+        tools:ignore="MissingConstraints"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="type: "
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="182dp" />
+
+    <Spinner
+        tools:ignore="MissingConstraints"
+        android:id="@+id/car_type"
+        android:layout_width="180dp"
+        android:layout_height="35dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        tools:layout_editor_absoluteX="181dp"
+        tools:layout_editor_absoluteY="182dp" />
+
+    <TextView
+        tools:ignore="MissingConstraints"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sign: "
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="262dp" />
+
+    <TextView
+        tools:ignore="MissingConstraints"
+        android:layout_width="wrap_content"
+        android:id="@+id/car_sign"
+        android:layout_height="wrap_content"
+        android:text=" "
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="181dp"
+        tools:layout_editor_absoluteY="262dp" />
+
+
+    <TextView
+        tools:ignore="MissingConstraints"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="year: "
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="342dp" />
+
+    <TextView
+        tools:ignore="MissingConstraints"
+        android:layout_width="wrap_content"
+        android:id="@+id/car_year"
+        android:layout_height="wrap_content"
+        android:text=" "
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="181dp"
+        tools:layout_editor_absoluteY="342dp" />
+
+    <TextView
+        tools:ignore="MissingConstraints"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="color: "
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="422dp" />
+
+    <Spinner
+        tools:ignore="MissingConstraints"
+        android:id="@+id/car_color"
+        android:layout_width="180dp"
+        android:layout_height="35dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        tools:layout_editor_absoluteX="181dp"
+        tools:layout_editor_absoluteY="422dp" />
+
+
+    <TextView
+        tools:ignore="MissingConstraints"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="intact: "
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="502dp" />
+
+    <ImageButton
+        tools:ignore="MissingConstraints"
+        android:id="@+id/car_image"
+        android:layout_width="46dp"
+        android:layout_height="45dp"
+        tools:layout_editor_absoluteX="181dp"
+        tools:layout_editor_absoluteY="502dp" />
+
+    <Button
+        tools:ignore="MissingConstraints"
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Done"
+        tools:layout_editor_absoluteX="159dp"
+        tools:layout_editor_absoluteY="603dp" />
+
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
