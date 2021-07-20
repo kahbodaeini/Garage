@@ -24,7 +24,7 @@ public class SignAndLog {
     private static FileWriter file;
     public static User currentUser;
 
-    private boolean usernameExists(String username) throws IOException, ParseException {
+    public static boolean usernameExists(String username) throws IOException, ParseException {
 
         File myObj = new File("main/java/Model/Database/Usernames.txt");
         Scanner myReader = new Scanner(myObj);
@@ -38,7 +38,7 @@ public class SignAndLog {
         return false;
     }
 
-    private void signup(String firstName, String lastName, String userName, String password, double budget) throws JSONException, IOException {
+    public static void signup(String firstName, String lastName, String userName, String password, double budget) throws JSONException, IOException {
 
         User user = new User(firstName, lastName, userName, password, budget, new ArrayList<>());
 
@@ -49,7 +49,7 @@ public class SignAndLog {
         currentUser = user;
     }
 
-    private int checkPassword(String username, String password) throws IOException, ParseException, JSONException {
+    public static int checkPassword(String username, String password) throws IOException, ParseException, JSONException {
 
         if(!usernameExists(username))
             return 0;

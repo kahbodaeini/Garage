@@ -13,5 +13,9 @@ public class SignInView extends AppCompatActivity {
         super.onCreate(savedInstancesState);
         setContentView(R.layout.signup_layout);
 
+        
+        
+        
+        
     }
 }
