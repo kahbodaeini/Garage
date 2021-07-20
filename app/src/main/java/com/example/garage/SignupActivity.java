@@ -27,6 +27,9 @@ public class SignupActivity extends AppCompatActivity {
         setContentView(R.layout.signup_layout);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
+    }
+
+    public void signup(){
 
         TextView usernameTextView = findViewById(R.id.userNameTextBoxSignup);
         String username = usernameTextView.getText().toString();
