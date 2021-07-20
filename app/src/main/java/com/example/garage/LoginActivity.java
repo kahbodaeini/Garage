@@ -27,16 +27,20 @@ public class LoginActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
 
+
+    }
+
+    public void login() {
+
         TextView usernameTextView = findViewById(R.id.userNameTextBoxSignup);
         String username = usernameTextView.getText().toString();
         TextView passwordTextView = findViewById(R.id.passwordTextBoxSignup);
         String password = passwordTextView.getText().toString();
 
-
         try {
             int res = SignAndLog.checkPassword(username, password);
 
-            switch(res){
+            switch (res) {
                 case 0:
 
                     //username does not exists
@@ -49,7 +53,5 @@ public class LoginActivity extends AppCompatActivity {
         } catch (IOException | JSONException | ParseException e) {
             e.printStackTrace();
         }
-
-
     }
 }
