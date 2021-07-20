@@ -11,7 +11,7 @@ public class SignInView extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstancesState) {
         super.onCreate(savedInstancesState);
-        setContentView(R.layout.signup_layoout);
+        setContentView(R.layout.signup_layout);
 
     }
 }

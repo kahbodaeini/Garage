@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/car_layouts"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/cardview_light_background"
+        android:orientation="horizontal"
+        android:visibility="invisible"
+        tools:ignore="MissingConstraints">
+
+        <ImageButton
+            android:id="@+id/car_image"
+            android:layout_width="match_parent"
+            android:layout_height="80dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/car_owner"
+        android:layout_width="393dp"
+        android:layout_height="49dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="102dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/car_company"
+        android:layout_width="393dp"
+        android:layout_height="49dp"
+        android:text="TextView"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="171dp" />
+
+    <TextView
+        android:id="@+id/car_type"
+        android:layout_width="393dp"
+        android:layout_height="49dp"
+        android:text="TextView"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="233dp" />
+
+    <TextView
+        android:id="@+id/car_sign"
+        android:layout_width="393dp"
+        android:layout_height="49dp"
+        tools:ignore="MissingConstraints"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="298dp" />
+
+    <TextView
+        android:id="@+id/car_year"
+        android:layout_width="393dp"
+        android:layout_height="49dp"
+        android:text="TextView"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="356dp" />
+
+    <TextView
+        android:id="@+id/car_color"
+        android:layout_width="393dp"
+        android:layout_height="49dp"
+        android:text="TextView"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="410dp" />
+
+    <TextView
+        android:id="@+id/car_intact"
+        android:layout_width="393dp"
+        android:layout_height="49dp"
+        tools:ignore="MissingConstraints"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="466dp" />
+
+    <TextView
+        android:id="@+id/car_price"
+        android:layout_width="393dp"
+        android:layout_height="49dp"
+        android:text="TextView"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="517dp" />
+
+    <Button
+        android:id="@+id/sell_car"
+        android:layout_width="154dp"
+        android:layout_height="57dp"
+        android:text="SELL"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="592dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/remove_car"
+        tools:ignore="MissingConstraints"
+        android:layout_width="162dp"
+        android:layout_height="46dp"
+        android:text="REMOVE"
+        tools:layout_editor_absoluteX="218dp"
+        tools:layout_editor_absoluteY="596dp" />
+
+    <Button
+        android:id="@+id/get_services"
+        tools:ignore="MissingConstraints"
+        android:layout_width="351dp"
+        android:layout_height="45dp"
+        android:text="GET SERVICES"
+        tools:layout_editor_absoluteX="31dp"
+        tools:layout_editor_absoluteY="664dp" />
+
+    <!--    <LinearLayout-->
+<!--        android:id="@+id/car_name"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="80dp"-->
+<!--        android:background="@color/black"-->
+<!--        android:orientation="vertical"-->
+<!--        tools:layout_editor_absoluteX="0dp"-->
+<!--        tools:layout_editor_absoluteY="87dp"-->
+<!--        tools:ignore="MissingConstraints">-->
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/car_owner"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="80dp"-->
+<!--        android:background="#00FFFF"-->
+<!--        android:orientation="vertical"-->
+<!--        tools:ignore="MissingConstraints"-->
+<!--        tools:layout_editor_absoluteX="0dp"-->
+<!--        tools:layout_editor_absoluteY="167dp" />-->
+
+    <!--    <LinearLayout-->
+<!--        android:id="@+id/details"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:layout_marginBottom="10dp"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="80dp"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:visibility="invisible"-->
+<!--        tools:ignore="MissingConstraints">-->
+<!--        -->
+<!--        -->
+
+
+<!--    </LinearLayout>-->
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
