@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         allUsers.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                startActivity(new Intent(MainActivity.this, MyOtherActivity.class));
+                startActivity(new Intent(MainActivity.this, AllUsersActivity.class));
             }
         });
 
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         allCars.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                startActivity(new Intent(MainActivity.this, MyOtherActivity.class));
+                startActivity(new Intent(MainActivity.this, AllCarsActivity.class));
             }
         });
 
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                startActivity(new Intent(MainActivity.this, MyOtherActivity.class));
+                startActivity(new Intent(MainActivity.this, SignupActivity.class));
             }
         });
 
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                startActivity(new Intent(MainActivity.this, MyOtherActivity.class));
+                startActivity(new Intent(MainActivity.this, LoginActivity.class));
             }
         });
 

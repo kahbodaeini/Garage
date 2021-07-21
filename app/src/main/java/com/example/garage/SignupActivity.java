@@ -3,6 +3,8 @@ package com.example.garage;
 import android.os.Bundle;
 import android.widget.TextView;
 import Controller.SignAndLog;
+import Model.Tools;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.ui.AppBarConfiguration;
 
@@ -40,7 +42,7 @@ public class SignupActivity extends AppCompatActivity {
             if(SignAndLog.usernameExists(username))
                 SignAndLog.signup(firstName, lastName, username, password, budget);
             else{
-                //TO DO
+                Tools.exceptionToast(getApplicationContext(), "This username already exists!");
             }
         } catch (IOException | JSONException | ParseException e) {
             e.printStackTrace();
