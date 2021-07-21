@@ -27,7 +27,7 @@ public class LoginActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
 
-
+        login();
     }
 
     public void login() {
