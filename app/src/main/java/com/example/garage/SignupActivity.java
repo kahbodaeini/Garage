@@ -1,9 +1,6 @@
 package com.example.garage;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.PopupMenu;
-import android.widget.PopupWindow;
 import android.widget.TextView;
 import Controller.SignAndLog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,10 +30,10 @@ public class SignupActivity extends AppCompatActivity {
 
         TextView usernameTextView = findViewById(R.id.userNameTextBoxSignup);
         String username = usernameTextView.getText().toString();
-        TextView firstnameTextView = findViewById(R.id.firstNameTextBoxSignup);
-        String firstname = firstnameTextView.getText().toString();
-        TextView lastnameTextView = findViewById(R.id.lastNameTextBoxSignup);
-        String lastname = lastnameTextView.getText().toString();
+        TextView firstNameTextView = findViewById(R.id.all_users);
+        String firstName = firstNameTextView.getText().toString();
+        TextView lastNameTextView = findViewById(R.id.all_cars);
+        String lastName = lastNameTextView.getText().toString();
         TextView passwordTextView = findViewById(R.id.passwordTextBoxSignup);
         String password = passwordTextView.getText().toString();
         TextView budgetTextView = findViewById(R.id.budgetTextBoxSignup);
@@ -44,7 +41,7 @@ public class SignupActivity extends AppCompatActivity {
 
         try {
             if(SignAndLog.usernameExists(username))
-                SignAndLog.signup(firstname, lastname, username, password, budget);
+                SignAndLog.signup(firstName, lastName, username, password, budget);
             else{
                 //TO DO
             }

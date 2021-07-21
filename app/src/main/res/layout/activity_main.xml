@@ -27,7 +27,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/aboutGarage"
+        android:id="@+id/about_garage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
@@ -36,28 +36,26 @@
         android:layout_marginBottom="15dp"
         android:ems="10"
         android:text="about Garage"
-        app:layout_constraintBottom_toTopOf="@+id/firstNameTextBoxSignup"
+        app:layout_constraintBottom_toTopOf="@+id/all_users"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
-        android:id="@+id/firstNameTextBoxSignup"
+        android:id="@+id/all_users"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="15dp"
         android:layout_marginEnd="101dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="16dp"
         android:ems="10"
         android:text="all users"
-        app:layout_constraintBottom_toTopOf="@+id/lastNameTextBoxSignup"
+        app:layout_constraintBottom_toTopOf="@+id/all_cars"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/lastNameTextBoxSignup"
+        android:id="@+id/all_cars"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
@@ -67,7 +65,7 @@
         android:text="all cars"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/firstNameTextBoxSignup" />
+        app:layout_constraintTop_toBottomOf="@+id/all_users" />
 
     <LinearLayout
         android:id="@+id/LinearLayout02"
@@ -80,7 +78,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
-            android:id="@+id/signUpButton"
+            android:id="@+id/sign_up_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -88,7 +86,7 @@
         </Button>
 
         <Button
-            android:id="@+id/loginButton"
+            android:id="@+id/login_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
