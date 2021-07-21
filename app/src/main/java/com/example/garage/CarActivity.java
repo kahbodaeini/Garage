@@ -1,6 +1,10 @@
 package com.example.garage;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -21,6 +25,60 @@ public class CarActivity extends AppCompatActivity {
         setContentView(R.layout.car_layout);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
+
+        ImageButton imageButton = findViewById(R.id.car_image);
+
+        TextView carOwnerTextView = findViewById(R.id.car_owner);
+        String carOwner = carOwnerTextView.getText().toString();
+
+        TextView carCompanyTextView = findViewById(R.id.car_company);
+        String carCompany = carOwnerTextView.getText().toString();
+
+        TextView carTypeTextView = findViewById(R.id.car_type);
+        String carType = carOwnerTextView.getText().toString();
+
+        TextView carSignTextView = findViewById(R.id.car_sign);
+        String carSign = carOwnerTextView.getText().toString();
+
+        TextView carYearTextView = findViewById(R.id.car_year);
+        String carYear = carOwnerTextView.getText().toString();
+
+        TextView carColorTextView = findViewById(R.id.car_color);
+        String carColor = carOwnerTextView.getText().toString();
+
+        TextView carIntactTextView = findViewById(R.id.car_intact);
+        String carIntact = carOwnerTextView.getText().toString();
+
+        TextView carPriceView = findViewById(R.id.car_price);
+        String carPrice = carOwnerTextView.getText().toString();
+
+        Button sellButton = findViewById(R.id.sell_car);
+
+        Button removeButton = findViewById(R.id.remove_car);
+
+        Button getServicesButton = findViewById(R.id.get_services);
+
+        sellButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        removeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        getServicesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
 
     }
 
