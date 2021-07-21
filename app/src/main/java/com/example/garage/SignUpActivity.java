@@ -15,7 +15,7 @@ import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
 
-public class SignupActivity extends AppCompatActivity {
+public class SignUpActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
