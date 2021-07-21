@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import Controller.*;
+import Model.Tools;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -43,11 +44,11 @@ public class LoginActivity extends AppCompatActivity {
             switch (res) {
                 case 0:
 
-                    //username does not exists
+                    Tools.exceptionToast(getApplicationContext(), "This username does not exists!");
                 case 1:
                     //you can login
                 case -1:
-                    //wrong password
+                    Tools.exceptionToast(getApplicationContext(), "Wrong password!");
 
             }
         } catch (IOException | JSONException | ParseException e) {
