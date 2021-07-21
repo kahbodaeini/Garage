@@ -1,9 +1,6 @@
 package com.example.garage;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.PopupMenu;
-import android.widget.PopupWindow;
 import android.widget.TextView;
 import Controller.SignAndLog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,9 +27,9 @@ public class SignupActivity extends AppCompatActivity {
 
         TextView usernameTextView = findViewById(R.id.userNameTextBoxSignup);
         String username = usernameTextView.getText().toString();
-        TextView firstnameTextView = findViewById(R.id.firstNameTextBoxSignup);
+        TextView firstnameTextView = findViewById(R.id.all_users);
         String firstname = firstnameTextView.getText().toString();
-        TextView lastnameTextView = findViewById(R.id.lastNameTextBoxSignup);
+        TextView lastnameTextView = findViewById(R.id.all_cars);
         String lastname = lastnameTextView.getText().toString();
         TextView passwordTextView = findViewById(R.id.passwordTextBoxSignup);
         String password = passwordTextView.getText().toString();
