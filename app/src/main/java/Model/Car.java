@@ -3,6 +3,8 @@ package Model;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 public class Car {
 
     private User owner;
@@ -12,6 +14,8 @@ public class Car {
     private Company company;
     private CarType type;
     private String sign;
+    private static ArrayList<Car> allCars = new ArrayList<>();
+
 
     public Car(User owner, Color color, int year, boolean intact, Company company, CarType type, String sign) {
         this.owner = owner;
@@ -21,6 +25,11 @@ public class Car {
         this.company = company;
         this.type = type;
         this.sign = sign;
+        allCars.add(this);
+    }
+
+    public static ArrayList<Car> getAllCars(){
+        return allCars;
     }
 
     public User getOwner() {

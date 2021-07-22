@@ -32,25 +32,25 @@ public class CarActivity extends AppCompatActivity {
         String carOwner = carOwnerTextView.getText().toString();
 
         TextView carCompanyTextView = findViewById(R.id.car_company);
-        String carCompany = carOwnerTextView.getText().toString();
+        String carCompany = carCompanyTextView.getText().toString();
 
         TextView carTypeTextView = findViewById(R.id.car_type);
-        String carType = carOwnerTextView.getText().toString();
+        String carType = carTypeTextView.getText().toString();
 
         TextView carSignTextView = findViewById(R.id.car_sign);
-        String carSign = carOwnerTextView.getText().toString();
+        String carSign = carSignTextView.getText().toString();
 
         TextView carYearTextView = findViewById(R.id.car_year);
-        String carYear = carOwnerTextView.getText().toString();
+        String carYear = carYearTextView.getText().toString();
 
         TextView carColorTextView = findViewById(R.id.car_color);
-        String carColor = carOwnerTextView.getText().toString();
+        String carColor = carColorTextView.getText().toString();
 
         TextView carIntactTextView = findViewById(R.id.car_intact);
-        String carIntact = carOwnerTextView.getText().toString();
+        String carIntact = carIntactTextView.getText().toString();
 
         TextView carPriceView = findViewById(R.id.car_price);
-        String carPrice = carOwnerTextView.getText().toString();
+        String carPrice = carPriceView.getText().toString();
 
         Button sellButton = findViewById(R.id.sell_car);
 
