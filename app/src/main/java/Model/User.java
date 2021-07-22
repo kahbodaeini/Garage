@@ -14,6 +14,7 @@ public class User {
     private String firstName, lastName, userName, password;
     private double budget;
     private ArrayList<Car> cars;
+    private static ArrayList<User> allUsers = new ArrayList<>();
 
     public User(String firstName, String lastName, String userName, String password, double budget, ArrayList<Car> cars) {
         this.firstName = firstName;
@@ -22,6 +23,11 @@ public class User {
         this.password = password;
         this.budget = budget;
         this.cars = cars;
+        allUsers.add(this);
+    }
+
+    public static ArrayList<User> getAllUsers(){
+        return allUsers;
     }
 
     public String getFirstName() {

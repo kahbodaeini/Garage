@@ -23,28 +23,50 @@
                 android:layout_height="match_parent"
                 >
 
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/fab"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|end"
-                    android:layout_margin="@dimen/fab_margin"
-                    app:srcCompat="@android:drawable/ic_dialog_email"
-                    tools:ignore="MissingConstraints" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
 
-                <TextView
-                    android:id="@+id/month_button"
-                    android:layout_width="320dp"
-                    android:layout_height="72dp"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginLeft="120dp"
-                    android:layout_toEndOf="@+id/refresh"
-                    android:layout_toRightOf="@+id/refresh"
-                    android:text="        ALL USERS"
-                    android:textColor="#C80D0D"
-                    android:textSize="39sp" />
+                    <!--                <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+                    <!--                    android:id="@+id/fab"-->
+                    <!--                    android:layout_width="wrap_content"-->
+                    <!--                    android:layout_height="wrap_content"-->
+                    <!--                    android:layout_gravity="bottom|end"-->
+                    <!--                    android:layout_margin="@dimen/fab_margin"-->
+                    <!--                    app:srcCompat="@android:drawable/ic_dialog_email"-->
+                    <!--                    tools:ignore="MissingConstraints"-->
+                    <!--                    tools:layout_editor_absoluteX="9dp"-->
+                    <!--                    tools:layout_editor_absoluteY="8dp" />-->
+
+                    <ImageButton
+                        android:id="@+id/back_image_button"
+                        android:layout_width="35dp"
+                        android:layout_height="32dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:src="back-arrow.png"
+                        tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteX="9dp"
+                        tools:layout_editor_absoluteY="7dp" />
+
+                    <!--                android:src="/src/main/java/Model/back-arrow.png"-->
+
+
+                    <TextView
+                        android:layout_width="309dp"
+                        android:layout_height="61dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/refresh"
+                        android:layout_toRightOf="@+id/refresh"
+                        android:text="        All users"
+                        android:textColor="#C80D0D"
+                        android:textSize="39sp"
+                        tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteX="65dp"
+                        tools:layout_editor_absoluteY="3dp" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </LinearLayout>
 
