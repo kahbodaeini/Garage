@@ -18,6 +18,8 @@ import android.widget.TextView;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -28,11 +30,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import Model.Car;
-import okhttp3.HttpUrl;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
-
 
 public class AllCarsActivity extends AppCompatActivity {
     final boolean[] firstTime = {true};
@@ -59,24 +56,17 @@ public class AllCarsActivity extends AppCompatActivity {
         car_layout = findViewById(R.id.car_layouts);
         backButton = findViewById(R.id.back_image_button);
 
-
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(AllCarsActivity.this, GuestUserActivity.class));
             }
         });
-
-        try {
-            loadCars();
-        } catch (IOException | JSONException e) {
-            e.printStackTrace();
-        }
-
+        loadCars();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.Q)
-    private synchronized void loadCars() throws IOException, JSONException {
+    private synchronized void loadCars() {
 
         final ImageButton carImage = findViewById(R.id.car_image);
         final TextView carName = findViewById(R.id.car_name);
@@ -89,80 +79,77 @@ public class AllCarsActivity extends AppCompatActivity {
             @Override
             public void run() {
 
-                try {
+                for (int i = 0; i < limit; i++) {
+                    Car car = allCars.get(i);
+                    final String logo = "/src/main/java/Model/images/" + car.getCompany() + ".jpg";
 
-                    for (int i = 0; i < limit; i++) {
-                        Car car = allCars.get(i);
-
-                        final String logo = "/src/main/java/Model/images/" + car.getCompany() + ".jpg";
-
-                        AllCarsActivity.this.runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                if (firstTime[0]) {
-                                    carPrice.setText("Price: " + car.calculatePrice());
-                                    carName.setText("Company: " + car.getCompany());
-                                    car_model.setText("Type: " + car.getType());
-                                    car_layout.setVisibility(View.VISIBLE);
-//                                    Glide.with(AllCarsActivity.this)
-//                                            .load(logo)
-//                                            .into(carImage);
-                                    carImage.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View view) {
-//                                            setSymbol(symbol);
-                                            startActivity(new Intent(AllCarsActivity.this, CarActivity.class));
-                                        }
-                                    });
-                                    firstTime[0] = false;
-                                } else {
-                                    LayoutInflater vi = (LayoutInflater) AllCarsActivity.this
-                                            .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                                    View v = vi.inflate(R.layout.car_layout, null);
-
-                                    final LinearLayout linearLayout = v.findViewById(R.id.);
-
-                                    if (linearLayout.getParent() != null) {
-                                        ((ViewGroup) linearLayout.getParent()).removeView(linearLayout); // <- fix
-                                    }
-                                    final LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                                            LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-
-                                    params.setMargins(0, 10, 0, 10);
-
-                                    params.gravity = Gravity.CENTER_VERTICAL;
-                                    mainLayout.setOrientation(LinearLayout.VERTICAL);
-
-                                    ((TextView) linearLayout.findViewById(R.id.car_price)).setText("Price: " + car.calculatePrice());
-                                    ((TextView) linearLayout.findViewById(R.id.car_name)).setText("Company: " + car.getCompany());
-                                    ((TextView) linearLayout.findViewById(R.id.car_type)).setText("Type: " + car.getType());
-//                                    Glide.with(AllCarsActivity.this)
-//                                            .load(logo)
-//                                            .into(((ImageButton) linearLayout.findViewById(R.id.car_image)));
-                                    ((ImageButton) linearLayout.findViewById(R.id.car_image)).setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View view) {
-//                                            setSymbol(symbol);
-                                            startActivity(new Intent(AllCarsActivity.this, CarActivity.class));
-                                        }
-                                    });
-                                    linearLayout.setVisibility(View.VISIBLE);
-                                    if (status == 2) {
-                                        linearLayout.setBackgroundColor(Color.GREEN);
-                                    }
-                                    mainLayout.addView(linearLayout, params);
-                                }
+                    AllCarsActivity.this.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (firstTime[0]) {
+                                carPrice.setText("Price: " + car.calculatePrice());
+                                carName.setText("Company: " + car.getCompany());
+                                car_model.setText("Type: " + car.getType());
                                 car_layout.setVisibility(View.VISIBLE);
-                            }
-                        });
-                    }
+                                Glide.with(AllCarsActivity.this)
+                                        .load(logo)
+                                        .into(carImage);
+                                carImage.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+//                                        setSymbol(symbol);
+                                        startActivity(new Intent(AllCarsActivity.this, CarActivity.class));
+                                    }
+                                });
+                                firstTime[0] = false;
+                            } else {
+                                LayoutInflater vi = (LayoutInflater) AllCarsActivity.this
+                                        .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                                View v = vi.inflate(R.layout.car_layout, null);
 
-                } catch (IOException | JSONException e) {
-                    e.printStackTrace();
+                                final LinearLayout linearLayout = v.findViewById(R.id.car_layouts);
+
+                                if (linearLayout.getParent() != null) {
+                                    ((ViewGroup) linearLayout.getParent()).removeView(linearLayout); // <- fix
+                                }
+                                final LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                                        LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+
+                                params.setMargins(0, 10, 0, 10);
+
+                                params.gravity = Gravity.CENTER_VERTICAL;
+                                mainLayout.setOrientation(LinearLayout.VERTICAL);
+
+                                ((TextView) linearLayout.findViewById(R.id.car_price)).setText("Price: " + car.calculatePrice());
+                                ((TextView) linearLayout.findViewById(R.id.car_name)).setText("Company: " + car.getCompany());
+                                ((TextView) linearLayout.findViewById(R.id.car_type)).setText("Type: " + car.getType());
+                                Glide.with(AllCarsActivity.this)
+                                        .load(logo)
+                                        .into(((ImageButton) linearLayout.findViewById(R.id.car_image)));
+                                ((ImageButton) linearLayout.findViewById(R.id.car_image)).setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+//                                        setSymbol(symbol);
+                                        startActivity(new Intent(AllCarsActivity.this, CarActivity.class));
+                                    }
+                                });
+                                linearLayout.setVisibility(View.VISIBLE);
+                                if (status == 2) {
+                                    linearLayout.setBackgroundColor(Color.GREEN);
+                                }
+                                mainLayout.addView(linearLayout, params);
+                            }
+                            car_layout.setVisibility(View.VISIBLE);
+                        }
+                    });
                 }
 
             }
         });
+
+    }
+
+    private void setSymbol(String symbol){
 
     }
 
