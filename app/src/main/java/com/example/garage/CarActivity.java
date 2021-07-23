@@ -1,9 +1,12 @@
 package com.example.garage;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,13 +14,24 @@ import androidx.navigation.ui.AppBarConfiguration;
 
 import com.example.garage.databinding.ActivityMainBinding;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.Random;
+
+import Controller.SignAndLog;
 import Model.Car;
 import Model.Company;
+import Model.Tools;
 
 public class CarActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
+    private final Car car;
+
+    public CarActivity(Car car){
+        this.car = car;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,30 +41,36 @@ public class CarActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
 
         ImageButton imageButton = findViewById(R.id.car_image);
+        File  imageFile = new File(getLogoImagePath(car));
+        Bitmap bmp = BitmapFactory.decodeFile(imageFile.getAbsolutePath());
+        imageButton.setImageBitmap(bmp);
 
         TextView carOwnerTextView = findViewById(R.id.car_owner);
-        String carOwner = carOwnerTextView.getText().toString();
+        carOwnerTextView.setText(car.getOwner().getUserName());
 
         TextView carCompanyTextView = findViewById(R.id.car_company);
-        String carCompany = carOwnerTextView.getText().toString();
+        carCompanyTextView.setText(car.getCompany().toString());
 
         TextView carTypeTextView = findViewById(R.id.car_type);
-        String carType = carOwnerTextView.getText().toString();
+        carTypeTextView.setText(car.getType().toString());
 
         TextView carSignTextView = findViewById(R.id.car_sign);
-        String carSign = carOwnerTextView.getText().toString();
+        carSignTextView.setText(car.getSign());
 
         TextView carYearTextView = findViewById(R.id.car_year);
-        String carYear = carOwnerTextView.getText().toString();
+        carYearTextView.setText(car.getYear());
 
         TextView carColorTextView = findViewById(R.id.car_color);
-        String carColor = carOwnerTextView.getText().toString();
+        carColorTextView.setText(car.getColor().toString());
 
         TextView carIntactTextView = findViewById(R.id.car_intact);
-        String carIntact = carOwnerTextView.getText().toString();
+        if(car.isIntact())
+            carIntactTextView.setText("This Car is Totally Intact!");
+        else
+            carIntactTextView.setText("Unfortunately This Car is Not Intact!");
 
         TextView carPriceView = findViewById(R.id.car_price);
-        String carPrice = carOwnerTextView.getText().toString();
+        carPriceView.setText(String.valueOf(car.calculatePrice()));
 
         Button sellButton = findViewById(R.id.sell_car);
 
@@ -62,13 +82,37 @@ public class CarActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                Random random = new Random();
+                boolean isThereABuyer = random.nextBoolean();
+
+                if (isThereABuyer){
+
+                    //TODO Are you sure popup
+
+                    try {
+                        SignAndLog.currentUser.setBudget(SignAndLog.currentUser.getBudget() + car.calculatePrice());
+                        SignAndLog.currentUser.removeCar(car);
+
+                        //TODO change page to the previous
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+                else
+                    Tools.exceptionToast(getApplicationContext(), "There is No Buyer For Your Car Right Now, Please Try Again Later!");
+
             }
         });
 
         removeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                try {
+                    SignAndLog.currentUser.removeCar(car);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -76,6 +120,7 @@ public class CarActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                //TODO go to service page by making a new ServiceActivity instance
             }
         });
 
@@ -170,5 +215,9 @@ public class CarActivity extends AppCompatActivity {
                 break;
         }
         return path;
+    }
+
+    public Car getCar() {
+        return car;
     }
 }

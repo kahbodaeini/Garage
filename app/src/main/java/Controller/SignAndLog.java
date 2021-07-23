@@ -46,6 +46,9 @@ public class SignAndLog {
         file = new FileWriter("main/java/Model/Database/Users/"+user.getUserName()+".json");
         file.write(obj.toString());
 
+        FileWriter fileWriter = new FileWriter("main/java/Model/Database/Usernames.txt");
+        fileWriter.write(userName);
+
         currentUser = user;
     }
 
@@ -75,4 +78,20 @@ public class SignAndLog {
 
     }
 
+    public static User getUserByUsername(String username) throws IOException, ParseException {
+
+        User returnedUser;
+
+        JSONParser jsonParser = new JSONParser();
+        FileReader reader = new FileReader("main/java/Model/Database/Users/"+ username +".json");
+        Object obj = jsonParser.parse(reader);
+
+        JSONObject user = (JSONObject) obj;
+
+        String json = user.toString();
+        ObjectMapper objectMapper = new ObjectMapper();
+        returnedUser = objectMapper.readValue(json, User.class);
+
+        return returnedUser;
+    }
 }

@@ -12,11 +12,11 @@ public class CarServices {
         SignAndLog.currentUser.addCar(car);
     }
 
-    public void upperTheBudget(double budget){
+    public void upperTheBudget(double budget) throws IOException {
         SignAndLog.currentUser.setBudget(SignAndLog.currentUser.getBudget() + budget);
     }
 
-    public boolean doService(Service service){
+    public boolean doService(Service service) throws IOException {
 
         double cost = service.calculateCost();
 
@@ -27,14 +27,6 @@ public class CarServices {
         }
         else
             return false;
-    }
-
-    public void sellCar(Car car) throws IOException {
-
-        double price = car.calculatePrice();
-        SignAndLog.currentUser.setBudget(SignAndLog.currentUser.getBudget() + price);
-        SignAndLog.currentUser.removeCar(car);
-
     }
     
     public ServiceType calculateLevelOfRepairment(int percent){
