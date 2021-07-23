@@ -7,14 +7,15 @@ import androidx.navigation.ui.AppBarConfiguration;
 
 import com.example.garage.databinding.ActivityMainBinding;
 
-public class UserActivity extends AppCompatActivity {
-
+public class GuestCarActivity extends AppCompatActivity {
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.user_layout);
+        setContentView(R.layout.guest_user_layout);
+
     }
+
 }
