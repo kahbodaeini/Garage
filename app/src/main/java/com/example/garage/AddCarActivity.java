@@ -82,6 +82,7 @@ public class AddCarActivity extends AppCompatActivity {
                     try {
                         SignAndLog.currentUser.addCar(new Car(SignAndLog.currentUser,
                                 color, Integer.parseInt(year), flag[0] % 2 == 0, company, type, sign));
+
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

@@ -34,40 +34,56 @@ public class User {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
+    public void setFirstName(String firstName) throws IOException {
         this.firstName = firstName;
+        File file = new File("main/java/Model/Database/Users/"+this.getUserName()+".json");
+        file.deleteOnExit();
+
+        FileWriter newFile = new FileWriter("main/java/Model/Database/Users/"+this.getUserName()+".json");
+        newFile.write(this.toString());
     }
 
     public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+    public void setLastName(String lastName) throws IOException {
         this.lastName = lastName;
+        File file = new File("main/java/Model/Database/Users/"+this.getUserName()+".json");
+        file.deleteOnExit();
+
+        FileWriter newFile = new FileWriter("main/java/Model/Database/Users/"+this.getUserName()+".json");
+        newFile.write(this.toString());
     }
 
     public String getUserName() {
         return userName;
     }
 
-    public void setUserName(String userName) {
+    public void setUserName(String userName) throws IOException {
         this.userName = userName;
+        File file = new File("main/java/Model/Database/Users/"+this.getUserName()+".json");
+        file.deleteOnExit();
+
+        FileWriter newFile = new FileWriter("main/java/Model/Database/Users/"+this.getUserName()+".json");
+        newFile.write(this.toString());
     }
 
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public double getBudget() {
         return budget;
     }
 
-    public void setBudget(double budget) {
+    public void setBudget(double budget) throws IOException {
         this.budget = budget;
+        File file = new File("main/java/Model/Database/Users/"+this.getUserName()+".json");
+        file.deleteOnExit();
+
+        FileWriter newFile = new FileWriter("main/java/Model/Database/Users/"+this.getUserName()+".json");
+        newFile.write(this.toString());
     }
 
     public ArrayList<Car> getCars() {
@@ -110,7 +126,6 @@ public class User {
 
         FileWriter newFile = new FileWriter("main/java/Model/Database/Users/"+this.getUserName()+".json");
         newFile.write(this.toString());
-
     }
 
     public void removeCar(Car car) throws IOException {

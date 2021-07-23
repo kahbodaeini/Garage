@@ -10,10 +10,17 @@ import androidx.navigation.ui.AppBarConfiguration;
 
 import com.example.garage.databinding.ActivityMainBinding;
 
+import Model.Car;
+
 public class ServicesActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
+    private Car car;
+
+    public ServicesActivity(Car car){
+        this.car = car;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
