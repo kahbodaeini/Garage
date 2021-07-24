@@ -37,6 +37,13 @@ public class ServicesActivity extends AppCompatActivity {
         Button buyRing = findViewById(R.id.buy_ring);
         Button carWash = findViewById(R.id.car_wash);
 
+        repairment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
         returnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
