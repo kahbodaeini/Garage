@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,11 +19,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -81,7 +75,7 @@ public class AllCarsActivity extends AppCompatActivity {
 
                 for (int i = 0; i < limit; i++) {
                     Car car = allCars.get(i);
-                    final String logo = "/src/main/java/Model/images/" + car.getCompany() + ".jpg";
+                    final String logo = CarActivity.getLogoImagePath(car);
 
                     AllCarsActivity.this.runOnUiThread(new Runnable() {
                         @Override

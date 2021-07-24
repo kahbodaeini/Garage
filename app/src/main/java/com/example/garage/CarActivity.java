@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +17,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Random;
 
+import Controller.ConfirmBox;
 import Controller.SignAndLog;
 import Model.Car;
 import Model.Company;
@@ -29,7 +29,7 @@ public class CarActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     private final Car car;
 
-    public CarActivity(Car car){
+    public CarActivity(Car car) {
         this.car = car;
     }
 
@@ -41,7 +41,7 @@ public class CarActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
 
         ImageButton imageButton = findViewById(R.id.car_image);
-        File  imageFile = new File(getLogoImagePath(car));
+        File imageFile = new File(getLogoImagePath(car));
         Bitmap bmp = BitmapFactory.decodeFile(imageFile.getAbsolutePath());
         imageButton.setImageBitmap(bmp);
 
@@ -64,7 +64,7 @@ public class CarActivity extends AppCompatActivity {
         carColorTextView.setText(car.getColor().toString());
 
         TextView carIntactTextView = findViewById(R.id.car_intact);
-        if(car.isIntact())
+        if (car.isIntact())
             carIntactTextView.setText("This Car is Totally Intact!");
         else
             carIntactTextView.setText("Unfortunately This Car is Not Intact!");
@@ -85,33 +85,36 @@ public class CarActivity extends AppCompatActivity {
                 Random random = new Random();
                 boolean isThereABuyer = random.nextBoolean();
 
-                if (isThereABuyer){
+                if (isThereABuyer) {
 
-                    //TODO Are you sure popup
+                    if (ConfirmBox.createConfirmBox(getApplicationContext(), "Are You Sure You Want To Sell This Car?")) {
 
-                    try {
-                        SignAndLog.currentUser.setBudget(SignAndLog.currentUser.getBudget() + car.calculatePrice());
-                        SignAndLog.currentUser.removeCar(car);
+                        try {
+                            SignAndLog.currentUser.setBudget(SignAndLog.currentUser.getBudget() + car.calculatePrice());
+                            SignAndLog.currentUser.removeCar(car);
 
-                        //TODO change page to the previous
+                            //TODO change page to the previous
 
-                    } catch (IOException e) {
-                        e.printStackTrace();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                     }
-                }
-                else
+                } else
                     Tools.exceptionToast(getApplicationContext(), "There is No Buyer For Your Car Right Now, Please Try Again Later!");
-
             }
         });
 
         removeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                try {
-                    SignAndLog.currentUser.removeCar(car);
-                } catch (IOException e) {
-                    e.printStackTrace();
+
+                if (ConfirmBox.createConfirmBox(getApplicationContext(), "Are You Sure You Want To Remove This Car From Garage?")) {
+                    try {
+                        SignAndLog.currentUser.removeCar(car);
+                        //TODO change page to the previous
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         });
@@ -127,13 +130,13 @@ public class CarActivity extends AppCompatActivity {
 
     }
 
-    public static String getLogoImagePath(Car car){
+    public static String getLogoImagePath(Car car) {
 
         Company company = car.getCompany();
 
         String path = "";
 
-        switch (company){
+        switch (company) {
             case BENZ:
             default:
                 path = "/src/main/java/Model/images/benz.jpg";
