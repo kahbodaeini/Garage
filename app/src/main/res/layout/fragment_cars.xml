@@ -1,14 +1,143 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="tablayout.example.com.tablayoutwithframelayout.carsActivity">
+    tools:context="com.example.garage.CarsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="@string/cars_fragment" />
+    <?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <ScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/main_linear_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:context=".SecondActivity">
+
+
+                <LinearLayout
+                    android:id="@+id/status_layout"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:orientation="horizontal"
+                    android:visibility="invisible">
+
+                    <ImageButton
+                        android:text="car_image"
+                        android:background="#ADD8E6"
+                        android:id="@+id/day_num"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp" />
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="333dp"
+                        android:layout_height="match_parent">
+
+
+                        <TextView
+                            android:id="@+id/car_company"
+                            android:layout_width="87dp"
+                            android:layout_height="20dp"
+                            android:text="company: "
+                            tools:ignore="MissingConstraints,NotSibling"
+                            tools:layout_editor_absoluteX="0dp"
+                            tools:layout_editor_absoluteY="3dp" />
+
+                        <TextView
+                            android:id="@+id/car_type"
+                            android:layout_width="87dp"
+                            android:layout_height="19dp"
+                            android:layout_marginTop="44dp"
+                            android:layout_marginRight="220dp"
+                            android:text="type: "
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <Button
+                            android:id="@+id/car_color"
+                            android:layout_width="93dp"
+                            android:layout_height="25dp"
+                            android:layout_marginLeft="130dp"
+                            android:background="@drawable/round_button"
+                            android:layout_marginTop="44dp"
+                            android:layout_marginEnd="72dp"
+                            android:layout_marginRight="72dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/car_sign"
+                            android:layout_width="82dp"
+                            android:layout_height="21dp"
+                            android:layout_marginTop="156dp"
+                            android:layout_marginRight="84dp"
+                            android:text="sign: "
+                            app:layout_constraintRight_toRightOf="parent"
+                            tools:ignore="MissingConstraints" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="631dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:gravity="center|bottom"
+            android:orientation="horizontal">
+
+
+            <RelativeLayout
+                android:id="@+id/footer"
+                android:layout_width="fill_parent"
+                android:layout_height="100dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/add_car"
+                    android:layout_width="match_parent"
+                    android:layout_height="47dp"
+                    android:layout_centerHorizontal="true"
+                    android:text="add car"
+                    android:background="@android:color/background_dark"
+                    app:layout_editor_absoluteY="1dp"
+                    android:textColor="#002000"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/total_prices"
+                    android:textSize="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="47dp"
+                    android:text="Total Prices Of your car: "
+                    app:layout_editor_absoluteY="55dp"
+                    android:textColor="#008000"
+                    tools:ignore="MissingConstraints"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
 
 </FrameLayout>
