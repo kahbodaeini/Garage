@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class User {
 
-    private String firstName, lastName, userName, password;
+    private String firstName, lastName, userName, password, about;
     private double budget;
     private ArrayList<Car> cars;
     private static ArrayList<User> allUsers = new ArrayList<>();
@@ -126,6 +126,14 @@ public class User {
 
         FileWriter newFile = new FileWriter("main/java/Model/Database/Users/"+this.getUserName()+".json");
         newFile.write(this.toString());
+    }
+
+    public String getAbout() {
+        return about;
+    }
+
+    public void setAbout(String about) {
+        this.about = about;
     }
 
     public void removeCar(Car car) throws IOException {

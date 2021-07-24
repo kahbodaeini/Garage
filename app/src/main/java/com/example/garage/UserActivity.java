@@ -12,7 +12,18 @@ import com.example.garage.CarsFragment;
 import com.example.garage.ProfileFragment;
 import com.example.garage.R;
 
+import Model.User;
+
 public class UserActivity extends AppCompatActivity {
+
+    private AppBarConfiguration appBarConfiguration;
+    private ActivityMainBinding binding;
+    private final User user;
+
+    public UserActivity(User user){
+        this.user = user;
+    }
+
     TabLayout tabLayout;
     FrameLayout frameLayout;
     Fragment fragment = null;

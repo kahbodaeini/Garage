@@ -190,7 +190,7 @@
                         tools:layout_editor_absoluteY="23dp" />
 
                     <TextView
-                        android:id="@+id/about_text"
+                        android:id="@+id/car_guest_image"
                         android:layout_width="257dp"
                         android:layout_height="18dp"
                         android:text="TextView"
