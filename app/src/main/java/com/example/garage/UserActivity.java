@@ -1,17 +1,21 @@
 package com.example.garage;
 
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-import com.example.garage.CarsFragment;
-import com.example.garage.ProfileFragment;
-import com.example.garage.R;
+import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
+
+import java.util.ArrayList;
+
+import Model.Car;
 import Model.User;
 
 public class UserActivity extends AppCompatActivity {
@@ -49,9 +53,33 @@ public class UserActivity extends AppCompatActivity {
                 switch (tab.getPosition()) {
                     case 0:
                         fragment = new ProfileFragment();
+
+                        TextView budgetTextview = findViewById(R.id.budget);
+                        budgetTextview.setText(String.valueOf(user.getBudget()));
+
+                        TextView usernameTextview = findViewById(R.id.username);
+                        usernameTextview.setText(user.getUserName());
+
+                        String imagePath = user.getImagePath();
+                        if(imagePath != null)
+                            Glide.with(UserActivity.this)
+                                    .load(imagePath)
+                                    .into((ImageView) findViewById(R.id.imageView));
+
                         break;
                     case 1:
                         fragment = new CarsFragment();
+                        ArrayList<Car> cars = new ArrayList<>();
+                        cars = user.getCars();
+                        double totalPrice = 0;
+
+                        if (!cars.isEmpty()){
+                            for(int i = 0; i < cars.size(); i++)
+                                totalPrice += cars.get(i).calculatePrice();
+                        }
+
+                        TextView totalPriceTextview = findViewById(R.id.total_prices);
+                        totalPriceTextview.setText("Total Prices Of your car: " + totalPrice);
                         break;
                 }
                 FragmentManager fm = getSupportFragmentManager();
