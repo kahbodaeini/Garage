@@ -53,14 +53,14 @@
             tools:layout_editor_absoluteX="232dp"
             tools:layout_editor_absoluteY="241dp" />
 
-        <Button
-            tools:ignore="MissingConstraints"
-            android:id="@+id/change_pic"
-            android:layout_width="239dp"
-            android:layout_height="56dp"
-            android:text="change pic"
-            tools:layout_editor_absoluteX="90dp"
-            tools:layout_editor_absoluteY="315dp" />
+            <Button
+                android:id="@+id/change_pic"
+                android:layout_width="239dp"
+                android:layout_height="56dp"
+                android:text="add pic"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="90dp"
+                tools:layout_editor_absoluteY="315dp" />
 
         <Button
             tools:ignore="MissingConstraints"
