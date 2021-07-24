@@ -127,7 +127,7 @@ public class CarActivity extends AppCompatActivity {
 
     }
 
-    public String getLogoImagePath(Car car){
+    public static String getLogoImagePath(Car car){
 
         Company company = car.getCompany();
 

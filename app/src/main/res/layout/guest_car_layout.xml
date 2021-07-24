@@ -179,7 +179,7 @@
                         tools:layout_editor_absoluteY="23dp" />
 
                     <ImageButton
-                        android:id="@+id/about_text"
+                        android:id="@+id/car_guest_image"
                         android:layout_width="198dp"
                         android:layout_height="64dp"
                         android:text="TextView"

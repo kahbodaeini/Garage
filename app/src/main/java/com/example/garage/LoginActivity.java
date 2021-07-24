@@ -46,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     Tools.exceptionToast(getApplicationContext(), "This username does not exists!");
                 case 1:
-                    //you can login
+                    //TODO you can login
                     SignAndLog.currentUser = SignAndLog.getUserByUsername(username);
                 case -1:
                     Tools.exceptionToast(getApplicationContext(), "Wrong password!");

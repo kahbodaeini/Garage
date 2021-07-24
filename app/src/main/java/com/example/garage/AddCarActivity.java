@@ -9,24 +9,35 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.ui.AppBarConfiguration;
 
 import com.example.garage.databinding.ActivityMainBinding;
 
 import java.io.IOException;
 import java.util.Arrays;
 
-import Controller.SignAndLog;
 import Model.Car;
 import Model.CarType;
 import Model.Color;
 import Model.Company;
 import Model.Tools;
+import Model.User;
 
 public class AddCarActivity extends AppCompatActivity {
+
+    private AppBarConfiguration appBarConfiguration;
+    private ActivityMainBinding binding;
+    private final User user;
+
+    public AddCarActivity(User user){
+        this.user = user;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_car);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
 
         Spinner companySpinner = findViewById(R.id.car_company);
         ArrayAdapter<String> companyAdapter = new ArrayAdapter<String>(this,
@@ -80,7 +91,7 @@ public class AddCarActivity extends AppCompatActivity {
                 }
                 else{
                     try {
-                        SignAndLog.currentUser.addCar(new Car(SignAndLog.currentUser,
+                        user.addCar(new Car(user,
                                 color, Integer.parseInt(year), flag[0] % 2 == 0, company, type, sign));
 
                     } catch (IOException e) {
