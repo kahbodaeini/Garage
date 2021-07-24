@@ -16,8 +16,6 @@ import Model.User;
 
 public class UserActivity extends AppCompatActivity {
 
-    private AppBarConfiguration appBarConfiguration;
-    private ActivityMainBinding binding;
     private final User user;
 
     public UserActivity(User user){
