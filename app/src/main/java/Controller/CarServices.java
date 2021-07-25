@@ -6,6 +6,12 @@ import Model.*;
 
 public class CarServices {
 
+    private final Car car;
+
+    public CarServices(Car car){
+        this.car = car;
+    }
+
     public void enterCar(Color color, int year, boolean intact, Company company, CarType type, String sign) throws IOException {
 
         Car car = new Car(SignAndLog.currentUser, color, year, intact, company, type, sign);

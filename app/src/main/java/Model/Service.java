@@ -160,7 +160,7 @@ public class Service {
         return 500*carTypeCoefficient + 1000 * serviceTypeCoefficient + 1500 * companyCoefficient;
     }
 
-    public String getImagePath(ServiceType serviceType){
+    public static String getImagePath(ServiceType serviceType){
 
         String string = null;
 
