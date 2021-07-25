@@ -11,10 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="28dp"
         android:layout_alignParentBottom="true"
-        android:layout_constraintBottom_toBottomOf="parent"
-        android:layout_constraintEnd_toEndOf="parent"
-        android:layout_constraintStart_toStartOf="parent"
-        android:gravity="center|top">
+        android:gravity="center|top"
+        tools:ignore="MissingConstraints">
 
         <TextView
             android:id="@+id/first_name"
@@ -40,11 +38,9 @@
         android:layout_width="401dp"
         android:layout_height="28dp"
         android:layout_alignParentBottom="true"
-        android:layout_constraintBottom_toBottomOf="LinearLayout1"
-        android:layout_constraintEnd_toEndOf="LinearLayout1"
-        android:layout_constraintStart_toStartOf="LinearLayout1"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints">
 
     </LinearLayout>
 
