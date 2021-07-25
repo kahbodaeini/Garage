@@ -60,7 +60,6 @@ public class AllCarsActivity extends AppCompatActivity {
         loadCars();
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.Q)
     private synchronized void loadCars() {
 
         final ImageButton carImage = findViewById(R.id.car_image);

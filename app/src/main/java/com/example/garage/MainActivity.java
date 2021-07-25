@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         aboutGarage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                startActivity(new Intent(MainActivity.this, MyOtherActivity.class));
+                startActivity(new Intent(MainActivity.this, AboutGarageActivity.class));
             }
         });
 

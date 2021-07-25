@@ -126,10 +126,20 @@ public class ServicesActivity extends AppCompatActivity {
     }
 
     public void buyHeadLightPopupWindow(View view) {
+        LayoutInflater inflater = (LayoutInflater)
+                getSystemService(LAYOUT_INFLATER_SERVICE);
+        View popupView = inflater.inflate(R.layout.popup_window, null);
+        int width = LinearLayout.LayoutParams.WRAP_CONTENT;
+        int height = LinearLayout.LayoutParams.WRAP_CONTENT;
+        boolean focusable = true;
+        final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
 
-        ImageButton type1 = findViewById(R.id.type1);
-        ImageButton type2 = findViewById(R.id.type2);
-        ImageButton type3 = findViewById(R.id.type3);
+        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+
+        ImageButton type1 = popupView.findViewById(R.id.type1);
+        ImageButton type2 = popupView.findViewById(R.id.type2);
+        ImageButton type3 = popupView.findViewById(R.id.type3);
+
 
         File imageFile1 = new File(Service.getImagePath(ServiceType.LIGHT1));
         Bitmap bmp1 = BitmapFactory.decodeFile(imageFile1.getAbsolutePath());
@@ -188,31 +198,29 @@ public class ServicesActivity extends AppCompatActivity {
             }
         });
 
-        LayoutInflater inflater = (LayoutInflater)
-                getSystemService(LAYOUT_INFLATER_SERVICE);
-        View popupView = inflater.inflate(R.layout.popup_window, null);
-
-        int width = LinearLayout.LayoutParams.WRAP_CONTENT;
-        int height = LinearLayout.LayoutParams.WRAP_CONTENT;
-        boolean focusable = true;
-        final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
-
-
-        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
-
-        popupView.setOnTouchListener(new View.OnTouchListener() {
+        ImageView back = popupView.findViewById(R.id.back_image_button);
+        back.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
+            public void onClick(View view) {
                 popupWindow.dismiss();
-                return true;
             }
         });
     }
 
     public void buyRingPopupWindow(View view){
-        ImageButton type1 = findViewById(R.id.type1);
-        ImageButton type2 = findViewById(R.id.type2);
-        ImageButton type3 = findViewById(R.id.type3);
+        LayoutInflater inflater = (LayoutInflater)
+                getSystemService(LAYOUT_INFLATER_SERVICE);
+        View popupView = inflater.inflate(R.layout.popup_window, null);
+        int width = LinearLayout.LayoutParams.WRAP_CONTENT;
+        int height = LinearLayout.LayoutParams.WRAP_CONTENT;
+        boolean focusable = true;
+        final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
+
+        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+
+        ImageButton type1 = popupView.findViewById(R.id.type1);
+        ImageButton type2 = popupView.findViewById(R.id.type2);
+        ImageButton type3 = popupView.findViewById(R.id.type3);
 
         File imageFile1 = new File(Service.getImagePath(ServiceType.RING1));
         Bitmap bmp1 = BitmapFactory.decodeFile(imageFile1.getAbsolutePath());
@@ -271,31 +279,29 @@ public class ServicesActivity extends AppCompatActivity {
             }
         });
 
-        LayoutInflater inflater = (LayoutInflater)
-                getSystemService(LAYOUT_INFLATER_SERVICE);
-        View popupView = inflater.inflate(R.layout.popup_window, null);
-
-        int width = LinearLayout.LayoutParams.WRAP_CONTENT;
-        int height = LinearLayout.LayoutParams.WRAP_CONTENT;
-        boolean focusable = true;
-        final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
-
-
-        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
-
-        popupView.setOnTouchListener(new View.OnTouchListener() {
+        ImageView back = popupView.findViewById(R.id.back_image_button);
+        back.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
+            public void onClick(View view) {
                 popupWindow.dismiss();
-                return true;
             }
         });
     }
 
     public void buyExhaustPopupWindow(View view){
-        ImageButton type1 = findViewById(R.id.type1);
-        ImageButton type2 = findViewById(R.id.type2);
-        ImageButton type3 = findViewById(R.id.type3);
+        LayoutInflater inflater = (LayoutInflater)
+                getSystemService(LAYOUT_INFLATER_SERVICE);
+        View popupView = inflater.inflate(R.layout.popup_window, null);
+        int width = LinearLayout.LayoutParams.WRAP_CONTENT;
+        int height = LinearLayout.LayoutParams.WRAP_CONTENT;
+        boolean focusable = true;
+        final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
+
+        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+
+        ImageButton type1 = popupView.findViewById(R.id.type1);
+        ImageButton type2 = popupView.findViewById(R.id.type2);
+        ImageButton type3 = popupView.findViewById(R.id.type3);
 
         File imageFile1 = new File(Service.getImagePath(ServiceType.EXHAUST1));
         Bitmap bmp1 = BitmapFactory.decodeFile(imageFile1.getAbsolutePath());
@@ -354,31 +360,29 @@ public class ServicesActivity extends AppCompatActivity {
             }
         });
 
-        LayoutInflater inflater = (LayoutInflater)
-                getSystemService(LAYOUT_INFLATER_SERVICE);
-        View popupView = inflater.inflate(R.layout.popup_window, null);
-
-        int width = LinearLayout.LayoutParams.WRAP_CONTENT;
-        int height = LinearLayout.LayoutParams.WRAP_CONTENT;
-        boolean focusable = true;
-        final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
-
-
-        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
-
-        popupView.setOnTouchListener(new View.OnTouchListener() {
+        ImageView back = popupView.findViewById(R.id.back_image_button);
+        back.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
+            public void onClick(View view) {
                 popupWindow.dismiss();
-                return true;
             }
         });
     }
 
     public void buyLeatherPopupWindow(View view){
-        ImageButton type1 = findViewById(R.id.type1);
-        ImageButton type2 = findViewById(R.id.type2);
-        ImageButton type3 = findViewById(R.id.type3);
+        LayoutInflater inflater = (LayoutInflater)
+                getSystemService(LAYOUT_INFLATER_SERVICE);
+        View popupView = inflater.inflate(R.layout.popup_window, null);
+        int width = LinearLayout.LayoutParams.WRAP_CONTENT;
+        int height = LinearLayout.LayoutParams.WRAP_CONTENT;
+        boolean focusable = true;
+        final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
+
+        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+
+        ImageButton type1 = popupView.findViewById(R.id.type1);
+        ImageButton type2 = popupView.findViewById(R.id.type2);
+        ImageButton type3 = popupView.findViewById(R.id.type3);
 
         File imageFile1 = new File(Service.getImagePath(ServiceType.LEATHER1));
         Bitmap bmp1 = BitmapFactory.decodeFile(imageFile1.getAbsolutePath());
@@ -437,31 +441,29 @@ public class ServicesActivity extends AppCompatActivity {
             }
         });
 
-        LayoutInflater inflater = (LayoutInflater)
-                getSystemService(LAYOUT_INFLATER_SERVICE);
-        View popupView = inflater.inflate(R.layout.popup_window, null);
-
-        int width = LinearLayout.LayoutParams.WRAP_CONTENT;
-        int height = LinearLayout.LayoutParams.WRAP_CONTENT;
-        boolean focusable = true;
-        final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
-
-
-        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
-
-        popupView.setOnTouchListener(new View.OnTouchListener() {
+        ImageView back = popupView.findViewById(R.id.back_image_button);
+        back.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
+            public void onClick(View view) {
                 popupWindow.dismiss();
-                return true;
             }
         });
     }
 
     public void changeColorPopupWindow(View view){
-        ImageButton type1 = findViewById(R.id.type1);
-        ImageButton type2 = findViewById(R.id.type2);
-        ImageButton type3 = findViewById(R.id.type3);
+        LayoutInflater inflater = (LayoutInflater)
+                getSystemService(LAYOUT_INFLATER_SERVICE);
+        View popupView = inflater.inflate(R.layout.popup_window, null);
+        int width = LinearLayout.LayoutParams.WRAP_CONTENT;
+        int height = LinearLayout.LayoutParams.WRAP_CONTENT;
+        boolean focusable = true;
+        final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
+
+        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+
+        ImageButton type1 = popupView.findViewById(R.id.type1);
+        ImageButton type2 = popupView.findViewById(R.id.type2);
+        ImageButton type3 = popupView.findViewById(R.id.type3);
 
         type1.setBackgroundColor(getResources().getColor(R.color.black));
         type2.setBackgroundColor(getResources().getColor(R.color.white));
@@ -513,32 +515,29 @@ public class ServicesActivity extends AppCompatActivity {
             }
         });
 
-        LayoutInflater inflater = (LayoutInflater)
-                getSystemService(LAYOUT_INFLATER_SERVICE);
-        View popupView = inflater.inflate(R.layout.popup_window, null);
-
-        int width = LinearLayout.LayoutParams.WRAP_CONTENT;
-        int height = LinearLayout.LayoutParams.WRAP_CONTENT;
-        boolean focusable = true;
-        final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
-
-
-        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
-
-        popupView.setOnTouchListener(new View.OnTouchListener() {
+        ImageView back = popupView.findViewById(R.id.back_image_button);
+        back.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
+            public void onClick(View view) {
                 popupWindow.dismiss();
-                return true;
             }
         });
     }
 
     public void improveEnginePopupWindow(View view) {
+        LayoutInflater inflater = (LayoutInflater)
+                getSystemService(LAYOUT_INFLATER_SERVICE);
+        View popupView = inflater.inflate(R.layout.popup_window, null);
+        int width = LinearLayout.LayoutParams.WRAP_CONTENT;
+        int height = LinearLayout.LayoutParams.WRAP_CONTENT;
+        boolean focusable = true;
+        final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
 
-        ImageButton type1 = findViewById(R.id.type1);
-        ImageButton type2 = findViewById(R.id.type2);
-        ImageButton type3 = findViewById(R.id.type3);
+        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+
+        ImageButton type1 = popupView.findViewById(R.id.type1);
+        ImageButton type2 = popupView.findViewById(R.id.type2);
+        ImageButton type3 = popupView.findViewById(R.id.type3);
 
         File imageFile1 = new File(Service.getImagePath(ServiceType.ENGINE1));
         Bitmap bmp1 = BitmapFactory.decodeFile(imageFile1.getAbsolutePath());
@@ -597,29 +596,16 @@ public class ServicesActivity extends AppCompatActivity {
             }
         });
 
-        LayoutInflater inflater = (LayoutInflater)
-                getSystemService(LAYOUT_INFLATER_SERVICE);
-        View popupView = inflater.inflate(R.layout.popup_window, null);
-
-        int width = LinearLayout.LayoutParams.WRAP_CONTENT;
-        int height = LinearLayout.LayoutParams.WRAP_CONTENT;
-        boolean focusable = true;
-        final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
-
-
-        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
-
-        popupView.setOnTouchListener(new View.OnTouchListener() {
+        ImageView back = popupView.findViewById(R.id.back_image_button);
+        back.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
+            public void onClick(View view) {
                 popupWindow.dismiss();
-                return true;
             }
         });
     }
 
     public void carWashButtonClicked(View view) throws IOException {
-
         if(ConfirmBox.createConfirmBox(getApplicationContext(), "Are You Sure You Want To Wash Your Car?")){
             CarServices carServices = new CarServices(SignAndLog.currentCar);
             if(carServices.doService(new Service(SignAndLog.currentCar, ServiceType.CAR_WASH)))
@@ -641,7 +627,7 @@ public class ServicesActivity extends AppCompatActivity {
         popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
 
         CarServices carServices = new CarServices(SignAndLog.currentCar);
-        EditText damagePercentageEdittext = findViewById(R.id.percent);
+        EditText damagePercentageEdittext = popupView.findViewById(R.id.percent);
         ServiceType serviceType = CarServices.calculateLevelOfRepairment(Integer.parseInt(String.valueOf(damagePercentageEdittext.getText())));
 
         if(carServices.doService(new Service(SignAndLog.currentCar, serviceType)))

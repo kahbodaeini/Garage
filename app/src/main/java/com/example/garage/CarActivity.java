@@ -97,9 +97,7 @@ public class CarActivity extends AppCompatActivity {
                         try {
                             SignAndLog.currentUser.setBudget(SignAndLog.currentUser.getBudget() + SignAndLog.currentCar.calculatePrice());
                             SignAndLog.currentUser.removeCar(SignAndLog.currentCar);
-
-                            //TODO change page to the previous
-
+                            startActivity(new Intent(CarActivity.this, UserActivity.class));
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
@@ -116,7 +114,7 @@ public class CarActivity extends AppCompatActivity {
                 if (ConfirmBox.createConfirmBox(getApplicationContext(), "Are You Sure You Want To Remove This Car From Garage?")) {
                     try {
                         SignAndLog.currentUser.removeCar(SignAndLog.currentCar);
-                        //TODO change page to the previous
+                        startActivity(new Intent(CarActivity.this, UserActivity.class));
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -127,8 +125,7 @@ public class CarActivity extends AppCompatActivity {
         getServicesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                //TODO go to service page by making a new ServiceActivity instance
+                startActivity(new Intent(CarActivity.this, ServicesActivity.class));
             }
         });
 

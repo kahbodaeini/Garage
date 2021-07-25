@@ -47,11 +47,12 @@ public class ProfileFragment extends Fragment {
         // Required empty public constructor
     }
 
+    View rootView;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_profile, container, false);
+        rootView = inflater.inflate(R.layout.fragment_profile, container, false);
 
         rootView.findViewById(R.id.change_pic).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -235,11 +236,13 @@ public class ProfileFragment extends Fragment {
     }
 
     public void addPic(ImageView imageView) throws IOException {
-        loadImage(imageView);
+        //TODO
+        String path = "";
+        rootView.findViewById(R.id.change_pic);
+        loadImage(imageView, path);
     }
 
-    public void loadImage(ImageView imageView) throws IOException {
-        String path = "/sdcard/Images/test_image.jpg";
+    public void loadImage(ImageView imageView, String path) throws IOException {
         File imgFile = new  File(path);
         if(imgFile.exists()){
             Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
