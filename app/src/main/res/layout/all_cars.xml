@@ -39,16 +39,15 @@ android:layout_height="fill_parent">
 <!--                    tools:layout_editor_absoluteX="9dp"-->
 <!--                    tools:layout_editor_absoluteY="8dp" />-->
 
-                <ImageButton
+                <ImageView
                     android:id="@+id/back_image_button"
-                    android:layout_width="35dp"
-                    android:layout_height="32dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentRight="true"
-                    android:src="back-arrow.png"
-                    tools:ignore="MissingConstraints"
-                    tools:layout_editor_absoluteX="9dp"
-                    tools:layout_editor_absoluteY="7dp" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:layout_margin="@dimen/fab_margin"
+                    android:scrollbarSize="@android:dimen/app_icon_size"
+                    android:src="@drawable/back_arrow"
+                    tools:ignore="MissingConstraints" />
 
 <!--                android:src="/src/main/java/Model/back-arrow.png"-->
 

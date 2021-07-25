@@ -7,25 +7,28 @@
     android:layout_height="match_parent">
 
 
-    <TextView
+    <ImageView
+        android:id="@+id/back_image_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text="SERVICES"
-        android:textSize="20dp"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="160dp" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/return_button"
-        android:layout_width="42dp"
-        android:layout_height="45dp"
-        android:text=""
-        tools:layout_editor_absoluteX="15dp"
-        tools:layout_editor_absoluteY="30dp"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:scrollbarSize="@android:dimen/app_icon_size"
+        android:src="@drawable/back_arrow"
         tools:ignore="MissingConstraints" />
 
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="405dp"
+        android:layout_height="71dp"
+        android:text="SERVICES"
+        android:textAlignment="center"
+        android:textColor="#C80D0D"
+        android:textSize="30sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="16dp" />
 
     <Button
         android:id="@+id/improve_engine"

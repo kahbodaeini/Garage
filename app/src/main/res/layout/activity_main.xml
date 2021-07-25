@@ -7,6 +7,7 @@
     android:background="#FFFFFF"
     android:backgroundTint="#FFFFFF">
 
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="254dp"
