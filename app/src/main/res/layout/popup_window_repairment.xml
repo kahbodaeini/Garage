@@ -8,7 +8,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="137dp">
+        android:layout_height="186dp">
 
         <ImageView
             android:id="@+id/back_image_button"
@@ -28,17 +28,27 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:text="Input the percent"
+            tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="89dp"
-            tools:layout_editor_absoluteY="27dp"
-            tools:ignore="MissingConstraints" />
+            tools:layout_editor_absoluteY="27dp" />
 
         <Button
             android:id="@+id/done"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="DONE"
+            tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="151dp"
-            tools:layout_editor_absoluteY="85dp"
+            tools:layout_editor_absoluteY="85dp" />
+
+        <TextView
+            android:id="@+id/error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#DC143C"
+            tools:layout_editor_absoluteX="101dp"
+            tools:layout_editor_absoluteY="150dp"
             tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
