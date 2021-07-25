@@ -14,20 +14,13 @@ import androidx.navigation.ui.AppBarConfiguration;
 
 import com.example.garage.databinding.ActivityMainBinding;
 
-import org.w3c.dom.Text;
-
 import java.io.File;
 
-import Model.Car;
+import Controller.SignAndLog;
 
 public class GuestCarActivity extends AppCompatActivity {
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
-    private final Car car;
-
-    public GuestCarActivity(Car car){
-        this.car = car;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,16 +37,16 @@ public class GuestCarActivity extends AppCompatActivity {
 
 
         TextView ownerTextview = findViewById(R.id.car_owner);
-        ownerTextview.setText(car.getOwner().getUserName());
+        ownerTextview.setText(SignAndLog.currentCar.getOwner().getUserName());
 
         TextView modelTextview = findViewById(R.id.car_model);
-        modelTextview.setText(car.getType().toString() + " " + car.getCompany().toString());
+        modelTextview.setText(SignAndLog.currentCar.getType().toString() + " " + SignAndLog.currentCar.getCompany().toString());
 
         TextView colorTextview = findViewById(R.id.car_color);
-        colorTextview.setText(car.getColor().toString());
+        colorTextview.setText(SignAndLog.currentCar.getColor().toString());
 
         ImageButton imageButton = findViewById(R.id.car_guest_image);
-        File imageFile = new File(CarActivity.getLogoImagePath(car));
+        File imageFile = new File(CarActivity.getLogoImagePath(SignAndLog.currentCar));
         Bitmap bmp = BitmapFactory.decodeFile(imageFile.getAbsolutePath());
         imageButton.setImageBitmap(bmp);
 
