@@ -188,4 +188,63 @@ public class Car {
 
         return 3000 * (carTypeCoefficient + companyCoefficient + intactCoefficient);
     }
+
+    public String getCompanyColor(){
+
+        String color;
+        Company company = this.getCompany();
+
+        switch (company){
+
+            case ASTON_MARTIN:
+                color = "#A9A9A9";
+            case LAMBORGHINI:
+                color = "##B22222";
+            case VOLKSWAGEN:
+                color = "#1E90FF";
+            case CHEVROLET:
+            case PORSCHE:
+                color = "#FFD700";
+            case MASERATI:
+                color = "#87CEFA";
+            case CADILLAC:
+                color = "#FFA500";
+            case PEUGEOT:
+                color = "#0000FF";
+            case FERRARI:
+                color = "#8B0000";
+            case BUGATTI:
+                color = "#800000";
+            case TOYOTA:
+            case NISSAN:
+                color = "#D3D3D3";
+            case SUBARU:
+                color = "#0000CD";
+            case JAGUAR:
+                color = "#708090";
+            case VOLVO:
+                color = "#FFFAFA";
+            case MAZDA:
+            case LEXUS:
+            case AUDI:
+                color = "#D3D3D3";
+            case HONDA:
+                color = "#B22222";
+            case JEEP:
+                color = "#FFFAF0";
+            case FORD:
+                color = "#00008B";
+            case FIAT:
+                color = "#DC143C";
+            case TESLA:
+            case MITSUBISHI:
+                color = "#FF4500";
+            case BMW:
+                color = "#0000FF";
+            case BENZ:
+            default:
+                color = "#C0C0C0";
+        }
+        return color;
+    }
 }

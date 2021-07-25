@@ -28,6 +28,13 @@ public class CarServices {
 
         if(SignAndLog.currentUser.getBudget() >= cost){
 
+            if (service.getServiceType() == ServiceType.COLOR1)
+                service.getCar().setColor(Color.WHITE);
+            if (service.getServiceType() == ServiceType.COLOR2)
+                service.getCar().setColor(Color.BLACK);
+            if (service.getServiceType() == ServiceType.COLOR3)
+                service.getCar().setColor(Color.RED);
+
             SignAndLog.currentUser.setBudget(SignAndLog.currentUser.getBudget() - cost);
             return true;
         }
