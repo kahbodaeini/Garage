@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -57,7 +58,11 @@ public class ServicesActivity extends AppCompatActivity {
         repairment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                try {
+                    repairmentPopupWindow(view);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -626,6 +631,35 @@ public class ServicesActivity extends AppCompatActivity {
             else
                 Tools.exceptionToast(getApplicationContext(), "Sorry! You Do Not Have Enough Budget For The Car Wash.");
         }
+    }
+
+    public void repairmentPopupWindow(View view) throws IOException {
+        LayoutInflater inflater = (LayoutInflater)
+                getSystemService(LAYOUT_INFLATER_SERVICE);
+        View popupView = inflater.inflate(R.layout.popup_window_change_password, null);
+
+        int width = LinearLayout.LayoutParams.WRAP_CONTENT;
+        int height = LinearLayout.LayoutParams.WRAP_CONTENT;
+        boolean focusable = true;
+        final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
+        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+
+        CarServices carServices = new CarServices(car);
+        EditText damagePercentageEdittext = findViewById(R.id.percent);
+        ServiceType serviceType = CarServices.calculateLevelOfRepairment(Integer.parseInt(String.valueOf(damagePercentageEdittext.getText())));
+
+        if(carServices.doService(new Service(car, serviceType)))
+            Tools.exceptionToast(getApplicationContext(), "Your Car Is Clean Now!");
+        else
+            Tools.exceptionToast(getApplicationContext(), "Sorry! You Do Not Have Enough Budget To Repair Your Car!");
+
+        popupView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                popupWindow.dismiss();
+                return true;
+            }
+        });
     }
 }
 

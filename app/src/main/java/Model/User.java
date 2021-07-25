@@ -140,8 +140,13 @@ public class User {
         return about;
     }
 
-    public void setAbout(String about) {
+    public void setAbout(String about) throws IOException {
         this.about = about;
+        File file = new File("main/java/Model/Database/Users/"+this.getUserName()+".json");
+        file.deleteOnExit();
+
+        FileWriter newFile = new FileWriter("main/java/Model/Database/Users/"+this.getUserName()+".json");
+        newFile.write(this.toString());
     }
 
     public void removeCar(Car car) throws IOException {
