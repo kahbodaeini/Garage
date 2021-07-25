@@ -35,7 +35,7 @@ public class CarServices {
             return false;
     }
     
-    public ServiceType calculateLevelOfRepairment(int percent){
+    public static ServiceType calculateLevelOfRepairment(int percent){
         
         if(0 < percent && percent < 10)
             return ServiceType.REPAIRMENT1;

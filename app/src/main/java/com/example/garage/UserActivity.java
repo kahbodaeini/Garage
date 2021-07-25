@@ -2,25 +2,21 @@ package com.example.garage;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
-
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import androidx.fragment.app.Fragment;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.bumptech.glide.Glide;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
-import Controller.ConfirmBox;
 import Controller.SignAndLog;
 import Model.Car;
-import Model.Tools;
 import Model.User;
 
 public class UserActivity extends AppCompatActivity {
@@ -91,44 +87,6 @@ public class UserActivity extends AppCompatActivity {
                 ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
                 ft.commit();
             }
-
-//            private void changePasswordButtonClicked(){
-//                //TODO popup to get current password and new password
-//
-//                String oldPassword, newPassword;
-//
-//                boolean isOk = user.changePassword(oldPassword, newPassword);
-//
-//                if(isOk){
-//                    Tools.exceptionToast(getApplicationContext(), "Password Successfully Changed!");
-//                }
-//                else{
-//                     Tools.exceptionToast(getApplicationContext(), "Wrong Password!");
-//                }
-//            }
-//
-//            private void addBudgetButtonClicked() throws IOException {
-//
-//                String inputBudget;
-//                double budget = Double.parseDouble(inputBudget);
-//
-//                user.setBudget(user.getBudget() + budget);
-//
-//            }
-//
-//            private void changeUsernameButtonClicked(){
-//
-//                String inputNewUsername;
-//                user.setUserName(inputNewUsername);
-//
-//                    Tools.exceptionToast(getApplicationContext(), "Username Successfully Changed to" + inputNewUsername + "!");
-//            }
-//
-//            private void addAboutButtonClicked(){
-//
-//                String newAbout;
-//                user.setAbout(newAbout);
-//            }
 
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
