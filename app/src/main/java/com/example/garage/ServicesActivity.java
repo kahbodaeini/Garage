@@ -635,11 +635,11 @@ public class ServicesActivity extends AppCompatActivity {
         else
             Tools.exceptionToast(getApplicationContext(), "Sorry! You Do Not Have Enough Budget To Repair Your Car!");
 
-        popupView.setOnTouchListener(new View.OnTouchListener() {
+        ImageView back = popupView.findViewById(R.id.back_image_button);
+        back.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
+            public void onClick(View view) {
                 popupWindow.dismiss();
-                return true;
             }
         });
     }
