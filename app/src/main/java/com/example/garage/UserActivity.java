@@ -17,16 +17,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import Controller.ConfirmBox;
+import Controller.SignAndLog;
 import Model.Car;
 import Model.User;
 
 public class UserActivity extends AppCompatActivity {
 
-    private final User user;
-
-    public UserActivity(User user){
-        this.user = user;
-    }
+    private User user;
 
     TabLayout tabLayout;
     FrameLayout frameLayout;
@@ -37,6 +34,8 @@ public class UserActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        user = SignAndLog.currentUser;
 
         tabLayout=(TabLayout)findViewById(R.id.tabLayout);
         frameLayout=(FrameLayout)findViewById(R.id.frameLayout);

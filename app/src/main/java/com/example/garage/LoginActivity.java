@@ -1,5 +1,6 @@
 package com.example.garage;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -46,11 +47,10 @@ public class LoginActivity extends AppCompatActivity {
 
                     Tools.exceptionToast(getApplicationContext(), "This username does not exists!");
                 case 1:
-                    //TODO you can login
                     SignAndLog.currentUser = SignAndLog.getUserByUsername(username);
+                    startActivity(new Intent(LoginActivity.this, UserActivity.class));
                 case -1:
                     Tools.exceptionToast(getApplicationContext(), "Wrong password!");
-
             }
         } catch (IOException | JSONException | ParseException e) {
             e.printStackTrace();
