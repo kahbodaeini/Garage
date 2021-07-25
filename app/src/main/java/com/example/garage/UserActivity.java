@@ -18,6 +18,7 @@ import java.util.ArrayList;
 
 import Controller.ConfirmBox;
 import Model.Car;
+import Model.Tools;
 import Model.User;
 
 public class UserActivity extends AppCompatActivity {
@@ -99,10 +100,10 @@ public class UserActivity extends AppCompatActivity {
 //                boolean isOk = user.changePassword(oldPassword, newPassword);
 //
 //                if(isOk){
-//                    //TODO popup that says password is changed
+//                    Tools.exceptionToast(getApplicationContext(), "Password Successfully Changed!");
 //                }
 //                else{
-//                    //TODO popup that says wrong password
+//                     Tools.exceptionToast(getApplicationContext(), "Wrong Password!");
 //                }
 //            }
 //
@@ -120,7 +121,7 @@ public class UserActivity extends AppCompatActivity {
 //                String inputNewUsername;
 //                user.setUserName(inputNewUsername);
 //
-//                //TODO popup that says username changed
+//                    Tools.exceptionToast(getApplicationContext(), "Username Successfully Changed to" + inputNewUsername + "!");
 //            }
 //
 //            private void addAboutButtonClicked(){
