@@ -1,9 +1,12 @@
 package com.example.garage;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,6 +33,14 @@ public class GuestCarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.guest_car_layout);
+
+        ImageView back = findViewById(R.id.back_image_button);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(GuestCarActivity.this, AllCarsActivity.class));
+            }
+        });
 
 
         TextView ownerTextview = findViewById(R.id.car_owner);

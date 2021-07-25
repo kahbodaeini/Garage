@@ -2,6 +2,8 @@ package com.example.garage;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import Controller.*;
@@ -33,11 +35,18 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void login() {
-
         TextView usernameTextView = findViewById(R.id.userNameTextBoxSignup);
         String username = usernameTextView.getText().toString();
         TextView passwordTextView = findViewById(R.id.passwordTextBoxSignup);
         String password = passwordTextView.getText().toString();
+
+        ImageView back = findViewById(R.id.back_image_button);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            }
+        });
 
         try {
             int res = SignAndLog.checkPassword(username, password);

@@ -1,6 +1,9 @@
 package com.example.garage;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import Controller.SignAndLog;
 import Model.Tools;
@@ -29,6 +32,14 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     public void signup(){
+
+        ImageView back = findViewById(R.id.back_image_button);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(SignUpActivity.this, MainActivity.class));
+            }
+        });
 
         TextView usernameTextView = findViewById(R.id.userNameTextBoxSignup);
         String username = usernameTextView.getText().toString();

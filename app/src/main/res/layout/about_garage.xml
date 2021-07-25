@@ -17,16 +17,25 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="412dp"
-        android:layout_height="100dp"
+        android:layout_width="414dp"
+        android:layout_height="67dp"
         android:text="ABOUT GARAGE"
         android:textAlignment="center"
         android:textColor="#C80D0D"
         android:textSize="30sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <TextView
+        android:id="@+id/multiAutoCompleteTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="THIS IS A GARAGE"
+        android:textSize="25dp"
+        tools:layout_editor_absoluteX="101dp"
+        tools:layout_editor_absoluteY="348dp"
         tools:ignore="MissingConstraints" />
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

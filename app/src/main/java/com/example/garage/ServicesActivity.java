@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 
@@ -32,7 +33,7 @@ public class ServicesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.services_layout);
 
-        Button returnButton = findViewById(R.id.return_button);
+        ImageView back = findViewById(R.id.back_image_button);
         Button repairment = findViewById(R.id.repairment);
         Button buyHeadLight = findViewById(R.id.buy_head_light);
         Button improveEngine = findViewById(R.id.improve_engine);
@@ -56,7 +57,7 @@ public class ServicesActivity extends AppCompatActivity {
             }
         });
 
-        returnButton.setOnClickListener(new View.OnClickListener() {
+        back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(ServicesActivity.this, CarActivity.class));
