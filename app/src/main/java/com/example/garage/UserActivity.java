@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import Controller.ConfirmBox;
@@ -89,6 +90,44 @@ public class UserActivity extends AppCompatActivity {
                 ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
                 ft.commit();
             }
+
+//            private void changePasswordButtonClicked(){
+//                //TODO popup to get current password and new password
+//
+//                String oldPassword, newPassword;
+//
+//                boolean isOk = user.changePassword(oldPassword, newPassword);
+//
+//                if(isOk){
+//                    //TODO popup that says password is changed
+//                }
+//                else{
+//                    //TODO popup that says wrong password
+//                }
+//            }
+//
+//            private void addBudgetButtonClicked() throws IOException {
+//
+//                String inputBudget;
+//                double budget = Double.parseDouble(inputBudget);
+//
+//                user.setBudget(user.getBudget() + budget);
+//
+//            }
+//
+//            private void changeUsernameButtonClicked(){
+//
+//                String inputNewUsername;
+//                user.setUserName(inputNewUsername);
+//
+//                //TODO popup that says username changed
+//            }
+//
+//            private void addAboutButtonClicked(){
+//
+//                String newAbout;
+//                user.setAbout(newAbout);
+//            }
 
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
