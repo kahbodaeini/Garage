@@ -7,15 +7,15 @@
     android:background="#FFFFFF"
     android:backgroundTint="#FFFFFF">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
+    <ImageView
+        android:id="@+id/back_image_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email"
+        android:scrollbarSize="@android:dimen/app_icon_size"
+        android:src="@drawable/back_arrow"
         tools:ignore="MissingConstraints" />
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="254dp"

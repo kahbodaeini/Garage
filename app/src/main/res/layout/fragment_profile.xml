@@ -21,7 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:layout_editor_absoluteX="46dp"
-            tools:layout_editor_absoluteY="50dp"
+            tools:layout_editor_absoluteY="30dp"
             tools:src="@tools:sample/avatars"
             tools:ignore="MissingConstraints" />
 
@@ -32,35 +32,55 @@
             android:layout_height="24dp"
             android:text="TextView"
             tools:layout_editor_absoluteX="223dp"
-            tools:layout_editor_absoluteY="103dp" />
+            tools:layout_editor_absoluteY="83dp" />
 
         <TextView
-            tools:ignore="MissingConstraints"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="BUDGET: "
             android:textSize="20dp"
-            tools:layout_editor_absoluteX="42dp"
-            tools:layout_editor_absoluteY="241dp" />
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="46dp"
+            tools:layout_editor_absoluteY="185dp" />
 
         <TextView
-            tools:ignore="MissingConstraints"
             android:id="@+id/budget"
             android:layout_width="93dp"
             android:layout_height="29dp"
             android:text=""
             android:textSize="20dp"
-            tools:layout_editor_absoluteX="232dp"
-            tools:layout_editor_absoluteY="241dp" />
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="223dp"
+            tools:layout_editor_absoluteY="185dp" />
 
-            <Button
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ABOUT: "
+            android:textSize="20dp"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="46dp"
+            tools:layout_editor_absoluteY="235dp" />
+
+        <TextView
+            android:id="@+id/about"
+            android:layout_width="93dp"
+            android:layout_height="29dp"
+            android:text=""
+            android:textSize="20dp"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="223dp"
+            tools:layout_editor_absoluteY="235dp" />
+
+
+        <Button
                 android:id="@+id/change_pic"
                 android:layout_width="239dp"
                 android:layout_height="56dp"
                 android:text="add pic"
                 tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteX="90dp"
-                tools:layout_editor_absoluteY="315dp" />
+                tools:layout_editor_absoluteY="295dp" />
 
         <Button
             tools:ignore="MissingConstraints"
@@ -69,7 +89,7 @@
             android:layout_height="56dp"
             android:text="ADD BUDGET"
             tools:layout_editor_absoluteX="90dp"
-            tools:layout_editor_absoluteY="395dp" />
+            tools:layout_editor_absoluteY="375dp" />
 
         <Button
             tools:ignore="MissingConstraints"
@@ -78,7 +98,7 @@
             android:layout_height="56dp"
             android:text="Change password"
             tools:layout_editor_absoluteX="90dp"
-            tools:layout_editor_absoluteY="475dp" />
+            tools:layout_editor_absoluteY="455dp" />
 
         <Button
             tools:ignore="MissingConstraints"
@@ -87,7 +107,7 @@
             android:layout_height="56dp"
             android:text="Change username"
             tools:layout_editor_absoluteX="90dp"
-            tools:layout_editor_absoluteY="555dp" />
+            tools:layout_editor_absoluteY="535dp" />
 
         <Button
             tools:ignore="MissingConstraints"
@@ -96,7 +116,7 @@
             android:layout_height="56dp"
             android:text="ADD about"
             tools:layout_editor_absoluteX="90dp"
-            tools:layout_editor_absoluteY="635dp" />
+            tools:layout_editor_absoluteY="615dp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -27,7 +28,7 @@ import Model.Car;
 
 public class AllCarsActivity extends AppCompatActivity {
     final boolean[] firstTime = {true};
-    ImageButton backButton;
+    ImageView backButton;
     LinearLayout mainLayout;
     LinearLayout barLayout;
 
@@ -53,7 +54,7 @@ public class AllCarsActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(AllCarsActivity.this, GuestUserActivity.class));
+                startActivity(new Intent(AllCarsActivity.this, MainActivity.class));
             }
         });
         loadCars();

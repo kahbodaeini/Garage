@@ -1,11 +1,13 @@
 package com.example.garage;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,6 +41,14 @@ public class CarActivity extends AppCompatActivity {
         setContentView(R.layout.car_layout);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
+
+        ImageView back = findViewById(R.id.back_image_button);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(CarActivity.this, UserActivity.class));
+            }
+        });
 
         ImageButton imageButton = findViewById(R.id.car_image);
         File imageFile = new File(getLogoImagePath(car));

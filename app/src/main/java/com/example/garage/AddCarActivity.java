@@ -1,10 +1,12 @@
 package com.example.garage;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -38,6 +40,14 @@ public class AddCarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_car);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
+
+        ImageView back = findViewById(R.id.back_image_button);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AddCarActivity.this, UserActivity.class));
+            }
+        });
 
         Spinner companySpinner = findViewById(R.id.car_company);
         ArrayAdapter<String> companyAdapter = new ArrayAdapter<String>(this,
