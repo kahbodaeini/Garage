@@ -9,40 +9,52 @@
     <LinearLayout
         android:id="@+id/LinearLayout1"
         android:layout_width="match_parent"
-        android:layout_height="28dp"
-        android:layout_alignParentBottom="true"
-        android:gravity="center|top"
+        android:layout_height="55dp"
+        android:background="#7FFFD4"
         tools:ignore="MissingConstraints">
 
-        <TextView
-            android:id="@+id/first_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:height="150dp"
-            android:background="#7FFFD4"
-            android:text="first name" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/last_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:height="150dp"
-            android:background="#7FFFD4"
-            android:text="last name" />
+
+            <ImageView
+                android:id="@+id/log_out_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="@dimen/fab_margin"
+                android:scrollbarSize="@android:dimen/app_icon_size"
+                android:src="@drawable/log_out2"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="297dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/refresh"
+                android:text="name"
+                android:textColor="#C80D0D"
+                android:textSize="25sp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="128dp"
+                tools:layout_editor_absoluteY="0dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/LinearLayout2"
-        android:layout_width="401dp"
-        android:layout_height="28dp"
-        android:layout_alignParentBottom="true"
-        android:gravity="center"
-        android:orientation="horizontal"
-        tools:ignore="MissingConstraints">
+<!--    <LinearLayout-->
+<!--        android:id="@+id/LinearLayout2"-->
+<!--        android:layout_width="401dp"-->
+<!--        android:layout_height="38dp"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:gravity="center"-->
+<!--        android:orientation="horizontal"-->
+<!--        tools:ignore="MissingConstraints">-->
 
-    </LinearLayout>
+<!--    </LinearLayout>-->
 
     <FrameLayout
         android:id="@+id/frameLayout"
@@ -50,7 +62,7 @@
         android:layout_height="455dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LinearLayout2" >
+        app:layout_constraintTop_toBottomOf="@+id/LinearLayout1" >
 
         <android.support.design.widget.TabLayout
             android:id="@+id/tabLayout"

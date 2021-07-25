@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import Controller.SignAndLog;
 import Model.Car;
 
 public class AllCarsActivity extends AppCompatActivity {
@@ -91,7 +92,7 @@ public class AllCarsActivity extends AppCompatActivity {
                                 carImage.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {
-//                                        setSymbol(symbol);
+                                        SignAndLog.currentCar = car;
                                         startActivity(new Intent(AllCarsActivity.this, CarActivity.class));
                                     }
                                 });
@@ -123,7 +124,7 @@ public class AllCarsActivity extends AppCompatActivity {
                                 ((ImageButton) linearLayout.findViewById(R.id.car_image)).setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {
-//                                        setSymbol(symbol);
+                                        SignAndLog.currentCar = car;
                                         startActivity(new Intent(AllCarsActivity.this, CarActivity.class));
                                     }
                                 });
@@ -140,10 +141,6 @@ public class AllCarsActivity extends AppCompatActivity {
 
             }
         });
-
-    }
-
-    private void setSymbol(String symbol){
 
     }
 

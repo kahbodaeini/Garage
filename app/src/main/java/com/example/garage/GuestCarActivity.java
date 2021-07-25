@@ -36,14 +36,14 @@ public class GuestCarActivity extends AppCompatActivity {
         });
 
 
-        TextView ownerTextview = findViewById(R.id.car_owner);
-        ownerTextview.setText(SignAndLog.currentCar.getOwner().getUserName());
+        TextView ownerTextView = findViewById(R.id.car_owner);
+        ownerTextView.setText(SignAndLog.currentCar.getOwner().getUserName());
 
-        TextView modelTextview = findViewById(R.id.car_model);
-        modelTextview.setText(SignAndLog.currentCar.getType().toString() + " " + SignAndLog.currentCar.getCompany().toString());
+        TextView modelTextView = findViewById(R.id.car_model);
+        modelTextView.setText(SignAndLog.currentCar.getType().toString() + " " + SignAndLog.currentCar.getCompany().toString());
 
-        TextView colorTextview = findViewById(R.id.car_color);
-        colorTextview.setText(SignAndLog.currentCar.getColor().toString());
+        TextView colorTextView = findViewById(R.id.car_color);
+        colorTextView.setText(SignAndLog.currentCar.getColor().toString());
 
         ImageButton imageButton = findViewById(R.id.car_guest_image);
         File imageFile = new File(CarActivity.getLogoImagePath(SignAndLog.currentCar));
