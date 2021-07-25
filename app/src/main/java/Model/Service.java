@@ -81,7 +81,9 @@ public class Service {
 
         switch (this.getServiceType()){
 
-            case COLOR:
+            case COLOR1:
+            case COLOR2:
+            case COLOR3:
             case ENGINE1:
                 serviceTypeCoefficient = 5;
                 break;

@@ -472,7 +472,7 @@ public class ServicesActivity extends AppCompatActivity {
             public void onClick(View view){
                 CarServices carServices = new CarServices(SignAndLog.currentCar);
                 try {
-                    if(carServices.doService(new Service(SignAndLog.currentCar, ServiceType.COLOR)))
+                    if(carServices.doService(new Service(SignAndLog.currentCar, ServiceType.COLOR1)))
                         Tools.exceptionToast(getApplicationContext(), "Congratulation On Your New COLOR!");
                     else
                         Tools.exceptionToast(getApplicationContext(), "Sorry! You Do Not Have Enough Budget To Buy This.");
@@ -487,7 +487,7 @@ public class ServicesActivity extends AppCompatActivity {
             public void onClick(View view){
                 CarServices carServices = new CarServices(SignAndLog.currentCar);
                 try {
-                    if(carServices.doService(new Service(SignAndLog.currentCar, ServiceType.COLOR)))
+                    if(carServices.doService(new Service(SignAndLog.currentCar, ServiceType.COLOR2)))
                         Tools.exceptionToast(getApplicationContext(), "Congratulation On Your New COLOR!");
                     else
                         Tools.exceptionToast(getApplicationContext(), "Sorry! You Do Not Have Enough Budget To Buy This.");
@@ -502,7 +502,7 @@ public class ServicesActivity extends AppCompatActivity {
             public void onClick(View view){
                 CarServices carServices = new CarServices(SignAndLog.currentCar);
                 try {
-                    if(carServices.doService(new Service(SignAndLog.currentCar, ServiceType.COLOR)))
+                    if(carServices.doService(new Service(SignAndLog.currentCar, ServiceType.COLOR3)))
                         Tools.exceptionToast(getApplicationContext(), "Congratulation On Your New COLOR!");
                     else
                         Tools.exceptionToast(getApplicationContext(), "Sorry! You Do Not Have Enough Budget To Buy This.");

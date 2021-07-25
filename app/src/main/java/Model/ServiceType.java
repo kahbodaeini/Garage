@@ -23,6 +23,8 @@ public enum ServiceType {
     LEATHER1,
     LEATHER2,
     LEATHER3,
-    COLOR,
+    COLOR1,
+    COLOR2,
+    COLOR3,
 
 }
