@@ -26,7 +26,7 @@ import java.io.IOException;
 
 import Controller.CarServices;
 import Controller.ConfirmBox;
-import Model.Car;
+import Controller.SignAndLog;
 import Model.Service;
 import Model.ServiceType;
 import Model.Tools;
@@ -35,11 +35,6 @@ public class ServicesActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
-    private Car car;
-
-    public ServicesActivity(Car car){
-        this.car = car;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -151,9 +146,9 @@ public class ServicesActivity extends AppCompatActivity {
         type1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                CarServices carServices = new CarServices(car);
+                CarServices carServices = new CarServices(SignAndLog.currentCar);
                 try {
-                    if(carServices.doService(new Service(car, ServiceType.LIGHT1)))
+                    if(carServices.doService(new Service(SignAndLog.currentCar, ServiceType.LIGHT1)))
                         Tools.exceptionToast(getApplicationContext(), "Congratulation On Your New HeadLight!");
                     else
                         Tools.exceptionToast(getApplicationContext(), "Sorry! You Do Not Have Enough Budget To Buy This.");
@@ -166,9 +161,9 @@ public class ServicesActivity extends AppCompatActivity {
         type2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                CarServices carServices = new CarServices(car);
+                CarServices carServices = new CarServices(SignAndLog.currentCar);
                 try {
-                    if(carServices.doService(new Service(car, ServiceType.LIGHT2)))
+                    if(carServices.doService(new Service(SignAndLog.currentCar, ServiceType.LIGHT2)))
                         Tools.exceptionToast(getApplicationContext(), "Congratulation On Your New HeadLight!");
                     else
                         Tools.exceptionToast(getApplicationContext(), "Sorry! You Do Not Have Enough Budget To Buy This.");
@@ -181,9 +176,9 @@ public class ServicesActivity extends AppCompatActivity {
         type3.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                CarServices carServices = new CarServices(car);
+                CarServices carServices = new CarServices(SignAndLog.currentCar);
                 try {
-                    if(carServices.doService(new Service(car, ServiceType.LIGHT3)))
+                    if(carServices.doService(new Service(SignAndLog.currentCar, ServiceType.LIGHT3)))
                         Tools.exceptionToast(getApplicationContext(), "Congratulation On Your New HeadLight!");
                     else
                         Tools.exceptionToast(getApplicationContext(), "Sorry! You Do Not Have Enough Budget To Buy This.");
@@ -234,9 +229,9 @@ public class ServicesActivity extends AppCompatActivity {
         type1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                CarServices carServices = new CarServices(car);
+                CarServices carServices = new CarServices(SignAndLog.currentCar);
                 try {
-                    if(carServices.doService(new Service(car, ServiceType.RING1)))
+                    if(carServices.doService(new Service(SignAndLog.currentCar, ServiceType.RING1)))
                         Tools.exceptionToast(getApplicationContext(), "Congratulation On Your New RING!");
                     else
                         Tools.exceptionToast(getApplicationContext(), "Sorry! You Do Not Have Enough Budget To Buy This.");
@@ -249,9 +244,9 @@ public class ServicesActivity extends AppCompatActivity {
         type2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                CarServices carServices = new CarServices(car);
+                CarServices carServices = new CarServices(SignAndLog.currentCar);
                 try {
-                    if(carServices.doService(new Service(car, ServiceType.RING2)))
+                    if(carServices.doService(new Service(SignAndLog.currentCar, ServiceType.RING2)))
                         Tools.exceptionToast(getApplicationContext(), "Congratulation On Your New RING!");
                     else
                         Tools.exceptionToast(getApplicationContext(), "Sorry! You Do Not Have Enough Budget To Buy This.");
@@ -264,9 +259,9 @@ public class ServicesActivity extends AppCompatActivity {
         type3.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                CarServices carServices = new CarServices(car);
+                CarServices carServices = new CarServices(SignAndLog.currentCar);
                 try {
-                    if(carServices.doService(new Service(car, ServiceType.RING3)))
+                    if(carServices.doService(new Service(SignAndLog.currentCar, ServiceType.RING3)))
                         Tools.exceptionToast(getApplicationContext(), "Congratulation On Your New RING!");
                     else
                         Tools.exceptionToast(getApplicationContext(), "Sorry! You Do Not Have Enough Budget To Buy This.");
@@ -317,9 +312,9 @@ public class ServicesActivity extends AppCompatActivity {
         type1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                CarServices carServices = new CarServices(car);
+                CarServices carServices = new CarServices(SignAndLog.currentCar);
                 try {
-                    if(carServices.doService(new Service(car, ServiceType.EXHAUST1)))
+                    if(carServices.doService(new Service(SignAndLog.currentCar, ServiceType.EXHAUST1)))
                         Tools.exceptionToast(getApplicationContext(), "Congratulation On Your New EXHAUST!");
                     else
                         Tools.exceptionToast(getApplicationContext(), "Sorry! You Do Not Have Enough Budget To Buy This.");
@@ -332,9 +327,9 @@ public class ServicesActivity extends AppCompatActivity {
         type2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                CarServices carServices = new CarServices(car);
+                CarServices carServices = new CarServices(SignAndLog.currentCar);
                 try {
-                    if(carServices.doService(new Service(car, ServiceType.EXHAUST2)))
+                    if(carServices.doService(new Service(SignAndLog.currentCar, ServiceType.EXHAUST2)))
                         Tools.exceptionToast(getApplicationContext(), "Congratulation On Your New EXHAUST!");
                     else
                         Tools.exceptionToast(getApplicationContext(), "Sorry! You Do Not Have Enough Budget To Buy This.");
@@ -347,9 +342,9 @@ public class ServicesActivity extends AppCompatActivity {
         type3.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                CarServices carServices = new CarServices(car);
+                CarServices carServices = new CarServices(SignAndLog.currentCar);
                 try {
-                    if(carServices.doService(new Service(car, ServiceType.EXHAUST3)))
+                    if(carServices.doService(new Service(SignAndLog.currentCar, ServiceType.EXHAUST3)))
                         Tools.exceptionToast(getApplicationContext(), "Congratulation On Your New EXHAUST!");
                     else
                         Tools.exceptionToast(getApplicationContext(), "Sorry! You Do Not Have Enough Budget To Buy This.");
@@ -400,9 +395,9 @@ public class ServicesActivity extends AppCompatActivity {
         type1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                CarServices carServices = new CarServices(car);
+                CarServices carServices = new CarServices(SignAndLog.currentCar);
                 try {
-                    if(carServices.doService(new Service(car, ServiceType.LEATHER1)))
+                    if(carServices.doService(new Service(SignAndLog.currentCar, ServiceType.LEATHER1)))
                         Tools.exceptionToast(getApplicationContext(), "Congratulation On Your New LEATHER!");
                     else
                         Tools.exceptionToast(getApplicationContext(), "Sorry! You Do Not Have Enough Budget To Buy This.");
@@ -415,9 +410,9 @@ public class ServicesActivity extends AppCompatActivity {
         type2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                CarServices carServices = new CarServices(car);
+                CarServices carServices = new CarServices(SignAndLog.currentCar);
                 try {
-                    if(carServices.doService(new Service(car, ServiceType.LEATHER2)))
+                    if(carServices.doService(new Service(SignAndLog.currentCar, ServiceType.LEATHER2)))
                         Tools.exceptionToast(getApplicationContext(), "Congratulation On Your New LEATHER!");
                     else
                         Tools.exceptionToast(getApplicationContext(), "Sorry! You Do Not Have Enough Budget To Buy This.");
@@ -430,9 +425,9 @@ public class ServicesActivity extends AppCompatActivity {
         type3.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                CarServices carServices = new CarServices(car);
+                CarServices carServices = new CarServices(SignAndLog.currentCar);
                 try {
-                    if(carServices.doService(new Service(car, ServiceType.LEATHER3)))
+                    if(carServices.doService(new Service(SignAndLog.currentCar, ServiceType.LEATHER3)))
                         Tools.exceptionToast(getApplicationContext(), "Congratulation On Your New LEATHER!");
                     else
                         Tools.exceptionToast(getApplicationContext(), "Sorry! You Do Not Have Enough Budget To Buy This.");
@@ -476,9 +471,9 @@ public class ServicesActivity extends AppCompatActivity {
         type1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                CarServices carServices = new CarServices(car);
+                CarServices carServices = new CarServices(SignAndLog.currentCar);
                 try {
-                    if(carServices.doService(new Service(car, ServiceType.COLOR)))
+                    if(carServices.doService(new Service(SignAndLog.currentCar, ServiceType.COLOR)))
                         Tools.exceptionToast(getApplicationContext(), "Congratulation On Your New COLOR!");
                     else
                         Tools.exceptionToast(getApplicationContext(), "Sorry! You Do Not Have Enough Budget To Buy This.");
@@ -491,9 +486,9 @@ public class ServicesActivity extends AppCompatActivity {
         type2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                CarServices carServices = new CarServices(car);
+                CarServices carServices = new CarServices(SignAndLog.currentCar);
                 try {
-                    if(carServices.doService(new Service(car, ServiceType.COLOR)))
+                    if(carServices.doService(new Service(SignAndLog.currentCar, ServiceType.COLOR)))
                         Tools.exceptionToast(getApplicationContext(), "Congratulation On Your New COLOR!");
                     else
                         Tools.exceptionToast(getApplicationContext(), "Sorry! You Do Not Have Enough Budget To Buy This.");
@@ -506,9 +501,9 @@ public class ServicesActivity extends AppCompatActivity {
         type3.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                CarServices carServices = new CarServices(car);
+                CarServices carServices = new CarServices(SignAndLog.currentCar);
                 try {
-                    if(carServices.doService(new Service(car, ServiceType.COLOR)))
+                    if(carServices.doService(new Service(SignAndLog.currentCar, ServiceType.COLOR)))
                         Tools.exceptionToast(getApplicationContext(), "Congratulation On Your New COLOR!");
                     else
                         Tools.exceptionToast(getApplicationContext(), "Sorry! You Do Not Have Enough Budget To Buy This.");
@@ -560,9 +555,9 @@ public class ServicesActivity extends AppCompatActivity {
         type1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                CarServices carServices = new CarServices(car);
+                CarServices carServices = new CarServices(SignAndLog.currentCar);
                 try {
-                    if(carServices.doService(new Service(car, ServiceType.ENGINE1)))
+                    if(carServices.doService(new Service(SignAndLog.currentCar, ServiceType.ENGINE1)))
                         Tools.exceptionToast(getApplicationContext(), "Congratulation On Your New ENGINE!");
                     else
                         Tools.exceptionToast(getApplicationContext(), "Sorry! You Do Not Have Enough Budget To Buy This.");
@@ -575,9 +570,9 @@ public class ServicesActivity extends AppCompatActivity {
         type2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                CarServices carServices = new CarServices(car);
+                CarServices carServices = new CarServices(SignAndLog.currentCar);
                 try {
-                    if(carServices.doService(new Service(car, ServiceType.ENGINE2)))
+                    if(carServices.doService(new Service(SignAndLog.currentCar, ServiceType.ENGINE2)))
                         Tools.exceptionToast(getApplicationContext(), "Congratulation On Your New ENGINE!");
                     else
                         Tools.exceptionToast(getApplicationContext(), "Sorry! You Do Not Have Enough Budget To Buy This.");
@@ -590,9 +585,9 @@ public class ServicesActivity extends AppCompatActivity {
         type3.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                CarServices carServices = new CarServices(car);
+                CarServices carServices = new CarServices(SignAndLog.currentCar);
                 try {
-                    if(carServices.doService(new Service(car, ServiceType.ENGINE3)))
+                    if(carServices.doService(new Service(SignAndLog.currentCar, ServiceType.ENGINE3)))
                         Tools.exceptionToast(getApplicationContext(), "Congratulation On Your New ENGINE!");
                     else
                         Tools.exceptionToast(getApplicationContext(), "Sorry! You Do Not Have Enough Budget To Buy This.");
@@ -626,8 +621,8 @@ public class ServicesActivity extends AppCompatActivity {
     public void carWashButtonClicked(View view) throws IOException {
 
         if(ConfirmBox.createConfirmBox(getApplicationContext(), "Are You Sure You Want To Wash Your Car?")){
-            CarServices carServices = new CarServices(car);
-            if(carServices.doService(new Service(car, ServiceType.CAR_WASH)))
+            CarServices carServices = new CarServices(SignAndLog.currentCar);
+            if(carServices.doService(new Service(SignAndLog.currentCar, ServiceType.CAR_WASH)))
                 Tools.exceptionToast(getApplicationContext(), "Your Car Is Clean Now!");
             else
                 Tools.exceptionToast(getApplicationContext(), "Sorry! You Do Not Have Enough Budget For The Car Wash.");
@@ -645,11 +640,11 @@ public class ServicesActivity extends AppCompatActivity {
         final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
         popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
 
-        CarServices carServices = new CarServices(car);
+        CarServices carServices = new CarServices(SignAndLog.currentCar);
         EditText damagePercentageEdittext = findViewById(R.id.percent);
         ServiceType serviceType = CarServices.calculateLevelOfRepairment(Integer.parseInt(String.valueOf(damagePercentageEdittext.getText())));
 
-        if(carServices.doService(new Service(car, serviceType)))
+        if(carServices.doService(new Service(SignAndLog.currentCar, serviceType)))
             Tools.exceptionToast(getApplicationContext(), "Your Car Is Clean Now!");
         else
             Tools.exceptionToast(getApplicationContext(), "Sorry! You Do Not Have Enough Budget To Repair Your Car!");

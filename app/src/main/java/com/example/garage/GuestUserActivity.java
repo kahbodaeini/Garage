@@ -13,18 +13,14 @@ import com.example.garage.databinding.ActivityMainBinding;
 
 import java.util.ArrayList;
 
+import Controller.SignAndLog;
 import Model.Car;
-import Model.User;
 
 public class GuestUserActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
-    private final User user;
 
-    public GuestUserActivity(User user){
-        this.user = user;
-    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,19 +36,19 @@ public class GuestUserActivity extends AppCompatActivity {
 
 
         TextView firstnameTextview = findViewById(R.id.first_name);
-        firstnameTextview.setText(user.getFirstName());
+        firstnameTextview.setText(SignAndLog.currentUser.getFirstName());
 
         TextView lastnameTextview = findViewById(R.id.last_name);
-        lastnameTextview.setText(user.getLastName());
+        lastnameTextview.setText(SignAndLog.currentUser.getLastName());
 
-        String about = user.getAbout();
+        String about = SignAndLog.currentUser.getAbout();
         if (about != null){
             TextView aboutTextview = findViewById(R.id.car_guest_image);
             aboutTextview.setText(about);
         }
 
         ArrayList<Car> cars = new ArrayList<>();
-        cars = user.getCars();
+        cars = SignAndLog.currentUser.getCars();
 
         if(!cars.isEmpty()){
             //TODO show the user's cars

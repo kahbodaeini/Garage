@@ -1,7 +1,6 @@
 package com.example.garage;
 
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -18,22 +17,17 @@ import com.example.garage.databinding.ActivityMainBinding;
 import java.io.IOException;
 import java.util.Arrays;
 
+import Controller.SignAndLog;
 import Model.Car;
 import Model.CarType;
 import Model.Color;
 import Model.Company;
 import Model.Tools;
-import Model.User;
 
 public class AddCarActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
-    private final User user;
-
-    public AddCarActivity(User user){
-        this.user = user;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,7 +95,7 @@ public class AddCarActivity extends AppCompatActivity {
                 }
                 else{
                     try {
-                        user.addCar(new Car(user,
+                        SignAndLog.currentUser.addCar(new Car(SignAndLog.currentUser,
                                 color, Integer.parseInt(year), flag[0] % 2 == 0, company, type, sign));
 
                     } catch (IOException e) {

@@ -29,11 +29,6 @@ public class CarActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
-    private final Car car;
-
-    public CarActivity(Car car) {
-        this.car = car;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,36 +46,36 @@ public class CarActivity extends AppCompatActivity {
         });
 
         ImageButton imageButton = findViewById(R.id.car_image);
-        File imageFile = new File(getLogoImagePath(car));
+        File imageFile = new File(getLogoImagePath(SignAndLog.currentCar));
         Bitmap bmp = BitmapFactory.decodeFile(imageFile.getAbsolutePath());
         imageButton.setImageBitmap(bmp);
 
         TextView carOwnerTextView = findViewById(R.id.car_owner);
-        carOwnerTextView.setText(car.getOwner().getUserName());
+        carOwnerTextView.setText(SignAndLog.currentCar.getOwner().getUserName());
 
         TextView carCompanyTextView = findViewById(R.id.car_company);
-        carCompanyTextView.setText(car.getCompany().toString());
+        carCompanyTextView.setText(SignAndLog.currentCar.getCompany().toString());
 
         TextView carTypeTextView = findViewById(R.id.car_type);
-        carTypeTextView.setText(car.getType().toString());
+        carTypeTextView.setText(SignAndLog.currentCar.getType().toString());
 
         TextView carSignTextView = findViewById(R.id.car_sign);
-        carSignTextView.setText(car.getSign());
+        carSignTextView.setText(SignAndLog.currentCar.getSign());
 
         TextView carYearTextView = findViewById(R.id.car_year);
-        carYearTextView.setText(car.getYear());
+        carYearTextView.setText(SignAndLog.currentCar.getYear());
 
         TextView carColorTextView = findViewById(R.id.car_color);
-        carColorTextView.setText(car.getColor().toString());
+        carColorTextView.setText(SignAndLog.currentCar.getColor().toString());
 
         TextView carIntactTextView = findViewById(R.id.car_intact);
-        if (car.isIntact())
+        if (SignAndLog.currentCar.isIntact())
             carIntactTextView.setText("This Car is Totally Intact!");
         else
             carIntactTextView.setText("Unfortunately This Car is Not Intact!");
 
         TextView carPriceView = findViewById(R.id.car_price);
-        carPriceView.setText(String.valueOf(car.calculatePrice()));
+        carPriceView.setText(String.valueOf(SignAndLog.currentCar.calculatePrice()));
 
         Button sellButton = findViewById(R.id.sell_car);
 
@@ -100,8 +95,8 @@ public class CarActivity extends AppCompatActivity {
                     if (ConfirmBox.createConfirmBox(getApplicationContext(), "Are You Sure You Want To Sell This Car?")) {
 
                         try {
-                            SignAndLog.currentUser.setBudget(SignAndLog.currentUser.getBudget() + car.calculatePrice());
-                            SignAndLog.currentUser.removeCar(car);
+                            SignAndLog.currentUser.setBudget(SignAndLog.currentUser.getBudget() + SignAndLog.currentCar.calculatePrice());
+                            SignAndLog.currentUser.removeCar(SignAndLog.currentCar);
 
                             //TODO change page to the previous
 
@@ -120,7 +115,7 @@ public class CarActivity extends AppCompatActivity {
 
                 if (ConfirmBox.createConfirmBox(getApplicationContext(), "Are You Sure You Want To Remove This Car From Garage?")) {
                     try {
-                        SignAndLog.currentUser.removeCar(car);
+                        SignAndLog.currentUser.removeCar(SignAndLog.currentCar);
                         //TODO change page to the previous
                     } catch (IOException e) {
                         e.printStackTrace();
@@ -231,6 +226,6 @@ public class CarActivity extends AppCompatActivity {
     }
 
     public Car getCar() {
-        return car;
+        return SignAndLog.currentCar;
     }
 }

@@ -5,24 +5,24 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import org.json.simple.parser.*;
-
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import Model.Car;
 import Model.User;
 
 public class SignAndLog {
 
     private static FileWriter file;
     public static User currentUser;
+    public static Car currentCar;
 
     public static boolean usernameExists(String username) throws IOException, ParseException {
 
