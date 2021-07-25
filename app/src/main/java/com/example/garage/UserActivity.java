@@ -2,25 +2,21 @@ package com.example.garage;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
-
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import androidx.fragment.app.Fragment;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.bumptech.glide.Glide;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
-import Controller.ConfirmBox;
 import Controller.SignAndLog;
 import Model.Car;
-import Model.Tools;
 import Model.User;
 
 public class UserActivity extends AppCompatActivity {
@@ -35,7 +31,7 @@ public class UserActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.user_layout);
 
         user = SignAndLog.currentUser;
 
