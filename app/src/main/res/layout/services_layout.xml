@@ -56,13 +56,13 @@
 
     <Button
         android:id="@+id/buy_head_light"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="157dp"
+        android:layout_height="49dp"
+        android:spinnerMode="dialog"
         android:text="Buy head light"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="39dp"
-        tools:layout_editor_absoluteY="166dp" />
-
+        tools:layout_editor_absoluteY="168dp" />
 
     <Button
         android:id="@+id/repairment"
