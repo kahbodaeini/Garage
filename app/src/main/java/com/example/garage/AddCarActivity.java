@@ -96,8 +96,14 @@ public class AddCarActivity extends AppCompatActivity {
                     Tools.exceptionToast(getApplicationContext(), "Please tell us all about your car first!");
                 } else {
                     try {
-                        SignAndLog.currentUser.addCar(new Car(SignAndLog.currentUser,
-                                color, Integer.parseInt(year), flag[0] % 2 == 0, company, type, sign));
+                        Car newCar = new Car(SignAndLog.currentUser,
+                                color, Integer.parseInt(year), flag[0] % 2 == 0, company, type, sign);
+                        if (SignAndLog.currentUser.getBudget() >= newCar.calculatePrice()) {
+                            SignAndLog.currentUser.setBudget(SignAndLog.currentUser.getBudget() - newCar.calculatePrice());
+                            SignAndLog.currentUser.addCar(newCar);
+                        }else {
+                            Tools.exceptionToast(getApplicationContext(), "Sorry! You Do Not Have Enough Budget To Buy This.");
+                        }
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
