@@ -7,9 +7,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import Controller.SignAndLog;
-import Model.Tools;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.ui.AppBarConfiguration;
 
@@ -17,6 +14,8 @@ import org.json.JSONException;
 import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
+
+import Controller.SignAndLog;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -63,7 +62,7 @@ public class SignUpActivity extends AppCompatActivity {
                     try {
                         double budget = Double.parseDouble(budgetString);
                         try {
-                            if (SignAndLog.usernameExists(username)) {
+                            if (!SignAndLog.usernameExists(username)) {
                                 SignAndLog.signup(firstName, lastName, username, password, budget);
                                 startActivity(new Intent(SignUpActivity.this, UserActivity.class));
                             } else {

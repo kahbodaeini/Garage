@@ -6,9 +6,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import Controller.*;
-import Model.Tools;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.ui.AppBarConfiguration;
 
@@ -16,6 +13,10 @@ import org.json.JSONException;
 import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
+
+import Controller.SignAndLog;
+import Model.Tools;
+import Model.User;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -50,7 +51,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     Tools.exceptionToast(getApplicationContext(), "This username does not exists!");
                 case 1:
-                    SignAndLog.currentUser = SignAndLog.getUserByUsername(username);
+                    SignAndLog.currentUser = User.getUserByUsername(username);
                     startActivity(new Intent(LoginActivity.this, UserActivity.class));
                 case -1:
                     Tools.exceptionToast(getApplicationContext(), "Wrong password!");
