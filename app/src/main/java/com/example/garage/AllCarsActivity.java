@@ -93,7 +93,7 @@ public class AllCarsActivity extends AppCompatActivity {
                                     @Override
                                     public void onClick(View view) {
                                         SignAndLog.currentCar = car;
-                                        startActivity(new Intent(AllCarsActivity.this, CarActivity.class));
+                                        startActivity(new Intent(AllCarsActivity.this, GuestCarActivity.class));
                                     }
                                 });
                                 firstTime[0] = false;
@@ -125,7 +125,7 @@ public class AllCarsActivity extends AppCompatActivity {
                                     @Override
                                     public void onClick(View view) {
                                         SignAndLog.currentCar = car;
-                                        startActivity(new Intent(AllCarsActivity.this, CarActivity.class));
+                                        startActivity(new Intent(AllCarsActivity.this, GuestCarActivity.class));
                                     }
                                 });
                                 linearLayout.setVisibility(View.VISIBLE);

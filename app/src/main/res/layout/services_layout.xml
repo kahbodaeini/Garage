@@ -27,82 +27,81 @@
         android:textColor="#C80D0D"
         android:textSize="30sp"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteX="-6dp"
         tools:layout_editor_absoluteY="16dp" />
 
     <Button
-        android:id="@+id/improve_engine"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="improve engine"
+        android:id="@+id/repairment"
+        android:layout_width="156dp"
+        android:layout_height="57dp"
+        android:text="repairment"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="72dp"
-        tools:layout_editor_absoluteY="231dp" />
-
-    <Button
-        android:id="@+id/car_wash"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="car wash"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="296dp"
-        tools:layout_editor_absoluteY="570dp" />
-
-    <Button
-        android:id="@+id/buy_ring"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Buy Ring"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="263dp"
-        tools:layout_editor_absoluteY="493dp" />
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="120dp" />
 
     <Button
         android:id="@+id/buy_head_light"
-        android:layout_width="157dp"
-        android:layout_height="49dp"
+        android:layout_width="156dp"
+        android:layout_height="57dp"
         android:spinnerMode="dialog"
         android:text="Buy head light"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="39dp"
-        tools:layout_editor_absoluteY="168dp" />
+        tools:layout_editor_absoluteX="50dp"
+        tools:layout_editor_absoluteY="190dp" />
 
     <Button
-        android:id="@+id/repairment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="repairment"
+        android:id="@+id/improve_engine"
+        android:layout_width="156dp"
+        android:layout_height="57dp"
+        android:text="improve engine"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="104dp" />
+        tools:layout_editor_absoluteX="80dp"
+        tools:layout_editor_absoluteY="260dp" />
 
     <Button
         android:id="@+id/buy_leather"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="156dp"
+        android:layout_height="57dp"
         android:text="Buy leather"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="118dp"
-        tools:layout_editor_absoluteY="293dp" />
+        tools:layout_editor_absoluteX="110dp"
+        tools:layout_editor_absoluteY="330dp" />
 
     <Button
         android:id="@+id/buy_exhaust"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="156dp"
+        android:layout_height="57dp"
         android:text="buy exhaust"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="159dp"
-        tools:layout_editor_absoluteY="361dp" />
+        tools:layout_editor_absoluteX="140dp"
+        tools:layout_editor_absoluteY="400dp" />
 
     <Button
         android:id="@+id/change_color"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="156dp"
+        android:layout_height="57dp"
         android:text="change color"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="196dp"
-        tools:layout_editor_absoluteY="424dp" />
+        tools:layout_editor_absoluteX="170dp"
+        tools:layout_editor_absoluteY="470dp" />
 
+    <Button
+        android:id="@+id/buy_ring"
+        android:layout_width="156dp"
+        android:layout_height="57dp"
+        android:text="Buy Ring"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="200dp"
+        tools:layout_editor_absoluteY="540dp" />
+
+    <Button
+        android:id="@+id/car_wash"
+        android:layout_width="156dp"
+        android:layout_height="57dp"
+        android:text="car wash"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="230dp"
+        tools:layout_editor_absoluteY="610dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

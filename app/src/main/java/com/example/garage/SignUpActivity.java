@@ -21,13 +21,13 @@ import java.io.IOException;
 public class SignUpActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
-    private ActivityMainBinding binding;
+//    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup_layout);
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+//        binding = ActivityMainBinding.inflate(getLayoutInflater());
         signup();
     }
 
