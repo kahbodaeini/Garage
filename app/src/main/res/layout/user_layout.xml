@@ -24,68 +24,52 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|end"
                 android:layout_margin="@dimen/fab_margin"
-                android:layout_marginBottom="4dp"
                 android:scrollbarSize="@android:dimen/app_icon_size"
                 android:src="@drawable/log_out2"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0"
                 tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="297dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/refresh"
+                android:text="name"
+                android:textColor="#C80D0D"
+                android:textSize="25sp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="139dp"
+                tools:layout_editor_absoluteY="0dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <TextView
-            android:id="@+id/name"
-            android:layout_width="153dp"
-            android:layout_height="match_parent"
-            android:layout_centerVertical="true"
-            android:layout_toEndOf="@+id/refresh"
-            android:text="name"
-            android:textColor="#C80D0D"
-            android:textSize="25sp"
-            tools:ignore="MissingConstraints" />
-
     </LinearLayout>
-
-<!--    <LinearLayout-->
-<!--        android:id="@+id/LinearLayout2"-->
-<!--        android:layout_width="401dp"-->
-<!--        android:layout_height="38dp"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:gravity="center"-->
-<!--        android:orientation="horizontal"-->
-<!--        tools:ignore="MissingConstraints">-->
-
-<!--    </LinearLayout>-->
 
     <FrameLayout
         android:id="@+id/frameLayout"
-        android:layout_width="match_parent"
-        android:layout_height="455dp"
+        android:layout_width="388dp"
+        android:layout_height="733dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LinearLayout1" >
+        app:layout_constraintTop_toBottomOf="@+id/LinearLayout1">
 
-<!--        <android.support.design.widget.TabLayout-->
-<!--            android:id="@+id/tabLayout"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:background="#7367"-->
-<!--            tools:ignore="MissingConstraints">-->
+        <!--        <android.support.design.widget.TabLayout-->
+        <!--            android:id="@+id/tabLayout"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:background="#7367"-->
+        <!--            tools:ignore="MissingConstraints">-->
 
-<!--            <android.support.design.widget.TabItem-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Profile" />-->
+        <!--            <android.support.design.widget.TabItem-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="Profile" />-->
 
-<!--            <android.support.design.widget.TabItem-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Cars" />-->
-<!--        </android.support.design.widget.TabLayout>-->
+        <!--            <android.support.design.widget.TabItem-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="Cars" />-->
+        <!--        </android.support.design.widget.TabLayout>-->
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout"

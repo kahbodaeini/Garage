@@ -47,9 +47,10 @@
                         android:layout_toRightOf="@+id/refresh"
                         android:text="car1"
                         android:textColor="#C80D0D"
-                        android:textSize="39sp"
+                        android:textSize="30sp"
+                        android:textStyle="bold"
                         tools:ignore="MissingConstraints"
-                        tools:layout_editor_absoluteX="170dp"
+                        tools:layout_editor_absoluteX="167dp"
                         tools:layout_editor_absoluteY="0dp" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -59,12 +59,13 @@ android:layout_height="fill_parent">
                     android:layout_centerVertical="true"
                     android:layout_toEndOf="@+id/refresh"
                     android:layout_toRightOf="@+id/refresh"
-                    android:text="        all cars"
+                    android:text="        ALL CARS"
                     android:textColor="#C80D0D"
-                    android:textSize="39sp"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
                     tools:ignore="MissingConstraints"
-                    tools:layout_editor_absoluteX="65dp"
-                    tools:layout_editor_absoluteY="3dp" />
+                    tools:layout_editor_absoluteX="107dp"
+                    tools:layout_editor_absoluteY="1dp" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

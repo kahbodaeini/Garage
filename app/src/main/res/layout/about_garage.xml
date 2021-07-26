@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -33,16 +32,10 @@
         android:id="@+id/multiAutoCompleteTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="101dp"
-        android:layout_marginTop="265dp"
-        android:layout_marginEnd="102dp"
-        android:layout_marginBottom="349dp"
-        android:text='Welcome to "The Garage"! This is the Biggest Garage in Town, Which you can register in this garage to be Serviced. The Garage can have as much as car you want to put here. We can give you new Exhust, Engine, Leather, Head Light or Ring. Also we can repair your damaged car or color it to White, Black or Red, and ofcourse washing your car is one of our main services. Hope you enjoy be a member of The Graage'
+        android:text="THIS IS A GARAGE"
         android:textSize="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:layout_editor_absoluteX="101dp"
+        tools:layout_editor_absoluteY="348dp"
         tools:ignore="MissingConstraints" />
 
 

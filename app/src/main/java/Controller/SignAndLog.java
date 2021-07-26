@@ -28,7 +28,7 @@ public class SignAndLog {
 //        }
 //        myReader.close();
 //        return false;
-        return User.getUserByUsername(username) == null;
+        return User.getUserByUsername(username) != null;
 
     }
 
