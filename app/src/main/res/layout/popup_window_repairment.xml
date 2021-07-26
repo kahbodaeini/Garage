@@ -62,11 +62,13 @@
             android:id="@+id/error"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="101dp"
+            android:layout_marginTop="150dp"
             android:text=""
             android:textColor="#DC143C"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="101dp"
-            tools:layout_editor_absoluteY="150dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </RelativeLayout>

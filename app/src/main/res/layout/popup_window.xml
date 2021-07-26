@@ -8,7 +8,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp">
+        android:layout_height="295dp">
 
         <ImageView
             android:id="@+id/back_image_button"
@@ -33,8 +33,8 @@
             android:text="CHOOSE THE TYPE"
             android:textAlignment="center"
             android:textColor="@color/titles_color"
-            android:textStyle="italic"
             android:textSize="20sp"
+            android:textStyle="italic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -79,7 +79,7 @@
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.543"
+            app:layout_constraintVertical_bias="0.9"
             tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

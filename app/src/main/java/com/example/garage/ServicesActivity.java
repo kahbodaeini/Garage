@@ -15,6 +15,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -303,17 +304,17 @@ public class ServicesActivity extends AppCompatActivity {
         ImageButton type2 = popupView.findViewById(R.id.type2);
         ImageButton type3 = popupView.findViewById(R.id.type3);
 
-        File imageFile1 = new File(Service.getImagePath(ServiceType.EXHAUST1));
-        Bitmap bmp1 = BitmapFactory.decodeFile(imageFile1.getAbsolutePath());
-        type1.setImageBitmap(bmp1);
-
-        File imageFile2 = new File(Service.getImagePath(ServiceType.EXHAUST2));
-        Bitmap bmp2 = BitmapFactory.decodeFile(imageFile2.getAbsolutePath());
-        type2.setImageBitmap(bmp2);
-
-        File imageFile3 = new File(Service.getImagePath(ServiceType.EXHAUST3));
-        Bitmap bmp3 = BitmapFactory.decodeFile(imageFile3.getAbsolutePath());
-        type3.setImageBitmap(bmp3);
+//        File imageFile1 = new File(Service.getImagePath(ServiceType.EXHAUST1));
+//        Bitmap bmp1 = BitmapFactory.decodeFile(imageFile1.getAbsolutePath());
+//        type1.setImageBitmap(bmp1);
+//
+//        File imageFile2 = new File(Service.getImagePath(ServiceType.EXHAUST2));
+//        Bitmap bmp2 = BitmapFactory.decodeFile(imageFile2.getAbsolutePath());
+//        type2.setImageBitmap(bmp2);
+//
+//        File imageFile3 = new File(Service.getImagePath(ServiceType.EXHAUST3));
+//        Bitmap bmp3 = BitmapFactory.decodeFile(imageFile3.getAbsolutePath());
+//        type3.setImageBitmap(bmp3);
 
         type1.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -384,17 +385,17 @@ public class ServicesActivity extends AppCompatActivity {
         ImageButton type2 = popupView.findViewById(R.id.type2);
         ImageButton type3 = popupView.findViewById(R.id.type3);
 
-        File imageFile1 = new File(Service.getImagePath(ServiceType.LEATHER1));
-        Bitmap bmp1 = BitmapFactory.decodeFile(imageFile1.getAbsolutePath());
-        type1.setImageBitmap(bmp1);
-
-        File imageFile2 = new File(Service.getImagePath(ServiceType.LEATHER2));
-        Bitmap bmp2 = BitmapFactory.decodeFile(imageFile2.getAbsolutePath());
-        type2.setImageBitmap(bmp2);
-
-        File imageFile3 = new File(Service.getImagePath(ServiceType.LEATHER3));
-        Bitmap bmp3 = BitmapFactory.decodeFile(imageFile3.getAbsolutePath());
-        type3.setImageBitmap(bmp3);
+//        File imageFile1 = new File(Service.getImagePath(ServiceType.LEATHER1));
+//        Bitmap bmp1 = BitmapFactory.decodeFile(imageFile1.getAbsolutePath());
+//        type1.setImageBitmap(bmp1);
+//
+//        File imageFile2 = new File(Service.getImagePath(ServiceType.LEATHER2));
+//        Bitmap bmp2 = BitmapFactory.decodeFile(imageFile2.getAbsolutePath());
+//        type2.setImageBitmap(bmp2);
+//
+//        File imageFile3 = new File(Service.getImagePath(ServiceType.LEATHER3));
+//        Bitmap bmp3 = BitmapFactory.decodeFile(imageFile3.getAbsolutePath());
+//        type3.setImageBitmap(bmp3);
 
         type1.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -538,18 +539,18 @@ public class ServicesActivity extends AppCompatActivity {
         ImageButton type1 = popupView.findViewById(R.id.type1);
         ImageButton type2 = popupView.findViewById(R.id.type2);
         ImageButton type3 = popupView.findViewById(R.id.type3);
-
-        File imageFile1 = new File(Service.getImagePath(ServiceType.ENGINE1));
-        Bitmap bmp1 = BitmapFactory.decodeFile(imageFile1.getAbsolutePath());
-        type1.setImageBitmap(bmp1);
-
-        File imageFile2 = new File(Service.getImagePath(ServiceType.ENGINE2));
-        Bitmap bmp2 = BitmapFactory.decodeFile(imageFile2.getAbsolutePath());
-        type2.setImageBitmap(bmp2);
-
-        File imageFile3 = new File(Service.getImagePath(ServiceType.ENGINE3));
-        Bitmap bmp3 = BitmapFactory.decodeFile(imageFile3.getAbsolutePath());
-        type3.setImageBitmap(bmp3);
+//
+//        File imageFile1 = new File(Service.getImagePath(ServiceType.ENGINE1));
+//        Bitmap bmp1 = BitmapFactory.decodeFile(imageFile1.getAbsolutePath());
+//        type1.setImageBitmap(bmp1);
+//
+//        File imageFile2 = new File(Service.getImagePath(ServiceType.ENGINE2));
+//        Bitmap bmp2 = BitmapFactory.decodeFile(imageFile2.getAbsolutePath());
+//        type2.setImageBitmap(bmp2);
+//
+//        File imageFile3 = new File(Service.getImagePath(ServiceType.ENGINE3));
+//        Bitmap bmp3 = BitmapFactory.decodeFile(imageFile3.getAbsolutePath());
+//        type3.setImageBitmap(bmp3);
 
         type1.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -618,7 +619,7 @@ public class ServicesActivity extends AppCompatActivity {
     public void repairmentPopupWindow(View view) throws IOException {
         LayoutInflater inflater = (LayoutInflater)
                 getSystemService(LAYOUT_INFLATER_SERVICE);
-        View popupView = inflater.inflate(R.layout.popup_window_change_password, null);
+        View popupView = inflater.inflate(R.layout.popup_window_repairment, null);
 
         int width = LinearLayout.LayoutParams.WRAP_CONTENT;
         int height = LinearLayout.LayoutParams.WRAP_CONTENT;
@@ -628,12 +629,24 @@ public class ServicesActivity extends AppCompatActivity {
 
         CarServices carServices = new CarServices(SignAndLog.currentCar);
         EditText damagePercentageEdittext = popupView.findViewById(R.id.percent);
-        ServiceType serviceType = CarServices.calculateLevelOfRepairment(Integer.parseInt(String.valueOf(damagePercentageEdittext.getText())));
 
-        if(carServices.doService(new Service(SignAndLog.currentCar, serviceType)))
-            Tools.exceptionToast(getApplicationContext(), "Your Car Is Clean Now!");
-        else
-            Tools.exceptionToast(getApplicationContext(), "Sorry! You Do Not Have Enough Budget To Repair Your Car!");
+        Button done = popupView.findViewById(R.id.done);
+        TextView error = popupView.findViewById(R.id.error);
+        done.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ServiceType serviceType = CarServices.calculateLevelOfRepairment(Integer.parseInt(String.valueOf(damagePercentageEdittext.getText().toString())));
+                try {
+                    if(carServices.doService(new Service(SignAndLog.currentCar, serviceType)))
+                        error.setText("Your Car Is Clean Now!");
+                    else
+                        error.setText("Sorry! You Do Not Have Enough Budget To Repair Your Car!");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
 
         ImageView back = popupView.findViewById(R.id.back_image_button);
         back.setOnClickListener(new View.OnClickListener() {
