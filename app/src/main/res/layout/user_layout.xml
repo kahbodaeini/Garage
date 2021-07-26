@@ -17,7 +17,7 @@
             android:id="@+id/LinearLayout1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#7FFFD4"
+            android:background="#840032"
             android:orientation="horizontal"
             android:weightSum="8"
             tools:ignore="MissingConstraints">
@@ -42,7 +42,7 @@
                 android:gravity="center"
                 android:paddingRight="60dp"
                 android:text="name"
-                android:textColor="@color/titles_color"
+                android:textColor="@color/white"
                 android:textSize="25sp"
                 android:textStyle="italic"
                 tools:ignore="MissingConstraints"
@@ -56,7 +56,7 @@
             android:id="@+id/tabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#7367"
+            android:background="#e59500"
             tools:ignore="MissingConstraints">
 
             <com.google.android.material.tabs.TabItem

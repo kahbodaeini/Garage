@@ -68,7 +68,6 @@ public class SignUpActivity extends AppCompatActivity {
                     String lastName = lastNameTextView.getText().toString();
                     String password = passwordTextView.getText().toString();
                     String budgetString = budgetTextView.getText().toString();
-
                     try {
                         double budget = Double.parseDouble(budgetString);
                         try {

@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -54,31 +55,31 @@ public class CarActivity extends AppCompatActivity {
         imageButton.setImageBitmap(bmp);
 
         TextView carOwnerTextView = findViewById(R.id.car_owner);
-        carOwnerTextView.setText(SignAndLog.currentCar.getOwner().getUserName());
+        carOwnerTextView.setText("OWNER:\t"  + SignAndLog.currentCar.getOwner().getUserName());
 
         TextView carCompanyTextView = findViewById(R.id.car_company);
-        carCompanyTextView.setText(SignAndLog.currentCar.getCompany().toString());
+        carCompanyTextView.setText("COMPANY:\t" + SignAndLog.currentCar.getCompany().toString());
 
         TextView carTypeTextView = findViewById(R.id.car_type);
-        carTypeTextView.setText(SignAndLog.currentCar.getType().toString());
+        carTypeTextView.setText("TYPE:\t" + SignAndLog.currentCar.getType().toString());
 
         TextView carSignTextView = findViewById(R.id.car_sign);
-        carSignTextView.setText(SignAndLog.currentCar.getSign());
+        carSignTextView.setText("SIGN:\t" + SignAndLog.currentCar.getSign());
 
         TextView carYearTextView = findViewById(R.id.car_year);
-        carYearTextView.setText(SignAndLog.currentCar.getYear());
+        carYearTextView.setText("YEAR:\t" + String.valueOf(SignAndLog.currentCar.getYear()));
 
         TextView carColorTextView = findViewById(R.id.car_color);
-        carColorTextView.setText(SignAndLog.currentCar.getColor().toString());
+        carColorTextView.setText("COLOR:\t" + SignAndLog.currentCar.getColor().toString());
 
         TextView carIntactTextView = findViewById(R.id.car_intact);
         if (SignAndLog.currentCar.isIntact())
-            carIntactTextView.setText("This Car is Totally Intact!");
+            carIntactTextView.setText("Intact:\tThis Car is Totally Intact!");
         else
-            carIntactTextView.setText("Unfortunately This Car is Not Intact!");
+            carIntactTextView.setText("Intact:\tUnfortunately This Car is Not Intact!");
 
         TextView carPriceView = findViewById(R.id.car_price);
-        carPriceView.setText(String.valueOf(SignAndLog.currentCar.calculatePrice()));
+        carPriceView.setText("PRICE:\t" + String.valueOf(SignAndLog.currentCar.calculatePrice()));
 
         Button sellButton = findViewById(R.id.sell_car);
 

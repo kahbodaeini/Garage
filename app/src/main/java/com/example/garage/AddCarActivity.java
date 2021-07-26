@@ -1,7 +1,9 @@
 package com.example.garage;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -20,7 +22,6 @@ import java.util.Arrays;
 import Controller.SignAndLog;
 import Model.Car;
 import Model.CarType;
-import Model.Color;
 import Model.Company;
 import Model.Tools;
 
@@ -56,10 +57,8 @@ public class AddCarActivity extends AppCompatActivity {
         typeSpinner.setAdapter(typeAdapter);
 
         TextView signTextView = findViewById(R.id.car_sign);
-        String sign = signTextView.getText().toString();
 
         TextView yearTextView = findViewById(R.id.car_year);
-        String year = yearTextView.getText().toString();
 
         Spinner colorSpinner = findViewById(R.id.car_color);
         ArrayAdapter<String> colorAdapter = new ArrayAdapter<String>(this,
@@ -73,9 +72,9 @@ public class AddCarActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (flag[0] % 2 == 0) {
-                    intact.setBackgroundColor(android.graphics.Color.green(10));
+                    intact.setBackgroundColor(Color.GREEN);
                 } else {
-                    intact.setBackgroundColor(android.graphics.Color.red(10));
+                    intact.setBackgroundColor(Color.RED);
                 }
                 flag[0]++;
             }
@@ -85,9 +84,12 @@ public class AddCarActivity extends AppCompatActivity {
         done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Color color = Color.valueOf(colorSpinner.getSelectedItem().toString());
+                String sign = signTextView.getText().toString();
+                String year = yearTextView.getText().toString();
+                Model.Color color = Model.Color.valueOf(colorSpinner.getSelectedItem().toString());
                 CarType type = CarType.valueOf(typeSpinner.getSelectedItem().toString());
                 Company company = Company.valueOf(companySpinner.getSelectedItem().toString());
+
                 if (signTextView.getText().equals("") || yearTextView.getText().equals("") ||
                         colorSpinner.getSelectedItem() == null || companySpinner.getSelectedItem() == null ||
                         typeSpinner.getSelectedItem() == null) {
@@ -96,7 +98,6 @@ public class AddCarActivity extends AppCompatActivity {
                     try {
                         SignAndLog.currentUser.addCar(new Car(SignAndLog.currentUser,
                                 color, Integer.parseInt(year), flag[0] % 2 == 0, company, type, sign));
-
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

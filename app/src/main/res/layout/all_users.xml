@@ -102,6 +102,7 @@
                         android:id="@+id/username"
                         android:layout_width="60dp"
                         android:layout_height="15dp"
+                        android:layout_marginEnd="60dp"
                         android:layout_marginBottom="1dp"
                         android:text="TextView"
                         app:layout_constraintBottom_toBottomOf="parent"

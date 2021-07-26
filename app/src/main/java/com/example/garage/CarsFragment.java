@@ -61,9 +61,9 @@ public class CarsFragment extends Fragment {
         totalPriceTextView.setText("Total Prices Of your car: " + totalPrice);
 
         barLayout = rootView.findViewById(R.id.bar);
-        mainLayout = rootView.findViewById(R.id.main_layout);
+        mainLayout = rootView.findViewById(R.id.main_linear_layout);
         scrollView = rootView.findViewById(R.id.scroll_view);
-        car_layout = rootView.findViewById(R.id.car_layouts);
+        car_layout = rootView.findViewById(R.id.status_layout);
         Button addCar = rootView.findViewById(R.id.add_car);
         addCar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,7 +71,6 @@ public class CarsFragment extends Fragment {
                 startActivity(new Intent(getActivity(), AddCarActivity.class));
             }
         });
-
         loadCars();
 
         return rootView;
@@ -79,9 +78,10 @@ public class CarsFragment extends Fragment {
 
     private synchronized void loadCars() {
         final ImageButton carImage = rootView.findViewById(R.id.car_image);
-        final TextView carName = rootView.findViewById(R.id.car_name);
-        final TextView carPrice = rootView.findViewById(R.id.car_price);
-        final TextView car_model = rootView.findViewById(R.id.car_model);
+        final TextView carCompany = rootView.findViewById(R.id.car_company);
+        final TextView carSign = rootView.findViewById(R.id.car_sign);
+        final TextView carType = rootView.findViewById(R.id.car_type);
+        final TextView carColor = rootView.findViewById(R.id.car_color);
 
         int limit = allCars.size();
         executor.execute(new Runnable() {
@@ -96,9 +96,10 @@ public class CarsFragment extends Fragment {
                         @Override
                         public void run() {
                             if (firstTime[0]) {
-                                carPrice.setText("Price: " + car.calculatePrice());
-                                carName.setText("Company: " + car.getCompany());
-                                car_model.setText("Type: " + car.getType());
+                                carSign.setText("Sign: " + car.getSign());
+                                carCompany.setText("Company: " + car.getCompany());
+                                carType.setText("Type: " + car.getType());
+                                carColor.setText("Color: " + car.getColor());
                                 car_layout.setVisibility(View.VISIBLE);
                                 Glide.with(getActivity())
                                         .load(logo)
@@ -129,9 +130,10 @@ public class CarsFragment extends Fragment {
                                 params.gravity = Gravity.CENTER_VERTICAL;
                                 mainLayout.setOrientation(LinearLayout.VERTICAL);
 
-                                ((TextView) linearLayout.findViewById(R.id.car_price)).setText("Price: " + car.calculatePrice());
-                                ((TextView) linearLayout.findViewById(R.id.car_name)).setText("Company: " + car.getCompany());
+                                ((TextView) linearLayout.findViewById(R.id.car_sign)).setText("Sign: " + car.getSign());
+                                ((TextView) linearLayout.findViewById(R.id.car_company)).setText("Company: " + car.getCompany());
                                 ((TextView) linearLayout.findViewById(R.id.car_type)).setText("Type: " + car.getType());
+                                ((TextView) linearLayout.findViewById(R.id.car_color)).setText("Color: " + car.getColor());
                                 Glide.with(getActivity())
                                         .load(logo)
                                         .into(((ImageButton) linearLayout.findViewById(R.id.car_image)));

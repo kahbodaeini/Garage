@@ -51,16 +51,16 @@ public class GuestUserActivity extends AppCompatActivity {
         lastnameTextview.setText(user.getLastName());
 
         String about = user.getAbout();
-        if (about != null && !about.isEmpty()){
+        if (about != null && !about.isEmpty()) {
             TextView aboutTextview = findViewById(R.id.car_guest_image);
             aboutTextview.setText(about);
         }
 
         ArrayList<Car> cars = user.getCars();
 
-        if(!cars.isEmpty()){
+        if (!cars.isEmpty()) {
             Car car1 = cars.get(0);
-            if (car1 != null){
+            if (car1 != null) {
                 TextView carInfo1 = findViewById(R.id.car1);
                 Button color1 = findViewById(R.id.car_color1);
                 carInfo1.setText("Company: " + car1.getCompany() + "\t" + "Type: " + car1.getType());
@@ -68,20 +68,24 @@ public class GuestUserActivity extends AppCompatActivity {
 
             }
 
-            Car car2 = cars.get(1);
-            if (car2 != null){
-                TextView carInfo2 = findViewById(R.id.car2);
-                Button color2 = findViewById(R.id.car_color2);
-                carInfo2.setText("Company: " + car2.getCompany() + "\t" + "Type: " + car2.getType());
-                color2.setBackgroundColor(Color.parseColor(car2.getColor().toString()));
+            if (cars.size() >= 2) {
+                Car car2 = cars.get(1);
+                if (car2 != null) {
+                    TextView carInfo2 = findViewById(R.id.car2);
+                    Button color2 = findViewById(R.id.car_color2);
+                    carInfo2.setText("Company: " + car2.getCompany() + "\t" + "Type: " + car2.getType());
+                    color2.setBackgroundColor(Color.parseColor(car2.getColor().toString()));
+                }
             }
 
-            Car car3 = cars.get(2);
-            if (car3 != null){
-                TextView carInfo3 = findViewById(R.id.car3);
-                Button color3 = findViewById(R.id.car_color3);
-                carInfo3.setText("Company: " + car3.getCompany() + "\t" + "Type: " + car3.getType());
-                color3.setBackgroundColor(Color.parseColor(car3.getColor().toString()));
+            if (cars.size() >= 2) {
+                Car car3 = cars.get(2);
+                if (car3 != null) {
+                    TextView carInfo3 = findViewById(R.id.car3);
+                    Button color3 = findViewById(R.id.car_color3);
+                    carInfo3.setText("Company: " + car3.getCompany() + "\t" + "Type: " + car3.getType());
+                    color3.setBackgroundColor(Color.parseColor(car3.getColor().toString()));
+                }
             }
         }
     }
