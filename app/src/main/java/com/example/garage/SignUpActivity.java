@@ -8,16 +8,15 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import Controller.SignAndLog;
-import Model.Tools;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.ui.AppBarConfiguration;
 
 import org.json.JSONException;
-import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
+
+import Controller.SignAndLog;
+import Model.User;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -74,13 +73,13 @@ public class SignUpActivity extends AppCompatActivity {
                         double budget = Double.parseDouble(budgetString);
                         try {
                             Log.d("FALSE: ", "please");
-                            if (!SignAndLog.usernameExists(username)) {
+                            if (User.getUserByUsername(username) == null) {
                                 SignAndLog.signup(firstName, lastName, username, password, budget);
                                 startActivity(new Intent(SignUpActivity.this, UserActivity.class));
                             } else {
                                 errorTextView.setText("This username already exists!");
                             }
-                        } catch (IOException | JSONException | ParseException e) {
+                        } catch (IOException | JSONException e) {
                             e.printStackTrace();
                         }
                     } catch (NumberFormatException ex) {
