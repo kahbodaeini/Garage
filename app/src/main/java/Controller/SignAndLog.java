@@ -1,16 +1,8 @@
 package Controller;
 
-import android.util.Log;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
-import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -28,27 +20,19 @@ public class SignAndLog {
     public static Car currentCar;
 
     public static boolean usernameExists(String username) throws IOException, ParseException {
-//        Log.d("FALSE: ", "here0");
-//        String path = "src/main/java/Model/Database/Usernames.txt";
-//        Log.d("FALSE: ", "here1");
-//        BufferedReader br = new BufferedReader(new FileReader(path));
-//        Log.d("FALSE: ", "here2");
-//        if (br.readLine() == null) {
-//            Log.d("FALSE: ", "here3");
-//            File myObj = new File(path);
-//            Scanner myReader = new Scanner(myObj);
-//            while (myReader.hasNextLine()) {
-//                String data = myReader.nextLine();
-//
-//                if(username.equals(data))
-//                    return true;
-//            }
-//            myReader.close();
-//        }
-//        Log.d("FALSE: ", "here4");
-//        return false;
 
-    return false;
+//        File myObj = new File("main/java/Model/Database/Usernames.txt");
+//        Scanner myReader = new Scanner(myObj);
+//        while (myReader.hasNextLine()) {
+//            String data = myReader.nextLine();
+//
+//            if(username.equals(data))
+//                return true;
+//        }
+//        myReader.close();
+//        return false;
+        return User.getUserByUsername(username) == null;
+
     }
 
     public static void signup(String firstName, String lastName, String userName, String password, double budget) throws JSONException, IOException {
@@ -70,41 +54,45 @@ public class SignAndLog {
         if(!usernameExists(username))
             return 0;
         else{
-            JSONParser jsonParser = new JSONParser();
-            FileReader reader = new FileReader("main/java/Model/Database/Users/"+ username +".json");
-            Object obj = jsonParser.parse(reader);
+//            JSONParser jsonParser = new JSONParser();
+//            FileReader reader = new FileReader("main/java/Model/Database/Users/"+ username +".json");
+//            Object obj = jsonParser.parse(reader);
+//
+//            JSONObject user = (JSONObject) obj;
+//            String pass = (String) user.get("password");
 
-            JSONObject user = (JSONObject) obj;
-            String pass = (String) user.get("password");
+            User user = User.getUserByUsername(username);
+            assert user != null;
+            String pass = user.getPassword();
 
             if(pass.equals(password)){
 
-                String json = user.toString();
-                ObjectMapper objectMapper = new ObjectMapper();
-                currentUser = objectMapper.readValue(json, User.class);
+//                String json = user.toString();
+//                ObjectMapper objectMapper = new ObjectMapper();
+//                currentUser = objectMapper.readValue(json, User.class);
 
+                currentUser = user;
                 return 1;
             }
             else
                 return -1;
         }
-
     }
 
-    public static User getUserByUsername(String username) throws IOException, ParseException {
-
-        User returnedUser;
-
-        JSONParser jsonParser = new JSONParser();
-        FileReader reader = new FileReader("main/java/Model/Database/Users/"+ username +".json");
-        Object obj = jsonParser.parse(reader);
-
-        JSONObject user = (JSONObject) obj;
-
-        String json = user.toString();
-        ObjectMapper objectMapper = new ObjectMapper();
-        returnedUser = objectMapper.readValue(json, User.class);
-
-        return returnedUser;
-    }
+//    public static User getUserByUsername(String username) throws IOException, ParseException {
+//
+//        User returnedUser;
+//
+//        JSONParser jsonParser = new JSONParser();
+//        FileReader reader = new FileReader("main/java/Model/Database/Users/"+ username +".json");
+//        Object obj = jsonParser.parse(reader);
+//
+//        JSONObject user = (JSONObject) obj;
+//
+//        String json = user.toString();
+//        ObjectMapper objectMapper = new ObjectMapper();
+//        returnedUser = objectMapper.readValue(json, User.class);
+//
+//        return returnedUser;
+//    }
 }

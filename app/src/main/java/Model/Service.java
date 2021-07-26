@@ -26,11 +26,11 @@ public class Service {
         this.serviceType = serviceType;
     }
 
-    public double calculateCost(){
+    public int calculateCost(){
 
-        double companyCoefficient;
-        double carTypeCoefficient;
-        double serviceTypeCoefficient;
+        int companyCoefficient;
+        int carTypeCoefficient;
+        int serviceTypeCoefficient;
 
         switch (this.car.getCompany()){
 
@@ -96,18 +96,12 @@ public class Service {
             case RING2:
             case LEATHER2:
             case EXHAUST3:
+            case LIGHT3:
                 serviceTypeCoefficient = 3;
                 break;
             case RING3:
             case LEATHER3:
                 serviceTypeCoefficient = 4;
-                break;
-            case LIGHT1:
-            case EXHAUST1:
-                serviceTypeCoefficient = 1.5;
-                break;
-            case LIGHT3:
-                serviceTypeCoefficient = 2.5;
                 break;
             case ENGINE2:
             case REPAIRMENT1:
@@ -127,6 +121,8 @@ public class Service {
                 serviceTypeCoefficient = 10;
                 break;
             case CAR_WASH:
+            case LIGHT1:
+            case EXHAUST1:
             default:
                 serviceTypeCoefficient = 1;
                 break;

@@ -4,8 +4,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -36,11 +34,11 @@ public class User {
 
     public void setFirstName(String firstName) throws IOException {
         this.firstName = firstName;
-        File file = new File("main/java/Model/Database/Users/"+this.getUserName()+".json");
-        file.deleteOnExit();
-
-        FileWriter newFile = new FileWriter("main/java/Model/Database/Users/"+this.getUserName()+".json");
-        newFile.write(this.toString());
+//        File file = new File("main/java/Model/Database/Users/"+this.getUserName()+".json");
+//        file.deleteOnExit();
+//
+//        FileWriter newFile = new FileWriter("main/java/Model/Database/Users/"+this.getUserName()+".json");
+//        newFile.write(this.toString());
     }
 
     public String getImagePath() {
@@ -57,11 +55,11 @@ public class User {
 
     public void setLastName(String lastName) throws IOException {
         this.lastName = lastName;
-        File file = new File("main/java/Model/Database/Users/"+this.getUserName()+".json");
-        file.deleteOnExit();
-
-        FileWriter newFile = new FileWriter("main/java/Model/Database/Users/"+this.getUserName()+".json");
-        newFile.write(this.toString());
+//        File file = new File("main/java/Model/Database/Users/"+this.getUserName()+".json");
+//        file.deleteOnExit();
+//
+//        FileWriter newFile = new FileWriter("main/java/Model/Database/Users/"+this.getUserName()+".json");
+//        newFile.write(this.toString());
     }
 
     public String getUserName() {
@@ -70,11 +68,11 @@ public class User {
 
     public void setUserName(String userName) throws IOException {
         this.userName = userName;
-        File file = new File("main/java/Model/Database/Users/"+this.getUserName()+".json");
-        file.deleteOnExit();
-
-        FileWriter newFile = new FileWriter("main/java/Model/Database/Users/"+this.getUserName()+".json");
-        newFile.write(this.toString());
+//        File file = new File("main/java/Model/Database/Users/"+this.getUserName()+".json");
+//        file.deleteOnExit();
+//
+//        FileWriter newFile = new FileWriter("main/java/Model/Database/Users/"+this.getUserName()+".json");
+//        newFile.write(this.toString());
     }
 
     public String getPassword() {
@@ -87,11 +85,11 @@ public class User {
 
     public void setBudget(double budget) throws IOException {
         this.budget = budget;
-        File file = new File("main/java/Model/Database/Users/"+this.getUserName()+".json");
-        file.deleteOnExit();
-
-        FileWriter newFile = new FileWriter("main/java/Model/Database/Users/"+this.getUserName()+".json");
-        newFile.write(this.toString());
+//        File file = new File("main/java/Model/Database/Users/"+this.getUserName()+".json");
+//        file.deleteOnExit();
+//
+//        FileWriter newFile = new FileWriter("main/java/Model/Database/Users/"+this.getUserName()+".json");
+//        newFile.write(this.toString());
     }
 
     public ArrayList<Car> getCars() {
@@ -129,11 +127,11 @@ public class User {
         cars.add(car);
         this.setCars(cars);
 
-        File file = new File("main/java/Model/Database/Users/"+this.getUserName()+".json");
-        file.deleteOnExit();
-
-        FileWriter newFile = new FileWriter("main/java/Model/Database/Users/"+this.getUserName()+".json");
-        newFile.write(this.toString());
+//        File file = new File("main/java/Model/Database/Users/"+this.getUserName()+".json");
+//        file.deleteOnExit();
+//
+//        FileWriter newFile = new FileWriter("main/java/Model/Database/Users/"+this.getUserName()+".json");
+//        newFile.write(this.toString());
     }
 
     public String getAbout() {
@@ -142,11 +140,11 @@ public class User {
 
     public void setAbout(String about) throws IOException {
         this.about = about;
-        File file = new File("main/java/Model/Database/Users/"+this.getUserName()+".json");
-        file.deleteOnExit();
-
-        FileWriter newFile = new FileWriter("main/java/Model/Database/Users/"+this.getUserName()+".json");
-        newFile.write(this.toString());
+//        File file = new File("main/java/Model/Database/Users/"+this.getUserName()+".json");
+//        file.deleteOnExit();
+//
+//        FileWriter newFile = new FileWriter("main/java/Model/Database/Users/"+this.getUserName()+".json");
+//        newFile.write(this.toString());
     }
 
     public void removeCar(Car car) throws IOException {
@@ -155,11 +153,11 @@ public class User {
         cars.remove(car);
         this.setCars(cars);
 
-        File file = new File("main/java/Model/Database/Users/"+this.getUserName()+".json");
-        file.deleteOnExit();
-
-        FileWriter newFile = new FileWriter("main/java/Model/Database/Users/"+this.getUserName()+".json");
-        newFile.write(this.toString());
+//        File file = new File("main/java/Model/Database/Users/"+this.getUserName()+".json");
+//        file.deleteOnExit();
+//
+//        FileWriter newFile = new FileWriter("main/java/Model/Database/Users/"+this.getUserName()+".json");
+//        newFile.write(this.toString());
 
     }
 
@@ -174,12 +172,20 @@ public class User {
             return false;
         else{
             this.password = newPassword;
-            File file = new File("main/java/Model/Database/Users/"+this.getUserName()+".json");
-            file.deleteOnExit();
-
-            FileWriter newFile = new FileWriter("main/java/Model/Database/Users/"+this.getUserName()+".json");
-            newFile.write(this.toString());
+//            File file = new File("main/java/Model/Database/Users/"+this.getUserName()+".json");
+//            file.deleteOnExit();
+//
+//            FileWriter newFile = new FileWriter("main/java/Model/Database/Users/"+this.getUserName()+".json");
+//            newFile.write(this.toString());
             return true;
         }
+    }
+
+    public static User getUserByUsername(String username){
+        for(int i = 0; i < allUsers.size(); i++){
+            if(username.equals(allUsers.get(i).getUserName()))
+                return allUsers.get(i);
+        }
+        return null;
     }
 }
