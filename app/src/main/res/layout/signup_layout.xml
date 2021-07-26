@@ -41,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="101dp"
         android:layout_marginBottom="14dp"
         android:ems="10"
@@ -131,7 +131,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/login_button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/budget_sign_up" />
+        app:layout_constraintTop_toBottomOf="@+id/budget_sign_up"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/login_button"
@@ -146,7 +147,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/budget_sign_up" />
+        app:layout_constraintTop_toBottomOf="@+id/budget_sign_up"
+        app:layout_constraintVertical_bias="0.961" />
 
     <Button
         android:id="@+id/done_button"
@@ -168,12 +170,13 @@
 
     <TextView
         android:id="@+id/error"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
+        android:layout_width="126dp"
+        android:layout_height="19dp"
+        android:text="HELLO"
         android:textColor="@android:color/holo_red_dark"
-        tools:layout_editor_absoluteX="86dp"
-        tools:layout_editor_absoluteY="528dp"
-        tools:ignore="MissingConstraints" />
+        android:textSize="100dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="81dp"
+        tools:layout_editor_absoluteY="576dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
