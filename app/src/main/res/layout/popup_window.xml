@@ -18,6 +18,12 @@
             android:layout_margin="@dimen/fab_margin"
             android:scrollbarSize="@android:dimen/app_icon_size"
             android:src="@drawable/back_arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
             tools:ignore="MissingConstraints" />
 
         <TextView
@@ -28,36 +34,52 @@
             android:textAlignment="center"
             android:textColor="#C80D0D"
             android:textSize="20sp"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="16dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.089"
+            tools:ignore="MissingConstraints" />
 
         <ImageButton
             android:id="@+id/type1"
             android:layout_width="90dp"
             android:layout_height="90dp"
             android:text="Button"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="52dp"
-            tools:layout_editor_absoluteY="76dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.093"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.543"
+            tools:ignore="MissingConstraints" />
 
         <ImageButton
             android:id="@+id/type2"
             android:layout_width="90dp"
             android:layout_height="90dp"
             android:text="Button"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="274dp"
-            tools:layout_editor_absoluteY="76dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.856"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.543"
+            tools:ignore="MissingConstraints" />
 
         <ImageButton
             android:id="@+id/type3"
             android:layout_width="90dp"
             android:layout_height="90dp"
             android:text="Button"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="160dp"
-            tools:layout_editor_absoluteY="144dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.543"
+            tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
