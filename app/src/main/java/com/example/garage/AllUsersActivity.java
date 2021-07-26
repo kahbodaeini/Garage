@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import Controller.SignAndLog;
 import Model.User;
 
 public class AllUsersActivity extends AppCompatActivity {
@@ -74,19 +75,19 @@ public class AllUsersActivity extends AppCompatActivity {
                 for (int i = 0; i < limit; i++) {
                     User user = users.get(i);
 
-                    int finalI = i;
+                    int finalI = i + 1;
                     AllUsersActivity.this.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
                             if (firstTime[0]) {
-                                name.setText(user.getFirstName() + " " + user.getLastName());
-                                userNum.setText(finalI + 1);
-                                username.setText(user.getUserName());
+                                name.setText("name: " + user.getFirstName() + " " + user.getLastName());
+                                userNum.setText("   " + String.valueOf(finalI));
+                                username.setText("username: " + user.getUserName());
                                 car_layout.setVisibility(View.VISIBLE);
                                 car_layout.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {
-//                                        setSymbol(symbol);
+                                        SignAndLog.guestUser = user;
                                         startActivity(new Intent(AllUsersActivity.this, GuestUserActivity.class));
                                     }
                                 });
@@ -109,9 +110,9 @@ public class AllUsersActivity extends AppCompatActivity {
                                 params.gravity = Gravity.CENTER_VERTICAL;
                                 mainLayout.setOrientation(LinearLayout.VERTICAL);
 
-                                ((TextView) linearLayout.findViewById(R.id.user_num)).setText(finalI + 1);
-                                ((TextView) linearLayout.findViewById(R.id.name)).setText(user.getFirstName() + " " + user.getLastName());
-                                ((TextView) linearLayout.findViewById(R.id.username)).setText(user.getUserName());
+                                ((TextView) linearLayout.findViewById(R.id.user_num)).setText("   " + String.valueOf(finalI));
+                                ((TextView) linearLayout.findViewById(R.id.name)).setText("name: " + user.getFirstName() + " " + user.getLastName());
+                                ((TextView) linearLayout.findViewById(R.id.username)).setText("username: " + user.getUserName());
                                 (linearLayout).setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {

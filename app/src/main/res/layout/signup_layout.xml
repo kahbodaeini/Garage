@@ -161,7 +161,6 @@
         android:layout_marginBottom="128dp"
         android:text="Log in"
         android:backgroundTint="@color/buttons_color"
-        android:textColor="#EC0404"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView3"

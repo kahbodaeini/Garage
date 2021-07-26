@@ -54,11 +54,14 @@ public class LoginActivity extends AppCompatActivity {
                         switch (res) {
                             case 0:
                                 errorTextView.setText( "This username does not exists!");
+                                break;
                             case 1:
                                 SignAndLog.currentUser = User.getUserByUsername(username);
                                 startActivity(new Intent(LoginActivity.this, UserActivity.class));
+                                break;
                             case -1:
                                 errorTextView.setText( "Wrong password!");
+                                break;
                         }
                     } catch (IOException | JSONException | ParseException e) {
                         e.printStackTrace();

@@ -175,7 +175,7 @@ public class ProfileFragment extends Fragment {
         rootView.findViewById(R.id.add_about).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                View popupView = inflater.inflate(R.layout.popup_window_change_username, null);
+                View popupView = inflater.inflate(R.layout.popup_window_repairment, null);
 
                 int width = LinearLayout.LayoutParams.WRAP_CONTENT;
                 int height = LinearLayout.LayoutParams.WRAP_CONTENT;

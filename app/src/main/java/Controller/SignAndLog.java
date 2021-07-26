@@ -15,6 +15,9 @@ public class SignAndLog {
     private static FileWriter file;
     public static User currentUser;
     public static Car currentCar;
+    public static User guestUser;
+    public static Car guestCar;
+
 
     public static boolean usernameExists(String username) throws IOException, ParseException {
 

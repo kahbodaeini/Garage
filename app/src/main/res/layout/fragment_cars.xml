@@ -42,7 +42,7 @@
 
 
                     <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="333dp"
+                        android:layout_width="312dp"
                         android:layout_height="match_parent">
 
 
@@ -50,10 +50,11 @@
                             android:id="@+id/car_company"
                             android:layout_width="87dp"
                             android:layout_height="20dp"
+                            android:layout_marginTop="1dp"
+                            android:layout_marginEnd="52dp"
                             android:text="company: "
-                            tools:ignore="MissingConstraints,NotSibling"
-                            tools:layout_editor_absoluteX="0dp"
-                            tools:layout_editor_absoluteY="3dp" />
+                            app:layout_constraintEnd_toStartOf="@+id/car_sign"
+                            app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
                             android:id="@+id/car_type"
@@ -70,10 +71,10 @@
                             android:layout_width="93dp"
                             android:layout_height="25dp"
                             android:layout_marginLeft="130dp"
-                            android:background="@drawable/round_button"
                             android:layout_marginTop="44dp"
                             android:layout_marginEnd="72dp"
                             android:layout_marginRight="72dp"
+                            android:background="@drawable/round_button"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -81,10 +82,11 @@
                             android:id="@+id/car_sign"
                             android:layout_width="82dp"
                             android:layout_height="21dp"
-                            android:layout_marginTop="156dp"
-                            android:layout_marginRight="84dp"
+                            android:layout_marginTop="1dp"
+                            android:layout_marginRight="80dp"
                             android:text="sign: "
                             app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
                             tools:ignore="MissingConstraints" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -97,9 +99,9 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="631dp"
+            android:layout_height="611dp"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="174dp"
             android:gravity="center|bottom"
             android:orientation="horizontal">
 
@@ -118,8 +120,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="47dp"
                         android:layout_centerHorizontal="true"
-                        android:text="add car"
                         android:backgroundTint="@color/buttons_color"
+                        android:text="add car"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"

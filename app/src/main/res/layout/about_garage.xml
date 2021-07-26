@@ -21,14 +21,15 @@
         android:id="@+id/textView"
         android:layout_width="414dp"
         android:layout_height="67dp"
+        android:layout_marginTop="15dp"
         android:text="ABOUT GARAGE"
         android:textAlignment="center"
         android:textColor="@color/titles_color"
-        android:textStyle="bold"
         android:textSize="30sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/multiAutoCompleteTextView"

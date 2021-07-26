@@ -40,19 +40,21 @@
                     tools:ignore="MissingConstraints" />
 
                     <TextView
-                        android:id="@+id/month_button"
+                        android:id="@+id/car1"
                         android:layout_width="320dp"
                         android:layout_height="72dp"
                         android:layout_centerVertical="true"
+                        android:layout_marginStart="148dp"
+                        android:layout_marginTop="16dp"
                         android:layout_toEndOf="@+id/refresh"
                         android:layout_toRightOf="@+id/refresh"
                         android:text="car1"
                         android:textColor="@color/titles_color"
-                        android:textStyle="bold"
                         android:textSize="30sp"
-                        tools:ignore="MissingConstraints"
-                        tools:layout_editor_absoluteX="167dp"
-                        tools:layout_editor_absoluteY="0dp" />
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="MissingConstraints" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -73,22 +75,26 @@
                     android:layout_height="68dp">
 
                     <TextView
+                        android:id="@+id/textView10"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
                         android:text="OWNER:  "
                         android:textSize="20dp"
-                        tools:ignore="MissingConstraints"
-                        tools:layout_editor_absoluteX="3dp"
-                        tools:layout_editor_absoluteY="23dp" />
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="MissingConstraints" />
 
                     <TextView
                         android:id="@+id/car_owner"
                         android:layout_width="257dp"
                         android:layout_height="18dp"
+                        android:layout_marginStart="150dp"
+                        android:layout_marginTop="27dp"
                         android:text="TextView"
-                        tools:ignore="MissingConstraints"
-                        tools:layout_editor_absoluteX="150dp"
-                        tools:layout_editor_absoluteY="27dp" />
+                        app:layout_constraintStart_toStartOf="@+id/textView10"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="MissingConstraints" />
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -109,22 +115,27 @@
                     android:layout_height="68dp">
 
                     <TextView
+                        android:id="@+id/textView11"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="22dp"
                         android:text="MODEL:  "
                         android:textSize="20dp"
-                        tools:ignore="MissingConstraints"
-                        tools:layout_editor_absoluteX="3dp"
-                        tools:layout_editor_absoluteY="23dp" />
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="MissingConstraints" />
 
                     <TextView
                         android:id="@+id/car_model"
                         android:layout_width="257dp"
                         android:layout_height="18dp"
+                        android:layout_marginStart="66dp"
+                        android:layout_marginTop="26dp"
                         android:text="TextView"
-                        tools:ignore="MissingConstraints"
-                        tools:layout_editor_absoluteX="150dp"
-                        tools:layout_editor_absoluteY="27dp" />
+                        app:layout_constraintStart_toEndOf="@+id/textView11"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="MissingConstraints" />
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -145,22 +156,27 @@
                     android:layout_height="68dp">
 
                     <TextView
+                        android:id="@+id/textView12"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="23dp"
                         android:text="COLOR:  "
                         android:textSize="20dp"
-                        tools:ignore="MissingConstraints"
-                        tools:layout_editor_absoluteX="3dp"
-                        tools:layout_editor_absoluteY="23dp" />
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="MissingConstraints" />
 
                     <TextView
                         android:id="@+id/car_color"
                         android:layout_width="257dp"
                         android:layout_height="18dp"
+                        android:layout_marginStart="69dp"
+                        android:layout_marginTop="27dp"
                         android:text="TextView"
-                        tools:ignore="MissingConstraints"
-                        tools:layout_editor_absoluteX="150dp"
-                        tools:layout_editor_absoluteY="27dp" />
+                        app:layout_constraintStart_toEndOf="@+id/textView12"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="MissingConstraints" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -180,22 +196,27 @@
                     android:layout_height="68dp">
 
                     <TextView
+                        android:id="@+id/textView13"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="23dp"
                         android:text="PIC:  "
                         android:textSize="20dp"
-                        tools:ignore="MissingConstraints"
-                        tools:layout_editor_absoluteX="3dp"
-                        tools:layout_editor_absoluteY="23dp" />
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="MissingConstraints" />
 
                     <ImageButton
                         android:id="@+id/car_guest_image"
                         android:layout_width="198dp"
                         android:layout_height="64dp"
+                        android:layout_marginStart="70dp"
+                        android:layout_marginTop="2dp"
                         android:text="TextView"
-                        tools:ignore="MissingConstraints"
-                        tools:layout_editor_absoluteX="119dp"
-                        tools:layout_editor_absoluteY="2dp" />
+                        app:layout_constraintStart_toEndOf="@+id/textView13"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="MissingConstraints" />
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>

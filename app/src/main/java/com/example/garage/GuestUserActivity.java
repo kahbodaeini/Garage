@@ -18,11 +18,14 @@ import java.util.ArrayList;
 
 import Controller.SignAndLog;
 import Model.Car;
+import Model.User;
 
 public class GuestUserActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
+
+    User user = SignAndLog.guestUser;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -38,20 +41,22 @@ public class GuestUserActivity extends AppCompatActivity {
             }
         });
 
+        TextView title = findViewById(R.id.user1);
+        title.setText(user.getUserName());
 
         TextView firstnameTextview = findViewById(R.id.first_name);
-        firstnameTextview.setText(SignAndLog.currentUser.getFirstName());
+        firstnameTextview.setText(user.getFirstName());
 
         TextView lastnameTextview = findViewById(R.id.last_name);
-        lastnameTextview.setText(SignAndLog.currentUser.getLastName());
+        lastnameTextview.setText(user.getLastName());
 
-        String about = SignAndLog.currentUser.getAbout();
-        if (about != null){
+        String about = user.getAbout();
+        if (about != null && !about.isEmpty()){
             TextView aboutTextview = findViewById(R.id.car_guest_image);
             aboutTextview.setText(about);
         }
 
-        ArrayList<Car> cars = SignAndLog.currentUser.getCars();
+        ArrayList<Car> cars = user.getCars();
 
         if(!cars.isEmpty()){
             Car car1 = cars.get(0);

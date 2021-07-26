@@ -35,6 +35,8 @@ public class GuestCarActivity extends AppCompatActivity {
             }
         });
 
+        TextView title = findViewById(R.id.car1);
+        title.setText(SignAndLog.currentCar.getCompany().toString());
 
         TextView ownerTextView = findViewById(R.id.car_owner);
         ownerTextView.setText(SignAndLog.currentCar.getOwner().getUserName());
