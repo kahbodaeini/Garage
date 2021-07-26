@@ -32,7 +32,6 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     public void signup(){
-
         ImageView back = findViewById(R.id.back_image_button);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +60,5 @@ public class SignUpActivity extends AppCompatActivity {
         } catch (IOException | JSONException | ParseException e) {
             e.printStackTrace();
         }
-
     }
 }

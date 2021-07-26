@@ -3,6 +3,7 @@ package com.example.garage;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -45,6 +46,8 @@ public class CarActivity extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.main_layout).setBackgroundColor(Color.parseColor(SignAndLog.currentCar.getCompanyColor()));
+
         ImageButton imageButton = findViewById(R.id.car_image);
         File imageFile = new File(getLogoImagePath(SignAndLog.currentCar));
         Bitmap bmp = BitmapFactory.decodeFile(imageFile.getAbsolutePath());
@@ -83,51 +86,60 @@ public class CarActivity extends AppCompatActivity {
 
         Button getServicesButton = findViewById(R.id.get_services);
 
-        sellButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        if (SignAndLog.currentUser != null) {
+            sellButton.setVisibility(View.VISIBLE);
+            sellButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
 
-                Random random = new Random();
-                boolean isThereABuyer = random.nextBoolean();
+                    Random random = new Random();
+                    boolean isThereABuyer = random.nextBoolean();
 
-                if (isThereABuyer) {
+                    if (isThereABuyer) {
 
-                    if (ConfirmBox.createConfirmBox(getApplicationContext(), "Are You Sure You Want To Sell This Car?")) {
+                        if (ConfirmBox.createConfirmBox(getApplicationContext(), "Are You Sure You Want To Sell This Car?")) {
 
+                            try {
+                                SignAndLog.currentUser.setBudget(SignAndLog.currentUser.getBudget() + SignAndLog.currentCar.calculatePrice());
+                                SignAndLog.currentUser.removeCar(SignAndLog.currentCar);
+                                startActivity(new Intent(CarActivity.this, UserActivity.class));
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    } else
+                        Tools.exceptionToast(getApplicationContext(), "There is No Buyer For Your Car Right Now, Please Try Again Later!");
+                }
+            });
+
+            removeButton.setVisibility(View.VISIBLE);
+            removeButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    if (ConfirmBox.createConfirmBox(getApplicationContext(), "Are You Sure You Want To Remove This Car From Garage?")) {
                         try {
-                            SignAndLog.currentUser.setBudget(SignAndLog.currentUser.getBudget() + SignAndLog.currentCar.calculatePrice());
                             SignAndLog.currentUser.removeCar(SignAndLog.currentCar);
                             startActivity(new Intent(CarActivity.this, UserActivity.class));
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
                     }
-                } else
-                    Tools.exceptionToast(getApplicationContext(), "There is No Buyer For Your Car Right Now, Please Try Again Later!");
-            }
-        });
-
-        removeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                if (ConfirmBox.createConfirmBox(getApplicationContext(), "Are You Sure You Want To Remove This Car From Garage?")) {
-                    try {
-                        SignAndLog.currentUser.removeCar(SignAndLog.currentCar);
-                        startActivity(new Intent(CarActivity.this, UserActivity.class));
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
                 }
-            }
-        });
+            });
 
-        getServicesButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(CarActivity.this, ServicesActivity.class));
-            }
-        });
+            getServicesButton.setVisibility(View.VISIBLE);
+            getServicesButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(CarActivity.this, ServicesActivity.class));
+                }
+            });
+        } else {
+            sellButton.setVisibility(View.INVISIBLE);
+            removeButton.setVisibility(View.INVISIBLE);
+            getServicesButton.setVisibility(View.INVISIBLE);
+        }
 
 
     }
