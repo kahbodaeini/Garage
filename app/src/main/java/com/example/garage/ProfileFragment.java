@@ -54,14 +54,34 @@ public class ProfileFragment extends Fragment {
         // Inflate the layout for this fragment
         rootView = inflater.inflate(R.layout.fragment_profile, container, false);
 
-        rootView.findViewById(R.id.change_pic).setOnClickListener(new View.OnClickListener() {
+        rootView.findViewById(R.id.change_pic).setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view) {
+            public void onClick(View view){
+                View popupView = inflater.inflate(R.layout.popup_window_repairment, null);
+
+                int width = LinearLayout.LayoutParams.WRAP_CONTENT;
+                int height = LinearLayout.LayoutParams.WRAP_CONTENT;
+                boolean focusable = true;
+                final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
+                popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+
+                EditText editText = popupView.findViewById(R.id.percent);
+                editText.setHint("Input the path in your device");
                 try {
-                    addPic(rootView.findViewById(R.id.imageView));
+                    if (!addPic(rootView.findViewById(R.id.imageView), editText.getText().toString())){
+                        TextView error = popupView.findViewById(R.id.error);
+                        error.setText("Please Fill All The Text Boxes!");
+                    }
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+
+                popupView.findViewById(R.id.back_image_button).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        popupWindow.dismiss();
+                    }
+                });
             }
         });
 
@@ -76,7 +96,7 @@ public class ProfileFragment extends Fragment {
                 final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
                 popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
 
-                EditText editText = rootView.findViewById(R.id.percent);
+                EditText editText = popupView.findViewById(R.id.percent);
                 editText.setHint("How Much You Want To Add To Your Budget?");
                 try {
                     SignAndLog.currentUser.setBudget(SignAndLog.currentUser.getBudget() +
@@ -85,11 +105,10 @@ public class ProfileFragment extends Fragment {
                     e.printStackTrace();
                 }
 
-                popupView.setOnTouchListener(new View.OnTouchListener() {
+                popupView.findViewById(R.id.back_image_button).setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public boolean onTouch(View v, MotionEvent event) {
+                    public void onClick(View view) {
                         popupWindow.dismiss();
-                        return true;
                     }
                 });
             }
@@ -108,9 +127,9 @@ public class ProfileFragment extends Fragment {
                 final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
                 popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
 
-                EditText currentUsernameEdittext = rootView.findViewById(R.id.current_username);
-                EditText currentPasswordEdittext = rootView.findViewById(R.id.current_password_username_change);
-                EditText newUsernameEdittext = rootView.findViewById(R.id.new_username);
+                EditText currentUsernameEdittext = popupView.findViewById(R.id.current_username);
+                EditText currentPasswordEdittext = popupView.findViewById(R.id.current_password_username_change);
+                EditText newUsernameEdittext = popupView.findViewById(R.id.new_username);
 
                 String currentUsername = "";
                 String currentPassword = "";
@@ -122,33 +141,32 @@ public class ProfileFragment extends Fragment {
 
                 if (!currentPassword.equals("") && !currentUsername.equals("") && !newUsername.equals("")) {
                     if (!currentUsername.equals(SignAndLog.currentUser.getUserName())) {
-                        TextView error = rootView.findViewById(R.id.error);
+                        TextView error = popupView.findViewById(R.id.error);
                         error.setText("There's No User With This Username!");
                     } else {
                         if (currentPassword.equals(SignAndLog.currentUser.getPassword())) {
                             try {
                                 SignAndLog.currentUser.setUserName(newUsername);
-                                TextView error = rootView.findViewById(R.id.error);
+                                TextView error = popupView.findViewById(R.id.error);
                                 error.setText("Your Username Successfully Changed To" + newUsername + "!");
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
                         } else {
-                            TextView error = rootView.findViewById(R.id.error);
+                            TextView error = popupView.findViewById(R.id.error);
                             error.setText("Wrong Password!");
                         }
                     }
                 }
                 else{
-                    TextView error = rootView.findViewById(R.id.error);
+                    TextView error = popupView.findViewById(R.id.error);
                     error.setText("Please Fill All The Text Boxes!");
                 }
 
-                popupView.setOnTouchListener(new View.OnTouchListener() {
+                popupView.findViewById(R.id.back_image_button).setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public boolean onTouch(View v, MotionEvent event) {
+                    public void onClick(View view) {
                         popupWindow.dismiss();
-                        return true;
                     }
                 });
             }
@@ -165,7 +183,7 @@ public class ProfileFragment extends Fragment {
                 final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
                 popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
 
-                EditText editText = rootView.findViewById(R.id.percent);
+                EditText editText = popupView.findViewById(R.id.percent);
                 editText.setHint("Description");
                 try {
                     SignAndLog.currentUser.setAbout(String.valueOf(editText.getText()));
@@ -173,11 +191,10 @@ public class ProfileFragment extends Fragment {
                     e.printStackTrace();
                 }
 
-                popupView.setOnTouchListener(new View.OnTouchListener() {
+                popupView.findViewById(R.id.back_image_button).setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public boolean onTouch(View v, MotionEvent event) {
+                    public void onClick(View view) {
                         popupWindow.dismiss();
-                        return true;
                     }
                 });
             }
@@ -194,8 +211,8 @@ public class ProfileFragment extends Fragment {
                 final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
                 popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
 
-                EditText currentPasswordEdittext = rootView.findViewById(R.id.current_password);
-                EditText newPasswordEdittext = rootView.findViewById(R.id.new_password);
+                EditText currentPasswordEdittext = popupView.findViewById(R.id.current_password);
+                EditText newPasswordEdittext = popupView.findViewById(R.id.new_password);
 
                 String currentPassword = "";
                 String newPassword = "";
@@ -206,11 +223,11 @@ public class ProfileFragment extends Fragment {
                 if(!currentPassword.equals("") && !newPassword.equals("")){
                     try {
                         if(SignAndLog.currentUser.changePassword(currentPassword, newPassword)){
-                            TextView error = rootView.findViewById(R.id.error);
+                            TextView error = popupView.findViewById(R.id.error);
                             error.setText("Your Password Successfully Changed!");
                         }
                         else{
-                            TextView error = rootView.findViewById(R.id.error);
+                            TextView error = popupView.findViewById(R.id.error);
                             error.setText("Wrong Password!");
                         }
                     } catch (IOException e) {
@@ -218,15 +235,14 @@ public class ProfileFragment extends Fragment {
                     }
                 }
                 else{
-                    TextView error = rootView.findViewById(R.id.error);
+                    TextView error = popupView.findViewById(R.id.error);
                     error.setText("Please Fill All The Text Boxes!");
                 }
 
-                popupView.setOnTouchListener(new View.OnTouchListener() {
+                popupView.findViewById(R.id.back_image_button).setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public boolean onTouch(View v, MotionEvent event) {
+                    public void onClick(View view) {
                         popupWindow.dismiss();
-                        return true;
                     }
                 });
             }
@@ -235,37 +251,33 @@ public class ProfileFragment extends Fragment {
         return rootView;
     }
 
-    public void addPic(ImageView imageView) throws IOException {
-        //TODO
-        String path = "";
-        rootView.findViewById(R.id.change_pic);
-        loadImage(imageView, path);
-    }
-
-    public void loadImage(ImageView imageView, String path) throws IOException {
+    public boolean addPic(ImageView imageView, String path) throws IOException {
         File imgFile = new  File(path);
         if(imgFile.exists()){
             Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
             imageView.setImageBitmap(myBitmap);
-            saveImage(imgFile);
+            SignAndLog.currentUser.setImagePath(path);
+//            saveImage(imgFile);
+            return true;
         }
+        return false;
     }
 
-    public void saveImage(File file) throws IOException {
-        String directory = "";
-        File newFile = new File(directory, file.getName());
-        FileChannel outputChannel = null;
-        FileChannel inputChannel = null;
-        try {
-            outputChannel = new FileOutputStream(newFile).getChannel();
-            inputChannel = new FileInputStream(file).getChannel();
-            inputChannel.transferTo(0, inputChannel.size(), outputChannel);
-            inputChannel.close();
-        } finally {
-            if (inputChannel != null) inputChannel.close();
-            if (outputChannel != null) outputChannel.close();
-        }
-    }
+//    public void saveImage(File file) throws IOException {
+//        String directory = "";
+//        File newFile = new File(directory, file.getName());
+//        FileChannel outputChannel = null;
+//        FileChannel inputChannel = null;
+//        try {
+//            outputChannel = new FileOutputStream(newFile).getChannel();
+//            inputChannel = new FileInputStream(file).getChannel();
+//            inputChannel.transferTo(0, inputChannel.size(), outputChannel);
+//            inputChannel.close();
+//        } finally {
+//            if (inputChannel != null) inputChannel.close();
+//            if (outputChannel != null) outputChannel.close();
+//        }
+//    }
 
 
 
