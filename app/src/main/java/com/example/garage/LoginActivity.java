@@ -16,6 +16,7 @@ import org.json.simple.parser.ParseException;
 import java.io.IOException;
 
 import Controller.SignAndLog;
+import Model.User;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -54,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
                             case 0:
                                 errorTextView.setText( "This username does not exists!");
                             case 1:
-                                SignAndLog.currentUser = SignAndLog.getUserByUsername(username);
+                                SignAndLog.currentUser = User.getUserByUsername(username);
                                 startActivity(new Intent(LoginActivity.this, UserActivity.class));
                             case -1:
                                 errorTextView.setText( "Wrong password!");
