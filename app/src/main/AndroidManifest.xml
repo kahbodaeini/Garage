@@ -19,6 +19,52 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".AboutGarageActivity">
+
+        </activity>
+
+        <activity android:name=".AddCarActivity">
+
+        </activity>
+
+        <activity android:name=".AllCarsActivity">
+
+        </activity>
+
+        <activity android:name=".AllUsersActivity">
+
+        </activity>
+
+        <activity android:name=".CarActivity">
+
+        </activity>
+
+        <activity android:name=".GuestUserActivity">
+
+        </activity>
+
+
+        <activity android:name=".GuestCarActivity">
+
+        </activity>
+
+        <activity android:name=".LoginActivity">
+
+        </activity>
+
+        <activity android:name=".ServicesActivity">
+
+        </activity>
+
+        <activity android:name=".SignUpActivity">
+
+        </activity>
+
+        <activity android:name=".UserActivity">
+
+        </activity>
+
     </application>
 
 </manifest>

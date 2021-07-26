@@ -12,8 +12,6 @@ import Model.Tools;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.ui.AppBarConfiguration;
 
-import com.example.garage.databinding.ActivityMainBinding;
-
 import org.json.JSONException;
 import org.json.simple.parser.ParseException;
 
@@ -22,15 +20,11 @@ import java.io.IOException;
 public class LoginActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
-    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_layout);
-
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-
         login();
     }
 

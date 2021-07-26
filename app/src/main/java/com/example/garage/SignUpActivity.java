@@ -27,8 +27,8 @@ public class SignUpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup_layout);
-
         binding = ActivityMainBinding.inflate(getLayoutInflater());
+        signup();
     }
 
     public void signup(){
