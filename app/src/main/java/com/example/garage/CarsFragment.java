@@ -9,6 +9,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -34,7 +35,6 @@ public class CarsFragment extends Fragment {
 
     View rootView;
     ArrayList<Car> allCars;
-    ImageView backButton;
     LinearLayout mainLayout;
     LinearLayout barLayout;
     ScrollView scrollView;
@@ -64,7 +64,14 @@ public class CarsFragment extends Fragment {
         mainLayout = rootView.findViewById(R.id.main_layout);
         scrollView = rootView.findViewById(R.id.scroll_view);
         car_layout = rootView.findViewById(R.id.car_layouts);
-//        backButton = rootView.findViewById(R.id.back_image_button);
+        Button addCar = rootView.findViewById(R.id.add_car);
+        addCar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), AddCarActivity.class));
+            }
+        });
+
         loadCars();
 
         return rootView;
