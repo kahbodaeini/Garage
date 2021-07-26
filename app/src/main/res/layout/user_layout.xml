@@ -38,49 +38,38 @@
                 android:textColor="#C80D0D"
                 android:textSize="25sp"
                 tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="128dp"
+                tools:layout_editor_absoluteX="139dp"
                 tools:layout_editor_absoluteY="0dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
 
-<!--    <LinearLayout-->
-<!--        android:id="@+id/LinearLayout2"-->
-<!--        android:layout_width="401dp"-->
-<!--        android:layout_height="38dp"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:gravity="center"-->
-<!--        android:orientation="horizontal"-->
-<!--        tools:ignore="MissingConstraints">-->
-
-<!--    </LinearLayout>-->
-
     <FrameLayout
         android:id="@+id/frameLayout"
-        android:layout_width="match_parent"
-        android:layout_height="455dp"
+        android:layout_width="388dp"
+        android:layout_height="733dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LinearLayout1" >
+        app:layout_constraintTop_toBottomOf="@+id/LinearLayout1">
 
-<!--        <android.support.design.widget.TabLayout-->
-<!--            android:id="@+id/tabLayout"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:background="#7367"-->
-<!--            tools:ignore="MissingConstraints">-->
+        <!--        <android.support.design.widget.TabLayout-->
+        <!--            android:id="@+id/tabLayout"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:background="#7367"-->
+        <!--            tools:ignore="MissingConstraints">-->
 
-<!--            <android.support.design.widget.TabItem-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Profile" />-->
+        <!--            <android.support.design.widget.TabItem-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="Profile" />-->
 
-<!--            <android.support.design.widget.TabItem-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Cars" />-->
-<!--        </android.support.design.widget.TabLayout>-->
+        <!--            <android.support.design.widget.TabItem-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="Cars" />-->
+        <!--        </android.support.design.widget.TabLayout>-->
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout"

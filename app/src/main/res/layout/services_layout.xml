@@ -21,87 +21,100 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="405dp"
-        android:layout_height="71dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="33dp"
         android:text="SERVICES"
         android:textAlignment="center"
         android:textColor="#C80D0D"
         android:textSize="30sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-6dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/repairment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/back_image_button" />
 
     <Button
         android:id="@+id/repairment"
         android:layout_width="156dp"
         android:layout_height="57dp"
+        android:layout_marginBottom="16dp"
         android:text="repairment"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="120dp" />
+        app:layout_constraintBottom_toTopOf="@+id/buy_head_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.067"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/buy_head_light"
         android:layout_width="156dp"
         android:layout_height="57dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginBottom="16dp"
         android:spinnerMode="dialog"
         android:text="Buy head light"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="190dp" />
+        app:layout_constraintBottom_toTopOf="@+id/improve_engine"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/improve_engine"
         android:layout_width="156dp"
         android:layout_height="57dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginBottom="16dp"
         android:text="improve engine"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="80dp"
-        tools:layout_editor_absoluteY="260dp" />
+        app:layout_constraintBottom_toTopOf="@+id/buy_leather"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/buy_leather"
         android:layout_width="156dp"
         android:layout_height="57dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginBottom="16dp"
         android:text="Buy leather"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="110dp"
-        tools:layout_editor_absoluteY="330dp" />
+        app:layout_constraintBottom_toTopOf="@+id/buy_exhaust"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/buy_exhaust"
         android:layout_width="156dp"
         android:layout_height="57dp"
+        android:layout_marginEnd="92dp"
+        android:layout_marginBottom="16dp"
         android:text="buy exhaust"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="140dp"
-        tools:layout_editor_absoluteY="400dp" />
+        app:layout_constraintBottom_toTopOf="@+id/change_color"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/change_color"
         android:layout_width="156dp"
         android:layout_height="57dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="16dp"
         android:text="change color"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="170dp"
-        tools:layout_editor_absoluteY="470dp" />
+        app:layout_constraintBottom_toTopOf="@+id/buy_ring"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/buy_ring"
         android:layout_width="156dp"
         android:layout_height="57dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="16dp"
         android:text="Buy Ring"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="200dp"
-        tools:layout_editor_absoluteY="540dp" />
+        app:layout_constraintBottom_toTopOf="@+id/car_wash"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/car_wash"
         android:layout_width="156dp"
         android:layout_height="57dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="104dp"
+        android:layout_marginTop="16p"
         android:text="car wash"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="230dp"
-        tools:layout_editor_absoluteY="610dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

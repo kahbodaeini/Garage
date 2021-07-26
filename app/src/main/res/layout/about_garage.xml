@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ADD8E6">
+    android:background="#d9ed92">
 
     <ImageView
         android:id="@+id/back_image_button"
@@ -20,22 +21,29 @@
         android:id="@+id/textView"
         android:layout_width="414dp"
         android:layout_height="67dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="700dp"
         android:text="ABOUT GARAGE"
         android:textAlignment="center"
-        android:textColor="#C80D0D"
-        android:textSize="30sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:textColor="#023e8a"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/multiAutoCompleteTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="292dp"
         android:text="THIS IS A GARAGE"
         android:textSize="25dp"
-        tools:layout_editor_absoluteX="101dp"
-        tools:layout_editor_absoluteY="348dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints" />
 
 

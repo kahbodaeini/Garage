@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Input the percent"
+            android:hint="Input the percent"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="89dp"
             tools:layout_editor_absoluteY="27dp" />

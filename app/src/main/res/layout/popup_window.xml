@@ -27,8 +27,10 @@
             android:text="CHOOSE THE TYPE"
             android:textAlignment="center"
             android:textColor="#C80D0D"
-            android:textSize="30sp"
-            tools:ignore="MissingConstraints" />
+            android:textSize="20sp"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="16dp" />
 
         <ImageButton
             android:id="@+id/type1"

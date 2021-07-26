@@ -36,17 +36,18 @@
 
                     <TextView
                         android:id="@+id/month_button"
-                        android:layout_width="320dp"
-                        android:layout_height="72dp"
+                        android:layout_width="288dp"
+                        android:layout_height="45dp"
                         android:layout_centerVertical="true"
                         android:layout_toEndOf="@+id/refresh"
                         android:layout_toRightOf="@+id/refresh"
                         android:text="user1"
                         android:textColor="#C80D0D"
-                        android:textSize="39sp"
+                        android:textSize="30sp"
+                        android:textStyle="bold"
                         tools:ignore="MissingConstraints"
-                        tools:layout_editor_absoluteX="160dp"
-                        tools:layout_editor_absoluteY="0dp" />
+                        tools:layout_editor_absoluteX="153dp"
+                        tools:layout_editor_absoluteY="3dp" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
