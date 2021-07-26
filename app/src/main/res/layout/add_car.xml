@@ -138,7 +138,7 @@
         android:id="@+id/car_intact"
         android:layout_width="46dp"
         android:layout_height="45dp"
-        android:background="@android:color/white"
+        android:backgroundTint="@color/white"
         tools:layout_editor_absoluteX="181dp"
         tools:layout_editor_absoluteY="495dp" />
 
@@ -148,6 +148,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Done"
+        android:backgroundTint="@color/buttons_color"
         tools:layout_editor_absoluteX="159dp"
         tools:layout_editor_absoluteY="603dp" />
 

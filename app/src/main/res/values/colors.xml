@@ -2,6 +2,7 @@
 <resources>
     <color name="buttons_color">#FFBB86FC</color>
     <color name="titles_color">#FFBB86FC</color>
+    <color name="background_color">#ffc4d6</color>
 
 
     <color name="purple_200">#FFBB86FC</color>

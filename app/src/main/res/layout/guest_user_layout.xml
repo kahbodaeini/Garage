@@ -162,6 +162,7 @@
                         tools:ignore="MissingConstraints"
                         android:id="@+id/car_color1"
                         android:layout_width="29dp"
+                        android:backgroundTint="@color/white"
                         android:layout_height="26dp"
                         android:text="Button"
                         tools:layout_editor_absoluteX="360dp"
@@ -208,6 +209,7 @@
                         android:layout_width="29dp"
                         android:layout_height="26dp"
                         android:text="Button"
+                        android:backgroundTint="@color/white"
                         tools:layout_editor_absoluteX="360dp"
                         tools:layout_editor_absoluteY="24dp" />
 
@@ -252,6 +254,7 @@
                         android:layout_width="29dp"
                         android:layout_height="26dp"
                         android:text="Button"
+                        android:backgroundTint="@color/white"
                         tools:layout_editor_absoluteX="360dp"
                         tools:layout_editor_absoluteY="24dp" />
 

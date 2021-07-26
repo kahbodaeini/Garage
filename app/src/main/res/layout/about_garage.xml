@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ADD8E6">
+    android:background="@color/background_color">
 
     <ImageView
         android:id="@+id/back_image_button"
@@ -35,7 +35,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text='Welcome to "The Garage"! This is the Biggest Garage in Town, Which you can register in this garage to be Serviced. The Garage can have as much as car you want to put here. We can give you new Exhust, Engine, Leather, Head Light or Ring. Also we can repair your damaged car or color it to White, Black or Red, and ofcourse washing your car is one of our main services. Hope you enjoy being a member of The Garage'
-        android:textSize="24sp"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

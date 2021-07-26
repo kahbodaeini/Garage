@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_color"
     android:id="@+id/main_layout">
 
     <ImageView
@@ -111,6 +112,7 @@
         android:layout_width="154dp"
         android:layout_height="57dp"
         android:text="SELL"
+        android:backgroundTint="@color/buttons_color"
         tools:layout_editor_absoluteX="24dp"
         tools:layout_editor_absoluteY="592dp"
         tools:ignore="MissingConstraints" />
@@ -121,6 +123,7 @@
         android:layout_width="162dp"
         android:layout_height="46dp"
         android:text="REMOVE"
+        android:backgroundTint="@color/buttons_color"
         tools:layout_editor_absoluteX="218dp"
         tools:layout_editor_absoluteY="596dp" />
 
@@ -130,6 +133,7 @@
         android:layout_width="351dp"
         android:layout_height="45dp"
         android:text="GET SERVICES"
+        android:backgroundTint="@color/buttons_color"
         tools:layout_editor_absoluteX="31dp"
         tools:layout_editor_absoluteY="664dp" />
 

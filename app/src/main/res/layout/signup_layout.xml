@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#90EE90"
-    android:backgroundTint="#FFFACD">
+    android:background="@color/background_color">
 
     <ImageView
         android:id="@+id/back_image_button"
@@ -160,8 +159,8 @@
         android:layout_marginTop="11dp"
         android:layout_marginEnd="34dp"
         android:layout_marginBottom="128dp"
-        android:backgroundTint="#FFFFFF"
         android:text="Log in"
+        android:backgroundTint="@color/buttons_color"
         android:textColor="#EC0404"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -177,10 +176,9 @@
         android:layout_marginTop="628dp"
         android:layout_marginEnd="126dp"
         android:layout_marginBottom="55dp"
-        android:backgroundTint="#FDFDFD"
         android:onClick="signup"
         android:text="Done"
-        android:textColor="#F61010"
+        android:backgroundTint="@color/buttons_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
