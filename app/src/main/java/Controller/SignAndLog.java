@@ -1,5 +1,7 @@
 package Controller;
 
+import android.util.Log;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.json.JSONArray;
@@ -8,6 +10,7 @@ import org.json.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -25,29 +28,39 @@ public class SignAndLog {
     public static Car currentCar;
 
     public static boolean usernameExists(String username) throws IOException, ParseException {
+//        Log.d("FALSE: ", "here0");
+//        String path = "src/main/java/Model/Database/Usernames.txt";
+//        Log.d("FALSE: ", "here1");
+//        BufferedReader br = new BufferedReader(new FileReader(path));
+//        Log.d("FALSE: ", "here2");
+//        if (br.readLine() == null) {
+//            Log.d("FALSE: ", "here3");
+//            File myObj = new File(path);
+//            Scanner myReader = new Scanner(myObj);
+//            while (myReader.hasNextLine()) {
+//                String data = myReader.nextLine();
+//
+//                if(username.equals(data))
+//                    return true;
+//            }
+//            myReader.close();
+//        }
+//        Log.d("FALSE: ", "here4");
+//        return false;
 
-        File myObj = new File("main/java/Model/Database/Usernames.txt");
-        Scanner myReader = new Scanner(myObj);
-        while (myReader.hasNextLine()) {
-            String data = myReader.nextLine();
-
-            if(username.equals(data))
-                return true;
-        }
-        myReader.close();
-        return false;
+    return false;
     }
 
     public static void signup(String firstName, String lastName, String userName, String password, double budget) throws JSONException, IOException {
 
         User user = new User(firstName, lastName, userName, password, budget, new ArrayList<>());
 
-        JSONArray obj = user.toJson();
-        file = new FileWriter("main/java/Model/Database/Users/"+user.getUserName()+".json");
-        file.write(obj.toString());
-
-        FileWriter fileWriter = new FileWriter("main/java/Model/Database/Usernames.txt");
-        fileWriter.write(userName);
+//        JSONArray obj = user.toJson();
+//        file = new FileWriter("main/java/Model/Database/Users/"+user.getUserName()+".json");
+//        file.write(obj.toString());
+//
+//        FileWriter fileWriter = new FileWriter("main/java/Model/Database/Usernames.txt");
+//        fileWriter.write(userName);
 
         currentUser = user;
     }
