@@ -50,17 +50,17 @@ public class LoginActivity extends AppCompatActivity {
                     String username = usernameTextView.getText().toString();
                     String password = passwordTextView.getText().toString();
                     try {
-                        int res = SignAndLog.checkPassword(username, password);
+                        int res = SignAndLog.checkPassword(LoginActivity.this.getFilesDir(), username, password);
                         switch (res) {
                             case 0:
-                                errorTextView.setText( "This username does not exists!");
+                                errorTextView.setText("This username does not exists!");
                                 break;
                             case 1:
                                 SignAndLog.currentUser = User.getUserByUsername(username);
                                 startActivity(new Intent(LoginActivity.this, UserActivity.class));
                                 break;
                             case -1:
-                                errorTextView.setText( "Wrong password!");
+                                errorTextView.setText("Wrong password!");
                                 break;
                         }
                     } catch (IOException | JSONException | ParseException e) {

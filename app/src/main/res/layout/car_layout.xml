@@ -39,102 +39,126 @@
         android:id="@+id/car_owner"
         android:layout_width="393dp"
         android:layout_height="49dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="22dp"
         android:text="TextView"
-        tools:layout_editor_absoluteX="10dp"
-        tools:layout_editor_absoluteY="102dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/car_layouts"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/car_company"
         android:layout_width="393dp"
         android:layout_height="49dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
         android:text="TextView"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="10dp"
-        tools:layout_editor_absoluteY="171dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/car_owner"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/car_type"
         android:layout_width="393dp"
         android:layout_height="49dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="13dp"
         android:text="TextView"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="10dp"
-        tools:layout_editor_absoluteY="233dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/car_company"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/car_sign"
         android:layout_width="393dp"
         android:layout_height="49dp"
-        tools:ignore="MissingConstraints"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="16dp"
         android:text="TextView"
-        tools:layout_editor_absoluteX="10dp"
-        tools:layout_editor_absoluteY="298dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/car_type"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/car_year"
         android:layout_width="393dp"
         android:layout_height="49dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="16dp"
         android:text="TextView"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="10dp"
-        tools:layout_editor_absoluteY="356dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/car_sign"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/car_color"
         android:layout_width="393dp"
         android:layout_height="49dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="16dp"
         android:text="TextView"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="10dp"
-        tools:layout_editor_absoluteY="410dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/car_year"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/car_intact"
         android:layout_width="393dp"
         android:layout_height="49dp"
-        tools:ignore="MissingConstraints"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="16dp"
         android:text="TextView"
-        tools:layout_editor_absoluteX="10dp"
-        tools:layout_editor_absoluteY="466dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/car_color"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/car_price"
         android:layout_width="393dp"
         android:layout_height="49dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="16dp"
         android:text="TextView"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="10dp"
-        tools:layout_editor_absoluteY="517dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/car_intact"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/sell_car"
         android:layout_width="154dp"
         android:layout_height="57dp"
-        android:text="SELL"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="40dp"
         android:backgroundTint="@color/buttons_color"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="592dp"
+        android:text="SELL"
+        app:layout_constraintEnd_toStartOf="@+id/remove_car"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/car_price"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/remove_car"
-        tools:ignore="MissingConstraints"
         android:layout_width="162dp"
         android:layout_height="46dp"
-        android:text="REMOVE"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="36dp"
         android:backgroundTint="@color/buttons_color"
-        tools:layout_editor_absoluteX="218dp"
-        tools:layout_editor_absoluteY="596dp" />
+        android:text="REMOVE"
+        app:layout_constraintStart_toEndOf="@+id/sell_car"
+        app:layout_constraintTop_toBottomOf="@+id/car_price"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/get_services"
-        tools:ignore="MissingConstraints"
         android:layout_width="351dp"
         android:layout_height="45dp"
-        android:text="GET SERVICES"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="25dp"
         android:backgroundTint="@color/buttons_color"
-        tools:layout_editor_absoluteX="31dp"
-        tools:layout_editor_absoluteY="664dp" />
+        android:text="GET SERVICES"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sell_car"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

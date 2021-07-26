@@ -99,9 +99,9 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="611dp"
+            android:layout_height="666dp"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="174dp"
+            android:layout_marginBottom="119dp"
             android:gravity="center|bottom"
             android:orientation="horizontal">
 

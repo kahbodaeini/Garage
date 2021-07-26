@@ -48,14 +48,12 @@ public class AddCarActivity extends AppCompatActivity {
                 android.R.layout.simple_spinner_item, Arrays.toString(Model.Company.values()).split(", "));
         companyAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         companySpinner.setAdapter(companyAdapter);
-        Company company = Company.valueOf(companySpinner.getSelectedItem().toString());
 
         Spinner typeSpinner = findViewById(R.id.car_type);
         ArrayAdapter<String> typeAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, Arrays.toString(Model.CarType.values()).split(", "));
         typeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         typeSpinner.setAdapter(typeAdapter);
-        CarType type = CarType.valueOf(typeSpinner.getSelectedItem().toString());
 
         TextView signTextView = findViewById(R.id.car_sign);
         String sign = signTextView.getText().toString();
@@ -68,16 +66,15 @@ public class AddCarActivity extends AppCompatActivity {
                 android.R.layout.simple_spinner_item, Arrays.toString(Model.Color.values()).split(", "));
         colorAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         colorSpinner.setAdapter(colorAdapter);
-        Color color = Color.valueOf(colorSpinner.getSelectedItem().toString());
 
         Button intact = findViewById(R.id.car_intact);
         final int[] flag = {0};
         intact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (flag[0] % 2 == 0){
+                if (flag[0] % 2 == 0) {
                     intact.setBackgroundColor(android.graphics.Color.green(10));
-                }else {
+                } else {
                     intact.setBackgroundColor(android.graphics.Color.red(10));
                 }
                 flag[0]++;
@@ -87,13 +84,15 @@ public class AddCarActivity extends AppCompatActivity {
         Button done = findViewById(R.id.done);
         done.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
+            public void onClick(View view) {
+                Color color = Color.valueOf(colorSpinner.getSelectedItem().toString());
+                CarType type = CarType.valueOf(typeSpinner.getSelectedItem().toString());
+                Company company = Company.valueOf(companySpinner.getSelectedItem().toString());
                 if (signTextView.getText().equals("") || yearTextView.getText().equals("") ||
-                colorSpinner.getSelectedItem() == null || companySpinner.getSelectedItem() == null ||
-                        typeSpinner.getSelectedItem() == null){
+                        colorSpinner.getSelectedItem() == null || companySpinner.getSelectedItem() == null ||
+                        typeSpinner.getSelectedItem() == null) {
                     Tools.exceptionToast(getApplicationContext(), "Please tell us all about your car first!");
-                }
-                else{
+                } else {
                     try {
                         SignAndLog.currentUser.addCar(new Car(SignAndLog.currentUser,
                                 color, Integer.parseInt(year), flag[0] % 2 == 0, company, type, sign));

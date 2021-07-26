@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:background="@color/background_color"
@@ -14,145 +15,186 @@
         android:layout_margin="@dimen/fab_margin"
         android:scrollbarSize="@android:dimen/app_icon_size"
         android:src="@drawable/back_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <TextView
+        android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="16dp"
         android:text="ADD CAR"
-        android:textSize="25dp"
         android:textColor="@color/titles_color"
+        android:textSize="25dp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="143dp"
-        tools:layout_editor_absoluteY="16dp"
+        app:layout_constraintStart_toEndOf="@+id/back_image_button"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        tools:ignore="MissingConstraints"
+        android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="54dp"
         android:text="company: "
         android:textSize="20dp"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="102dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/back_image_button"
+        tools:ignore="MissingConstraints" />
 
     <Spinner
-        tools:ignore="MissingConstraints"
         android:id="@+id/car_company"
         android:layout_width="180dp"
         android:layout_height="35dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="68dp"
         android:background="@android:drawable/btn_dropdown"
         android:spinnerMode="dropdown"
-        tools:layout_editor_absoluteX="181dp"
-        tools:layout_editor_absoluteY="102dp" />
+        app:layout_constraintStart_toEndOf="@+id/textView14"
+        app:layout_constraintTop_toBottomOf="@+id/textView15"
+        tools:ignore="MissingConstraints" />
 
     <TextView
-        tools:ignore="MissingConstraints"
+        android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="37dp"
         android:text="type: "
         android:textSize="20dp"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="182dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14"
+        tools:ignore="MissingConstraints" />
 
     <Spinner
-        tools:ignore="MissingConstraints"
         android:id="@+id/car_type"
         android:layout_width="180dp"
         android:layout_height="35dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="28dp"
         android:background="@android:drawable/btn_dropdown"
         android:spinnerMode="dropdown"
-        tools:layout_editor_absoluteX="181dp"
-        tools:layout_editor_absoluteY="182dp" />
+        app:layout_constraintStart_toEndOf="@+id/textView16"
+        app:layout_constraintTop_toBottomOf="@+id/car_company"
+        tools:ignore="MissingConstraints" />
 
     <TextView
-        tools:ignore="MissingConstraints"
+        android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="53dp"
         android:text="sign: "
         android:textSize="20dp"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="262dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView16"
+        tools:ignore="MissingConstraints" />
+
 
     <EditText
         android:id="@+id/car_sign"
-        android:layout_width="190dp"
-        android:layout_height="52dp"
+        android:layout_width="178dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="44dp"
         android:ems="10"
+        android:hint="sign"
         android:inputType="textPersonName"
-        android:text="sign"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="181dp"
-        tools:layout_editor_absoluteY="262dp" />
-
+        app:layout_constraintStart_toEndOf="@+id/textView17"
+        app:layout_constraintTop_toBottomOf="@+id/car_type"
+        tools:ignore="MissingConstraints" />
 
     <TextView
-        tools:ignore="MissingConstraints"
+        android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="53dp"
         android:text="year: "
         android:textSize="20dp"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="342dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView17"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/car_year"
-        android:layout_width="190dp"
-        android:layout_height="52dp"
+        android:layout_width="154dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="24dp"
         android:ems="10"
+        android:hint="year"
         android:inputType="textPersonName"
-        android:text="year"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="181dp"
-        tools:layout_editor_absoluteY="342dp" />
+        app:layout_constraintStart_toEndOf="@+id/textView18"
+        app:layout_constraintTop_toBottomOf="@+id/car_sign"
+        tools:ignore="MissingConstraints" />
 
     <TextView
-        tools:ignore="MissingConstraints"
+        android:id="@+id/textView19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="53dp"
         android:text="color: "
         android:textSize="20dp"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="422dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView18"
+        tools:ignore="MissingConstraints" />
 
     <Spinner
-        tools:ignore="MissingConstraints"
         android:id="@+id/car_color"
         android:layout_width="180dp"
         android:layout_height="35dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="40dp"
         android:background="@android:drawable/btn_dropdown"
         android:spinnerMode="dropdown"
-        tools:layout_editor_absoluteX="181dp"
-        tools:layout_editor_absoluteY="422dp" />
+        app:layout_constraintStart_toEndOf="@+id/textView19"
+        app:layout_constraintTop_toBottomOf="@+id/car_year"
+        tools:ignore="MissingConstraints" />
 
     <TextView
-        tools:ignore="MissingConstraints"
+        android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="53dp"
         android:text="intact: "
         android:textSize="20dp"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="502dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView19"
+        tools:ignore="MissingConstraints" />
 
     <Button
-        tools:ignore="MissingConstraints"
         android:id="@+id/car_intact"
         android:layout_width="46dp"
         android:layout_height="45dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="44dp"
         android:backgroundTint="@color/white"
-        tools:layout_editor_absoluteX="181dp"
-        tools:layout_editor_absoluteY="495dp" />
+        app:layout_constraintStart_toEndOf="@+id/textView20"
+        app:layout_constraintTop_toBottomOf="@+id/car_color"
+        tools:ignore="MissingConstraints" />
 
     <Button
-        tools:ignore="MissingConstraints"
         android:id="@+id/done"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Done"
+        android:layout_marginStart="159dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="146dp"
         android:backgroundTint="@color/buttons_color"
-        tools:layout_editor_absoluteX="159dp"
-        tools:layout_editor_absoluteY="603dp" />
-
+        android:text="Done"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.882"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/car_intact"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

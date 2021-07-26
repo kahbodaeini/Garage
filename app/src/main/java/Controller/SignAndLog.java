@@ -3,9 +3,11 @@ package Controller;
 import org.json.JSONException;
 import org.json.simple.parser.ParseException;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import Model.Car;
 import Model.User;
@@ -19,23 +21,31 @@ public class SignAndLog {
     public static Car guestCar;
 
 
-    public static boolean usernameExists(String username) throws IOException, ParseException {
+    public static boolean usernameExists(File rootDirectoryPath, String username) throws IOException, ParseException {
 
-//        File myObj = new File("main/java/Model/Database/Usernames.txt");
+//        File myObj = new File(rootDirectoryPath, "Usernames.txt");
 //        Scanner myReader = new Scanner(myObj);
 //        while (myReader.hasNextLine()) {
 //            String data = myReader.nextLine();
 //
-//            if(username.equals(data))
+//            if (username.equals(data))
 //                return true;
 //        }
 //        myReader.close();
 //        return false;
-        return User.getUserByUsername(username) != null;
+
+         return User.getUserByUsername(username) != null;
 
     }
 
     public static void signup(String firstName, String lastName, String userName, String password, double budget) throws JSONException, IOException {
+
+        /*
+         * todo write into this file
+         * File myObj = new File(rootDirectoryPath, "Usernames.txt");
+         * myObj.createNewFile();
+         * todo write into this.
+         * */
 
         User user = new User(firstName, lastName, userName, password, budget, new ArrayList<>());
 
@@ -49,11 +59,11 @@ public class SignAndLog {
         currentUser = user;
     }
 
-    public static int checkPassword(String username, String password) throws IOException, ParseException, JSONException {
+    public static int checkPassword(File path, String username, String password) throws IOException, ParseException, JSONException {
 
-        if(!usernameExists(username))
+        if (!usernameExists(path, username))
             return 0;
-        else{
+        else {
 //            JSONParser jsonParser = new JSONParser();
 //            FileReader reader = new FileReader("main/java/Model/Database/Users/"+ username +".json");
 //            Object obj = jsonParser.parse(reader);
@@ -65,7 +75,7 @@ public class SignAndLog {
             assert user != null;
             String pass = user.getPassword();
 
-            if(pass.equals(password)){
+            if (pass.equals(password)) {
 
 //                String json = user.toString();
 //                ObjectMapper objectMapper = new ObjectMapper();
@@ -73,8 +83,7 @@ public class SignAndLog {
 
                 currentUser = user;
                 return 1;
-            }
-            else
+            } else
                 return -1;
         }
     }
