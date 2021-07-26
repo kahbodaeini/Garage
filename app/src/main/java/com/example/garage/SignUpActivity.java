@@ -11,8 +11,6 @@ import Model.Tools;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.ui.AppBarConfiguration;
 
-import com.example.garage.databinding.ActivityMainBinding;
-
 import org.json.JSONException;
 import org.json.simple.parser.ParseException;
 
@@ -40,15 +38,15 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
 
-        TextView usernameTextView = findViewById(R.id.userNameTextBoxSignup);
+        TextView usernameTextView = findViewById(R.id.username_sign_up);
         String username = usernameTextView.getText().toString();
-        TextView firstNameTextView = findViewById(R.id.all_users);
+        TextView firstNameTextView = findViewById(R.id.first_name_sign_up);
         String firstName = firstNameTextView.getText().toString();
-        TextView lastNameTextView = findViewById(R.id.all_cars);
+        TextView lastNameTextView = findViewById(R.id.last_name_sign_up);
         String lastName = lastNameTextView.getText().toString();
-        TextView passwordTextView = findViewById(R.id.passwordTextBoxSignup);
+        TextView passwordTextView = findViewById(R.id.password_sign_up);
         String password = passwordTextView.getText().toString();
-        TextView budgetTextView = findViewById(R.id.budgetTextBoxSignup);
+        TextView budgetTextView = findViewById(R.id.budget_sign_up);
         double budget = Double.parseDouble(budgetTextView.getText().toString());
 
         try {

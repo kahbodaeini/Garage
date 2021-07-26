@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button allUsers = findViewById(R.id.all_users);
+        Button allUsers = findViewById(R.id.first_name_sign_up);
         allUsers.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button allCars = findViewById(R.id.all_cars);
+        Button allCars = findViewById(R.id.last_name_sign_up);
         allCars.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

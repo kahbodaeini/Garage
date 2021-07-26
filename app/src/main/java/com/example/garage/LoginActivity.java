@@ -29,9 +29,9 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void login() {
-        TextView usernameTextView = findViewById(R.id.userNameTextBoxSignup);
+        TextView usernameTextView = findViewById(R.id.username_sign_up);
         String username = usernameTextView.getText().toString();
-        TextView passwordTextView = findViewById(R.id.passwordTextBoxSignup);
+        TextView passwordTextView = findViewById(R.id.password_sign_up);
         String password = passwordTextView.getText().toString();
 
         ImageView back = findViewById(R.id.back_image_button);
