@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -10,16 +11,25 @@
         android:layout_width="match_parent"
         android:layout_height="186dp">
 
+
         <ImageView
             android:id="@+id/back_image_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:layout_margin="@dimen/fab_margin"
+            android:layout_marginStart="347dp"
+            android:layout_marginEnd="363dp"
+            android:layout_marginBottom="16dp"
             android:scrollbarSize="@android:dimen/app_icon_size"
             android:src="@drawable/back_arrow"
+            app:layout_constraintBottom_toTopOf="@+id/percent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.437"
             tools:ignore="MissingConstraints" />
-
 
         <EditText
             android:id="@+id/percent"
@@ -28,18 +38,28 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:text="Input the percent"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="89dp"
-            tools:layout_editor_absoluteY="27dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.34"
+            tools:ignore="MissingConstraints" />
 
         <Button
             android:id="@+id/done"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="151dp"
+            android:layout_marginEnd="172dp"
             android:text="DONE"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="151dp"
-            tools:layout_editor_absoluteY="85dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.789"
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/error"

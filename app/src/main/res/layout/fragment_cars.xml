@@ -112,26 +112,33 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                <Button
-                    android:id="@+id/add_car"
-                    android:layout_width="match_parent"
-                    android:layout_height="47dp"
-                    android:layout_centerHorizontal="true"
-                    android:text="add car"
-                    android:background="@android:color/background_dark"
-                    app:layout_editor_absoluteY="1dp"
-                    android:textColor="#002000"
-                    tools:ignore="MissingConstraints" />
+                    <Button
+                        android:id="@+id/add_car"
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@android:color/background_dark"
+                        android:text="add car"
+                        android:textColor="#002000"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_editor_absoluteY="1dp"
+                        tools:ignore="MissingConstraints" />
 
-                <TextView
-                    android:id="@+id/total_prices"
-                    android:textSize="20dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="47dp"
-                    android:text="Total Prices Of your car: "
-                    app:layout_editor_absoluteY="55dp"
-                    android:textColor="#008000"
-                    tools:ignore="MissingConstraints"/>
+                    <TextView
+                        android:id="@+id/total_prices"
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp"
+                        android:layout_marginTop="8dp"
+                        android:text="Total Prices Of your car: "
+                        android:textColor="#008000"
+                        android:textSize="20dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/add_car"
+                        app:layout_editor_absoluteY="55dp"
+                        tools:ignore="MissingConstraints" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

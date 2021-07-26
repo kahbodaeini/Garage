@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -10,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="267dp">
 
+
         <ImageView
             android:id="@+id/back_image_button"
             android:layout_width="wrap_content"
@@ -18,8 +20,13 @@
             android:layout_margin="@dimen/fab_margin"
             android:scrollbarSize="@android:dimen/app_icon_size"
             android:src="@drawable/back_arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
             tools:ignore="MissingConstraints" />
-
 
         <EditText
             android:id="@+id/current_username"
@@ -28,9 +35,13 @@
             android:ems="10"
             android:hint="current username"
             android:inputType="textPersonName"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="100dp"
-            tools:layout_editor_absoluteY="16dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.112"
+            tools:ignore="MissingConstraints" />
 
         <EditText
             android:id="@+id/current_password_username_change"
@@ -40,8 +51,12 @@
             android:hint="current password"
             android:inputType="textPassword"
             android:text=""
-            tools:layout_editor_absoluteX="100dp"
-            tools:layout_editor_absoluteY="70dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.364"
             tools:ignore="MissingConstraints" />
 
         <EditText
@@ -52,9 +67,13 @@
             android:hint="new username"
             android:inputType="textPersonName"
             android:text=""
-            tools:ignore="MissingConstraints,TextFields"
-            tools:layout_editor_absoluteX="100dp"
-            tools:layout_editor_absoluteY="124dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.599"
+            tools:ignore="MissingConstraints,TextFields" />
 
         <Button
             android:id="@+id/done"
