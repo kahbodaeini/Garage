@@ -5,11 +5,9 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
-
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, AllUsersActivity.class));
             }
         });
-
 
         Button allCars = findViewById(R.id.all_cars);
         allCars.setOnClickListener(new View.OnClickListener() {

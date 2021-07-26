@@ -87,6 +87,10 @@ public class CarActivity extends AppCompatActivity {
         Button getServicesButton = findViewById(R.id.get_services);
 
         if (SignAndLog.currentUser != null) {
+            sellButton.setBackgroundColor(Color.parseColor("#2F4F4F"));
+            removeButton.setBackgroundColor(Color.parseColor("#2F4F4F"));
+            getServicesButton.setBackgroundColor(Color.parseColor("#2F4F4F"));
+
             sellButton.setVisibility(View.VISIBLE);
             sellButton.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -136,20 +140,16 @@ public class CarActivity extends AppCompatActivity {
                 }
             });
         } else {
-            sellButton.setVisibility(View.INVISIBLE);
-            removeButton.setVisibility(View.INVISIBLE);
-            getServicesButton.setVisibility(View.INVISIBLE);
+            sellButton.setBackgroundColor(Color.parseColor("#2F4F4F"));
+            removeButton.setBackgroundColor(Color.parseColor("#2F4F4F"));
+            getServicesButton.setBackgroundColor(Color.parseColor("#2F4F4F"));
         }
-
-
     }
 
     public static String getLogoImagePath(Car car) {
 
         Company company = car.getCompany();
-
         String path = "";
-
         switch (company) {
             case BENZ:
             default:

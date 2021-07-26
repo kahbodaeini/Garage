@@ -3,7 +3,7 @@ package com.example.garage;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
+//import android.support.design.widget.TabLayout;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -13,6 +13,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+
+
+import com.google.android.material.tabs.TabLayout;
 
 import Controller.SignAndLog;
 import Model.User;
