@@ -15,8 +15,13 @@
         android:layout_margin="@dimen/fab_margin"
         android:scrollbarSize="@android:dimen/app_icon_size"
         android:src="@drawable/back_arrow"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints" />
-
 
     <TextView
         android:id="@+id/textView"
@@ -41,80 +46,100 @@
         android:text="repairment"
         app:layout_constraintBottom_toTopOf="@+id/buy_head_light"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.067"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/buy_head_light"
         android:layout_width="156dp"
         android:layout_height="57dp"
-        android:layout_marginStart="48dp"
         android:layout_marginBottom="16dp"
         android:spinnerMode="dialog"
         android:text="Buy head light"
         app:layout_constraintBottom_toTopOf="@+id/improve_engine"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/improve_engine"
         android:layout_width="156dp"
         android:layout_height="57dp"
-        android:layout_marginStart="92dp"
         android:layout_marginBottom="16dp"
         android:text="improve engine"
         app:layout_constraintBottom_toTopOf="@+id/buy_leather"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/buy_leather"
         android:layout_width="156dp"
         android:layout_height="57dp"
-        android:layout_marginStart="116dp"
         android:layout_marginBottom="16dp"
         android:text="Buy leather"
         app:layout_constraintBottom_toTopOf="@+id/buy_exhaust"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/buy_exhaust"
         android:layout_width="156dp"
         android:layout_height="57dp"
-        android:layout_marginEnd="92dp"
         android:layout_marginBottom="16dp"
         android:text="buy exhaust"
         app:layout_constraintBottom_toTopOf="@+id/change_color"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/change_color"
         android:layout_width="156dp"
         android:layout_height="57dp"
-        android:layout_marginEnd="68dp"
         android:layout_marginBottom="16dp"
         android:text="change color"
         app:layout_constraintBottom_toTopOf="@+id/buy_ring"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/buy_ring"
         android:layout_width="156dp"
         android:layout_height="57dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="16dp"
         android:text="Buy Ring"
-        app:layout_constraintBottom_toTopOf="@+id/car_wash"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.772" />
 
     <Button
         android:id="@+id/car_wash"
         android:layout_width="156dp"
         android:layout_height="57dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="104dp"
-        android:layout_marginTop="16p"
         android:text="car wash"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.896" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
