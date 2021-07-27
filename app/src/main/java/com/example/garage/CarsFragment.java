@@ -50,7 +50,8 @@ public class CarsFragment extends Fragment {
         // Inflate the layout for this fragment
         rootView = inflater.inflate(R.layout.fragment_cars, container, false);
 
-        allCars = SignAndLog.currentUser.getCars();
+        if (SignAndLog.currentUser != null)
+            allCars = SignAndLog.currentUser.getCars();
         double totalPrice = 0;
 
         if(!allCars.isEmpty())

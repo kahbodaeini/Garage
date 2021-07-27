@@ -11,16 +11,15 @@ public class User {
 
     private String firstName, lastName, userName, password, about, imagePath;
     private double budget;
-    private ArrayList<Car> cars;
+    private ArrayList<Car> cars = new ArrayList<>();
     private static final ArrayList<User> allUsers = new ArrayList<>();
 
-    public User(String firstName, String lastName, String userName, String password, double budget, ArrayList<Car> cars) {
+    public User(String firstName, String lastName, String userName, String password, double budget) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
         this.password = password;
         this.budget = budget;
-        this.cars = cars;
         allUsers.add(this);
     }
 
@@ -148,10 +147,12 @@ public class User {
     }
 
     public void removeCar(Car car) throws IOException {
+        cars.remove(getCarBySign(car.getSign()));
+        cars.clear();
 
-        ArrayList<Car> cars = this.getCars();
-        cars.remove(car);
-        this.setCars(cars);
+//        ArrayList<Car> cars = this.getCars();
+//        cars.remove(car);
+//        this.setCars(cars);
 
 //        File file = new File("main/java/Model/Database/Users/"+this.getUserName()+".json");
 //        file.deleteOnExit();
@@ -159,6 +160,15 @@ public class User {
 //        FileWriter newFile = new FileWriter("main/java/Model/Database/Users/"+this.getUserName()+".json");
 //        newFile.write(this.toString());
 
+    }
+
+    public Car getCarBySign(String sign){
+        for (Car car : cars) {
+            if (car.getSign().equals(sign)){
+                return car;
+            }
+        }
+        return null;
     }
 
     public boolean checkPasswordInProfilePage(String password){

@@ -1,5 +1,8 @@
 package com.example.garage;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -31,11 +34,13 @@ public class CarActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.car_layout);
+        context = this;
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
 
@@ -99,7 +104,7 @@ public class CarActivity extends AppCompatActivity {
                     Random random = new Random();
                     boolean isThereABuyer = random.nextBoolean();
                     if (isThereABuyer) {
-                        if (ConfirmBox.createConfirmBox(getApplicationContext(), "Are You Sure You Want To Sell This Car?")) {
+                        if (ConfirmBox.createConfirmBox(context, "Are You Sure You Want To Sell This Car?")) {
                             try {
                                 SignAndLog.currentUser.setBudget(SignAndLog.currentUser.getBudget() + SignAndLog.currentCar.calculatePrice());
                                 SignAndLog.currentUser.removeCar(SignAndLog.currentCar);
@@ -118,7 +123,7 @@ public class CarActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
 
-                    if (ConfirmBox.createConfirmBox(getApplicationContext(), "Are You Sure You Want To Remove This Car From Garage?")) {
+                    if (ConfirmBox.createConfirmBox(context, "Are You Sure You Want To Remove This Car From Garage?")) {
                         try {
                             SignAndLog.currentUser.removeCar(SignAndLog.currentCar);
                             startActivity(new Intent(CarActivity.this, UserActivity.class));
@@ -141,6 +146,39 @@ public class CarActivity extends AppCompatActivity {
             removeButton.setBackgroundColor(Color.parseColor("#2F4F4F"));
             getServicesButton.setBackgroundColor(Color.parseColor("#2F4F4F"));
         }
+    }
+
+    public static boolean createConfirmBox(Context context, String message){
+        final boolean[] answer = new boolean[1];
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(context);
+        builder1.setMessage(message);
+        builder1.setCancelable(true);
+        final int[] flag = {0};
+        final boolean[] isClicked = {false};
+
+        builder1.setPositiveButton(
+                "Yes",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        answer[0] = true;
+                        dialog.cancel();
+                    }
+                });
+
+        builder1.setNegativeButton(
+                "No",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        answer[0] = false;
+                        dialog.cancel();
+
+                    }
+                });
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
+
+        return answer[0];
     }
 
     public static String getLogoImagePath(Car car) {

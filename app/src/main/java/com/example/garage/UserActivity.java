@@ -29,6 +29,7 @@ public class UserActivity extends AppCompatActivity {
     Fragment fragment = null;
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
+
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +39,7 @@ public class UserActivity extends AppCompatActivity {
         user = SignAndLog.currentUser;
 
         TextView name = findViewById(R.id.name);
-        if (name!= null)
+        if (name != null && user != null)
             name.setText("" + user.getFirstName() + "  " + user.getLastName());
 
         ImageView logout = findViewById(R.id.log_out_button);
@@ -50,8 +51,8 @@ public class UserActivity extends AppCompatActivity {
             }
         });
 
-        tabLayout=(TabLayout)findViewById(R.id.tabLayout);
-        frameLayout=(FrameLayout)findViewById(R.id.frameLayout);
+        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+        frameLayout = (FrameLayout) findViewById(R.id.frameLayout);
 
         fragment = new ProfileFragment();
         fragmentManager = getSupportFragmentManager();

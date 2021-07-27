@@ -47,7 +47,7 @@ public class SignAndLog {
          * todo write into this.
          * */
 
-        User user = new User(firstName, lastName, userName, password, budget, new ArrayList<>());
+        User user = new User(firstName, lastName, userName, password, budget);
 
 //        JSONArray obj = user.toJson();
 //        file = new FileWriter("main/java/Model/Database/Users/"+user.getUserName()+".json");

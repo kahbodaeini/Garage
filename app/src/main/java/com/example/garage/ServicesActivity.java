@@ -1,5 +1,6 @@
 package com.example.garage;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -36,11 +37,13 @@ public class ServicesActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
+    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.services_layout);
+        context = this;
 
         ImageView back = findViewById(R.id.back_image_button);
         Button repairment = findViewById(R.id.repairment);
@@ -607,7 +610,7 @@ public class ServicesActivity extends AppCompatActivity {
     }
 
     public void carWashButtonClicked(View view) throws IOException {
-        if(ConfirmBox.createConfirmBox(getApplicationContext(), "Are You Sure You Want To Wash Your Car?")){
+        if(ConfirmBox.createConfirmBox(context, "Are You Sure You Want To Wash Your Car?")){
             CarServices carServices = new CarServices(SignAndLog.currentCar);
             if(carServices.doService(new Service(SignAndLog.currentCar, ServiceType.CAR_WASH)))
                 Tools.exceptionToast(getApplicationContext(), "Your Car Is Clean Now!");
