@@ -54,8 +54,8 @@ public class CarsFragment extends Fragment {
             allCars = SignAndLog.currentUser.getCars();
         double totalPrice = 0;
 
-        if(!allCars.isEmpty())
-            for(int i = 0; i < allCars.size(); i++)
+        if (allCars != null && !allCars.isEmpty())
+            for (int i = 0; i < allCars.size(); i++)
                 totalPrice += allCars.get(i).calculatePrice();
 
         TextView totalPriceTextView = rootView.findViewById(R.id.total_prices);
