@@ -72,9 +72,9 @@ public class AddCarActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (flag[0] % 2 == 0) {
-                    intact.setBackgroundColor(Color.GREEN);
+                    intact.setBackgroundColor(Color.parseColor("#04a777"));
                 } else {
-                    intact.setBackgroundColor(Color.RED);
+                    intact.setBackgroundColor(Color.parseColor("#840032"));
                 }
                 flag[0]++;
             }
@@ -97,7 +97,7 @@ public class AddCarActivity extends AppCompatActivity {
                 } else {
                     try {
                         Car newCar = new Car(SignAndLog.currentUser,
-                                color, Integer.parseInt(year), flag[0] % 2 == 0, company, type, sign);
+                                color, Integer.parseInt(year), flag[0] % 2 != 0, company, type, sign);
                         if (SignAndLog.currentUser.getBudget() >= newCar.calculatePrice()) {
                             SignAndLog.currentUser.setBudget(SignAndLog.currentUser.getBudget() - newCar.calculatePrice());
                             SignAndLog.currentUser.addCar(newCar);

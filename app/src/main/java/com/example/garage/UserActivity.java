@@ -38,7 +38,8 @@ public class UserActivity extends AppCompatActivity {
         user = SignAndLog.currentUser;
 
         TextView name = findViewById(R.id.name);
-        name.setText(user.getFirstName() + "  " + user.getLastName());
+        if (name!= null)
+            name.setText("" + user.getFirstName() + "  " + user.getLastName());
 
         ImageView logout = findViewById(R.id.log_out_button);
         logout.setOnClickListener(new View.OnClickListener() {

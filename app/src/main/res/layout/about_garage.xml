@@ -35,6 +35,7 @@
         android:id="@+id/multiAutoCompleteTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/buttons_color"
         android:text='Welcome to "The Garage"! This is the Biggest Garage in Town, Which you can register in this garage to be Serviced. The Garage can have as much as car you want to put here. We can give you new Exhust, Engine, Leather, Head Light or Ring. Also we can repair your damaged car or color it to White, Black or Red, and ofcourse washing your car is one of our main services. Hope you enjoy being a member of The Garage'
         android:textSize="20sp"
         android:textStyle="italic"

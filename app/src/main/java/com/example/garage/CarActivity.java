@@ -47,7 +47,7 @@ public class CarActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.main_layout).setBackgroundColor(Color.parseColor(SignAndLog.currentCar.getCompanyColor()));
+//        findViewById(R.id.main_layout).setBackgroundColor(Color.parseColor(SignAndLog.currentCar.getCompanyColor()));
 
         ImageButton imageButton = findViewById(R.id.car_image);
         File imageFile = new File(getLogoImagePath(SignAndLog.currentCar));
@@ -88,22 +88,18 @@ public class CarActivity extends AppCompatActivity {
         Button getServicesButton = findViewById(R.id.get_services);
 
         if (SignAndLog.currentUser != null) {
-            sellButton.setBackgroundColor(Color.parseColor("#2F4F4F"));
-            removeButton.setBackgroundColor(Color.parseColor("#2F4F4F"));
-            getServicesButton.setBackgroundColor(Color.parseColor("#2F4F4F"));
+            sellButton.setBackgroundColor(Color.parseColor("#840032"));
+            removeButton.setBackgroundColor(Color.parseColor("#840032"));
+            getServicesButton.setBackgroundColor(Color.parseColor("#840032"));
 
             sellButton.setVisibility(View.VISIBLE);
             sellButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
                     Random random = new Random();
                     boolean isThereABuyer = random.nextBoolean();
-
                     if (isThereABuyer) {
-
                         if (ConfirmBox.createConfirmBox(getApplicationContext(), "Are You Sure You Want To Sell This Car?")) {
-
                             try {
                                 SignAndLog.currentUser.setBudget(SignAndLog.currentUser.getBudget() + SignAndLog.currentCar.calculatePrice());
                                 SignAndLog.currentUser.removeCar(SignAndLog.currentCar);
